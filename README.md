@@ -8,7 +8,7 @@ This script is designed to allow me to easily reinstall my macOS without fear of
 - Homebrew
 - Git
 - GPG
-- lolcat, cowsay, fortune
+- lolcat, cowsay, fortune, sugarpaccione
 
 ## Applications
 - iTerm2
