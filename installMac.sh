@@ -16,7 +16,6 @@ fi
 
 # Install Oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-sed -i -e 's/robbyrussell/agnoster/g' ~/.zshrc
 
 # The essentials
 
@@ -24,6 +23,7 @@ sed -i -e 's/robbyrussell/agnoster/g' ~/.zshrc
 brew install git
 brew install cowsay
 brew install fortune
+brew install gpg
 gem install lolcat
 
 # Applications
@@ -32,7 +32,15 @@ brew cask install atom
 brew cask install google-chrome
 brew cask install spotify
 brew cask install pibakery
-brw cask install etcher
+brew cask install etcher
+brew cask install lastpass
+brew cask install sonos
+brew cask install the-unarchiver
+brew cask install flux
+brew cask install vlc
+brew cask install gpgtools
+brew cask install paragon-ntfs
+
 
 # Set up github folder
 mkdir ~/GitHub
