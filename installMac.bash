@@ -25,6 +25,7 @@ brew install git
 brew install cowsay
 brew install fortune
 gem install lolcat
+gem install sugarpaccione
 
 # Applications
 brew cask install iterm2
