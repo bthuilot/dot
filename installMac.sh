@@ -42,7 +42,15 @@ brew cask install vlc
 brew cask install gpgtools
 brew cask install paragon-ntfs
 brew cask install utorrent
+brew cask install discord
+brew cask install steam
+brew cask install thunderbird
 
 
 # Set up github folder
 mkdir ~/GitHub
+
+echo 'Authy still needs to be installed from chrome'
+echo 'Files still need to be added from flash drive'
+echo 'Please add your ssh key to GitHub'
+echo 'Quotes also still need to be set up'
