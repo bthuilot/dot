@@ -41,6 +41,7 @@ brew cask install flux
 brew cask install vlc
 brew cask install gpgtools
 brew cask install paragon-ntfs
+brew cask install utorrent
 
 
 # Set up github folder

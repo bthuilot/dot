@@ -24,3 +24,4 @@ This script is designed to allow me to easily reinstall my macOS without fear of
 - VLC
 - GPG Tools
 - Paragon NFTS for Mac
+- uTorrent 
