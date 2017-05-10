@@ -27,8 +27,8 @@ brew install git
 brew install cowsay
 brew install fortune
 brew install gpg
-gem install lolcat
-gem install sugarpaccione
+sudo gem install lolcat
+sudo gem install sugarpaccione
 
 # Applications
 brew cask install iterm2
