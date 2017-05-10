@@ -1,7 +1,10 @@
 #!/bin/bash
 
 # Install Homebrew
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+if ! type "$brew" > /dev/null; then
+  /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+fi
+
 # Add cask
 brew tap caskroom/cask
 
@@ -38,7 +41,6 @@ brew cask install lastpass
 brew cask install sonos
 brew cask install the-unarchiver
 brew cask install flux
-brew cask install vlc
 brew cask install gpgtools
 brew cask install paragon-ntfs
 brew cask install utorrent
