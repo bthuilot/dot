@@ -1,1 +1,0 @@
-!function(){"use strict";var e="https://aboutme.google.com"===location.origin;if(e){var i='#gb ul[id]>li[class][role="menuitem"][id]:nth-child(2)';window.addEventListener("message",function(e){var t=e.data,o=t.method;if("aboutmeOpenPreview"===o){var n=document.querySelector(i);n.click()}})}}();

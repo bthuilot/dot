@@ -1,7 +1,0 @@
-{
-"version": 3,
-"mappings": "AAAA,IAAK,CACD,OAAO,CAAE,CAAC,CACV,UAAU,CAAE,IAAI",
-"sources": ["loader.scss"],
-"names": [],
-"file": "loader.css"
-}

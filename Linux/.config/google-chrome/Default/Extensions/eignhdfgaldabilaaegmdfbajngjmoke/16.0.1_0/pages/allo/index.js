@@ -1,1 +1,0 @@
-cjModules.define(function(){"use strict";return function(e){var t="https://allo.google.com/web",n=bmElements.createElement("iframe",{src:cjBasics.urls.create(t,{bm_embed:"1",bm_contentscript:"allo"}),darker:!0,noLoading:!0});e.appendChild(n)}});
