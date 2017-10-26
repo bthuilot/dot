@@ -1,0 +1,8 @@
+{
+   "ext_description": {
+      "message": "This app allows you to view SQLite Database on your browser. It can help you to easily manage, and open the SQLite database."
+   },
+   "ext_name": {
+      "message": "SQLite Viewer with Google Drive"
+   }
+}

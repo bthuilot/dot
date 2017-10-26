@@ -1,0 +1,1 @@
+cjModules.define(function(){"use strict";return function(e){function t(){var t=cjBasics.urls.create(c,{bm_contentscript:"marketplace",bm_embed:"1",bm_wiz:"1",hl:g.lang}),a=bmElements.createElement("iframe",{src:t,darker:!0,noLoading:!0});e.appendChild(a)}var c="https://gsuite.google.com/";"0"!==g.account.authuser&&(c+="u/"+g.account.authuser+"/"),c+="marketplace/",t()}});

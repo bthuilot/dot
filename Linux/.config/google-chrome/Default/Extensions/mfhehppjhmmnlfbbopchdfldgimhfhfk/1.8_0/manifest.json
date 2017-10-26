@@ -1,0 +1,19 @@
+{
+   "app": {
+      "launch": {
+         "web_url": "https://classroom.google.com/"
+      },
+      "urls": [ "*://classroom.google.com/" ]
+   },
+   "default_locale": "en",
+   "description": "__MSG_appDesc__",
+   "icons": {
+      "128": "icon_128.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAjAbGnpa01ysP4V9DUFR7kAQM2nExxZN1KwpJ0hfJv1VceMsbRuYFjyzNMNfU3N2A5XS0g+SRkaX2Dp8U2A3Z+9e82HJtFDxUREk4BjmnnzAAI+uvXjG7ngvKLAVkckNOmBcBtgJFE3SHLNjWR+Sk1rTNuUMcAsDFhcLucGvpSQ8kmzePUAlV7JRBeBtsPgL7GIMbioMARVWlyFF83teGSxPCc0YFdtQnhI2PfvVYy/KQjUhdDv70rt4lBKuIDWbfd+azMKz4dD6L6V5zQwCKd/RnrkaTrGaRbnPFp78QjY1R0m2SlnTrFRlPtX85/DnS5sTwaXqrdsZU7dbSBVHTwQIDAQAB",
+   "manifest_version": 2,
+   "name": "__MSG_appName__",
+   "short_name": "Classroom",
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "1.8"
+}

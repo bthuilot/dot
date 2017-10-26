@@ -1,0 +1,1 @@
+cjModules.define(function(){"use strict";return function(e){var n=bmElements.createElement("fulldialog",{serviceLogo:{label:bmRuntime.i18n("cj_i18n_00081","Reminders")},iconName:"reminders",message:"This page is under maintainance. Sorry for any inconveniences"});e.appendChild(n)}});

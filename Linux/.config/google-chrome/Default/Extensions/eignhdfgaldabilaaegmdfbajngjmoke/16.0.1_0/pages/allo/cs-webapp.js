@@ -1,0 +1,1 @@
+!function(){"use strict";var o="https://allo.google.com"===location.origin&&location.pathname.indexOf("/web")!==-1}();

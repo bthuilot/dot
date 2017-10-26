@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Modern MyNEU's Options</title>
+    <link href="css/popup.css" rel="stylesheet" type="text/css">
+    <style>
+        body {
+            width: 100%;
+        }
+
+        .content {
+            width: 400px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="title-head">
+        <h1>Modern MyNEU</h1>
+        <p>By <a target="_new" href="https://github.com/Abbondanzo/Modern-MyNEU">Peter Abbondanzo</a></p>
+    </div>
+    <div class="content">
+        <table>
+            <tr>
+                <td>
+                    <h3>Toggle Plugin On/Off</h3>
+                </td>
+                <td>
+                    <button style="margin-left:40px;" value="true" id="enable">ON</button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h3>Select Theme</h3>
+                </td>
+                <td>
+                    <select>
+                        <option value="modern">Modern</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h3>Custom Color (coming soon)</h3>
+                </td>
+                <td>
+                    <input class="jscolor" value="#EA1F23" disabled>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h3>Default Page</h3>
+                </td>
+                <td>
+                    <select id="default-page">
+                        <option value="central" selected="selected">myNEU Central</option>
+                        <option value="selfservice">Self-Service</option>
+                        <option value="community">Community</option>
+                        <option value="coop">Experiential Learning/Co-op</option>
+                        <option value="career">Career Development</option>
+                        <option value="info">InfoChannels</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+        <p style="padding:10px;font-size:10px;margin:0 auto;">More settings coming soon. I'm in the middle of building two new features--theme customization and movable widget
+            layouts.
+        </p>
+        <div class="help">
+            <p>Any questions or bugs? Report them by <a target="_new" href="https://github.com/Abbondanzo/Modern-MyNEU/issues">clicking here</a></p>
+        </div>
+        <div id="status"></div>
+    </div>
+</body>
+<script src="js/popup.min.js"></script>
+
+</html>

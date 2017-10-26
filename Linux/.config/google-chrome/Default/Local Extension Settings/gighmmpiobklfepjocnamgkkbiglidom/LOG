@@ -1,0 +1,20 @@
+2017/10/26-11:34:57.902 1738 Reusing MANIFEST /home/bryce/.config/google-chrome/Default/Local Extension Settings/gighmmpiobklfepjocnamgkkbiglidom/MANIFEST-000001
+2017/10/26-11:34:57.902 1738 Recovering log #253
+2017/10/26-11:34:57.904 1738 Reusing old log /home/bryce/.config/google-chrome/Default/Local Extension Settings/gighmmpiobklfepjocnamgkkbiglidom/000253.log 
+2017/10/26-11:35:58.923 2512 Level-0 table #257: started
+2017/10/26-11:35:58.950 2512 Level-0 table #257: 2874791 bytes OK
+2017/10/26-11:35:58.953 2512 Delete type=0 #253
+2017/10/26-11:35:59.751 2512 Level-0 table #259: started
+2017/10/26-11:35:59.776 2512 Level-0 table #259: 2873727 bytes OK
+2017/10/26-11:35:59.779 2512 Delete type=0 #256
+2017/10/26-11:35:59.780 2512 Compacting 4@0 + 2@1 files
+2017/10/26-11:35:59.830 2512 Generated table #260@0: 2 keys, 2873878 bytes
+2017/10/26-11:35:59.832 2512 Generated table #261@0: 5 keys, 408 bytes
+2017/10/26-11:35:59.832 2512 Compacted 4@0 + 2@1 files => 2874286 bytes
+2017/10/26-11:35:59.835 2512 compacted to: files[ 0 4 1 0 0 0 0 ]
+2017/10/26-11:35:59.835 2512 Delete type=2 #252
+2017/10/26-11:35:59.835 2512 Delete type=2 #250
+2017/10/26-11:35:59.835 2512 Delete type=2 #249
+2017/10/26-11:35:59.835 2512 Delete type=2 #257
+2017/10/26-11:35:59.836 2512 Delete type=2 #259
+2017/10/26-11:35:59.836 2512 Delete type=2 #254

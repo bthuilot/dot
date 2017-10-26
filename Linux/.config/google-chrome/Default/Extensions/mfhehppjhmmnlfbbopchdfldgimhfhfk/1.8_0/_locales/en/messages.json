@@ -1,0 +1,10 @@
+{
+   "appDesc": {
+      "description": "The description of the application, displayed in the web store.",
+      "message": "Classroom helps teachers save time, keep classes organized, and improve communication with students."
+   },
+   "appName": {
+      "description": "The title of the application, displayed in the web store.",
+      "message": "Google Classroom"
+   }
+}

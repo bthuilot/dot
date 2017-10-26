@@ -1,0 +1,23 @@
+{
+   "background": {
+      "persistent": false,
+      "scripts": [ "background.js" ]
+   },
+   "browser_action": {
+      "default_icon": "data/icon-64.png",
+      "default_title": "Netflix Shuffle"
+   },
+   "description": "Netflix Shuffle adds a button that detects which Netflix show page the user is on, and plays a random episode from that show.",
+   "icons": {
+      "128": "data/icon-128.png",
+      "256": "data/icon-256.png",
+      "512": "data/icon-512.png",
+      "64": "data/icon-64.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAgfu9PtjMpBwcijR2QZAB7zK3dndYH5ptwfJBxMpVmG9GhyOlfl5WzVJqnGLMy8I6hkxfwpgoyMokjKsYBGDr9LmtZgsso/2wOzO9XPQZEKB1idZQYoEwWoCm1be5FDY7NsmAeNRQ0a1eTgNuC94Nva3AqIDlT4EwVEIMYDWrvmHJWto86EJnQfLRfWKlSNOrabLNJNVocR4a5c9dMC6vT6mlkkUs3szxCb6NxCKZUMVdpsUM2lvPvQL/Hyr6mZS5kTOyMUHScmvqu5NRqQH9/XZP28ma6DWGzNu6FTBK04dc8mrbip+O/cYj+lSKZFPAXDekCzRlHD1GLEnD6sYBNQIDAQAB",
+   "manifest_version": 2,
+   "name": "Netflix Shuffle",
+   "permissions": [ "activeTab", "notifications", "tabs" ],
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "1.1"
+}

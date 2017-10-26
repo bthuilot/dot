@@ -1,0 +1,1349 @@
+{
+   "cj_i18n_00000": {
+      "message": "La façon la plus simple d'accéder à l'univers Google"
+   },
+   "cj_i18n_00001": {
+      "message": "Mon Drive"
+   },
+   "cj_i18n_00002": {
+      "message": "Partagés avec moi"
+   },
+   "cj_i18n_00003": {
+      "message": "Récents"
+   },
+   "cj_i18n_00004": {
+      "message": "Suivis"
+   },
+   "cj_i18n_00005": {
+      "message": "Corbeille"
+   },
+   "cj_i18n_00006": {
+      "message": "modifié"
+   },
+   "cj_i18n_00007": {
+      "message": "Ajouté"
+   },
+   "cj_i18n_00008": {
+      "message": "Tous les favoris"
+   },
+   "cj_i18n_00009": {
+      "message": "Ajouter un favori"
+   },
+   "cj_i18n_00010": {
+      "message": "Gérer les libellés"
+   },
+   "cj_i18n_00011": {
+      "message": "créés"
+   },
+   "cj_i18n_00013": {
+      "message": "m'appartenant"
+   },
+   "cj_i18n_00014": {
+      "message": "Vidéos"
+   },
+   "cj_i18n_00016": {
+      "message": "Brevets"
+   },
+   "cj_i18n_00018": {
+      "message": "Actualités"
+   },
+   "cj_i18n_00019": {
+      "message": "Livres"
+   },
+   "cj_i18n_00020": {
+      "message": "À la une"
+   },
+   "cj_i18n_00021": {
+      "message": "International"
+   },
+   "cj_i18n_00022": {
+      "message": "Local"
+   },
+   "cj_i18n_00023": {
+      "message": "Économie"
+   },
+   "cj_i18n_00024": {
+      "message": "Sciences et technologies"
+   },
+   "cj_i18n_00025": {
+      "message": "Culture"
+   },
+   "cj_i18n_00027": {
+      "message": "Santé"
+   },
+   "cj_i18n_00028": {
+      "message": "Populaire"
+   },
+   "cj_i18n_00030": {
+      "message": "Gestionnaire d'appareils"
+   },
+   "cj_i18n_00031": {
+      "message": "Play Music Le coin des musiciens"
+   },
+   "cj_i18n_00032": {
+      "message": "Trafic"
+   },
+   "cj_i18n_00033": {
+      "message": "Transports en commun"
+   },
+   "cj_i18n_00034": {
+      "message": "Pistes cyclables"
+   },
+   "cj_i18n_00035": {
+      "message": "Trier par date"
+   },
+   "cj_i18n_00036": {
+      "message": "Trier par avis"
+   },
+   "cj_i18n_00037": {
+      "message": "Trier par pertinence"
+   },
+   "cj_i18n_00038": {
+      "message": "Trier par titre"
+   },
+   "cj_i18n_00039": {
+      "message": "Trier par vues"
+   },
+   "cj_i18n_00040": {
+      "message": "Plus long que 20 min"
+   },
+   "cj_i18n_00041": {
+      "message": "Entre 4 et 20 min"
+   },
+   "cj_i18n_00042": {
+      "message": "Plus court que 4 min"
+   },
+   "cj_i18n_00043": {
+      "message": "Épisodes"
+   },
+   "cj_i18n_00044": {
+      "message": "Films"
+   },
+   "cj_i18n_00045": {
+      "message": "Ouvrir la vidéo dans un nouvel onglet"
+   },
+   "cj_i18n_00046": {
+      "message": "Saisir une requête"
+   },
+   "cj_i18n_00047": {
+      "message": "Plus"
+   },
+   "cj_i18n_00048": {
+      "message": "Appuyez sur CTRL-C pour copier"
+   },
+   "cj_i18n_00049": {
+      "message": "Il y a 0 minute(s)"
+   },
+   "cj_i18n_00050": {
+      "message": "Entrez une adresse valide"
+   },
+   "cj_i18n_00051": {
+      "message": "Une erreur est survenue."
+   },
+   "cj_i18n_00052": {
+      "message": "Impressions"
+   },
+   "cj_i18n_00053": {
+      "message": "Imprimantes"
+   },
+   "cj_i18n_00054": {
+      "message": "Mes sites"
+   },
+   "cj_i18n_00055": {
+      "message": "Aucun site trouvé"
+   },
+   "cj_i18n_00056": {
+      "message": "Recherche sur le Web"
+   },
+   "cj_i18n_00057": {
+      "message": "Recherche d'images"
+   },
+   "cj_i18n_00058": {
+      "message": "Recherche d'actualités"
+   },
+   "cj_i18n_00060": {
+      "message": "Recherche sur YouTube"
+   },
+   "cj_i18n_00061": {
+      "message": "Explorer"
+   },
+   "cj_i18n_00062": {
+      "message": "Recherches associées"
+   },
+   "cj_i18n_00063": {
+      "message": "Recherches"
+   },
+   "cj_i18n_00064": {
+      "message": "Articles d'actualité"
+   },
+   "cj_i18n_00065": {
+      "message": "Portefeuilles"
+   },
+   "cj_i18n_00066": {
+      "message": "Marchés"
+   },
+   "cj_i18n_00067": {
+      "message": "Actualités"
+   },
+   "cj_i18n_00068": {
+      "message": "Résumé du secteur"
+   },
+   "cj_i18n_00069": {
+      "message": "Secteur"
+   },
+   "cj_i18n_00070": {
+      "message": "Changer"
+   },
+   "cj_i18n_00071": {
+      "message": "% plus/moins"
+   },
+   "cj_i18n_00072": {
+      "message": "Elevé"
+   },
+   "cj_i18n_00073": {
+      "message": "Faible"
+   },
+   "cj_i18n_00074": {
+      "message": "Cap du marché"
+   },
+   "cj_i18n_00075": {
+      "message": "Infos sur le marché"
+   },
+   "cj_i18n_00076": {
+      "message": "À regarder plus tard"
+   },
+   "cj_i18n_00077": {
+      "message": "Ajouter du stockage"
+   },
+   "cj_i18n_00078": {
+      "message": "Applications Chrome"
+   },
+   "cj_i18n_00079": {
+      "message": "Favoris Chrome"
+   },
+   "cj_i18n_00080": {
+      "message": "Les plus visités"
+   },
+   "cj_i18n_00081": {
+      "message": "Rappels"
+   },
+   "cj_i18n_00082": {
+      "message": "Ajouter"
+   },
+   "cj_i18n_00083": {
+      "message": "Tous"
+   },
+   "cj_i18n_00084": {
+      "message": "Ouvrir dans un nouvel onglet"
+   },
+   "cj_i18n_00085": {
+      "message": "Rechercher"
+   },
+   "cj_i18n_00086": {
+      "message": "Rechercher dans un nouvel onglet"
+   },
+   "cj_i18n_00087": {
+      "message": "Aucun cours trouvé"
+   },
+   "cj_i18n_00089": {
+      "message": "Avant d'utiliser cette page vous devez autoriser l'accès à Google Drive"
+   },
+   "cj_i18n_00090": {
+      "message": "Nouveau fichier"
+   },
+   "cj_i18n_00091": {
+      "message": "Plus"
+   },
+   "cj_i18n_00092": {
+      "message": "Nom"
+   },
+   "cj_i18n_00093": {
+      "message": "Dernière modification"
+   },
+   "cj_i18n_00094": {
+      "message": "Ma dernière modification"
+   },
+   "cj_i18n_00095": {
+      "message": "Ma dernière ouverture"
+   },
+   "cj_i18n_00096": {
+      "message": "Classé par"
+   },
+   "cj_i18n_00097": {
+      "message": "Glissez ici pour supprimer"
+   },
+   "cj_i18n_00098": {
+      "message": "rapports"
+   },
+   "cj_i18n_00100": {
+      "message": "feuilles de calcul"
+   },
+   "cj_i18n_00101": {
+      "message": "présentations"
+   },
+   "cj_i18n_00102": {
+      "message": "formulaires"
+   },
+   "cj_i18n_00103": {
+      "message": "dessins"
+   },
+   "cj_i18n_00104": {
+      "message": "cartes"
+   },
+   "cj_i18n_00105": {
+      "message": "site"
+   },
+   "cj_i18n_00106": {
+      "message": "Changer la vue"
+   },
+   "cj_i18n_00107": {
+      "message": "Tous"
+   },
+   "cj_i18n_00108": {
+      "message": "M'appartenant"
+   },
+   "cj_i18n_00109": {
+      "message": "Partagés avec moi"
+   },
+   "cj_i18n_00110": {
+      "message": "Filtrer"
+   },
+   "cj_i18n_00111": {
+      "message": "Google Sites - Version classique"
+   },
+   "cj_i18n_00113": {
+      "message": "Supprimer sites"
+   },
+   "cj_i18n_00114": {
+      "message": "Pour ajouter un nouveau site cliquer sur ajouter"
+   },
+   "cj_i18n_00115": {
+      "message": "Créer un nouveau site"
+   },
+   "cj_i18n_00116": {
+      "message": "Essayer un synonyme ou un mot clé plus générique"
+   },
+   "cj_i18n_00117": {
+      "message": "Vous pouvez ajouter un nouveau"
+   },
+   "cj_i18n_00118": {
+      "message": "en utlisant le bouton ci-dessous"
+   },
+   "cj_i18n_00119": {
+      "message": "Non"
+   },
+   "cj_i18n_00120": {
+      "message": "trouvé"
+   },
+   "cj_i18n_00121": {
+      "message": "Dossiers"
+   },
+   "cj_i18n_00122": {
+      "message": "Fichiers"
+   },
+   "cj_i18n_00123": {
+      "message": "Ouvrir un dossier dans un nouvel onglet"
+   },
+   "cj_i18n_00124": {
+      "message": "Voir sur Google Maps"
+   },
+   "cj_i18n_00127": {
+      "message": "Vos endroits favoris"
+   },
+   "cj_i18n_00128": {
+      "message": "Vos contributions"
+   },
+   "cj_i18n_00129": {
+      "message": "Votre agenda"
+   },
+   "cj_i18n_00130": {
+      "message": "Aucune revue trouvée"
+   },
+   "cj_i18n_00131": {
+      "message": "Bobliothèque"
+   },
+   "cj_i18n_00132": {
+      "message": "Revues"
+   },
+   "cj_i18n_00133": {
+      "message": "Lire plustard"
+   },
+   "cj_i18n_00134": {
+      "message": "Boutique"
+   },
+   "cj_i18n_00135": {
+      "message": "Pas d'élément dans la bibliothèque"
+   },
+   "cj_i18n_00136": {
+      "message": "Kioske"
+   },
+   "cj_i18n_00138": {
+      "message": "Documents textes"
+   },
+   "cj_i18n_00139": {
+      "message": "Feuilles de calcul"
+   },
+   "cj_i18n_00140": {
+      "message": "Présentations"
+   },
+   "cj_i18n_00141": {
+      "message": "Photos et images"
+   },
+   "cj_i18n_00143": {
+      "message": "Plus"
+   },
+   "cj_i18n_00144": {
+      "message": "fichiers"
+   },
+   "cj_i18n_00146": {
+      "message": "Feuille de calcul"
+   },
+   "cj_i18n_00147": {
+      "message": "Présentations"
+   },
+   "cj_i18n_00148": {
+      "message": "Télécharger"
+   },
+   "cj_i18n_00149": {
+      "message": "Mes listes"
+   },
+   "cj_i18n_00150": {
+      "message": "Ajouter un portefeuille"
+   },
+   "cj_i18n_00151": {
+      "message": "À regarder"
+   },
+   "cj_i18n_00152": {
+      "message": "Mes vidéos"
+   },
+   "cj_i18n_00153": {
+      "message": "Populaire"
+   },
+   "cj_i18n_00154": {
+      "message": "Abonnements"
+   },
+   "cj_i18n_00155": {
+      "message": "Historique"
+   },
+   "cj_i18n_00156": {
+      "message": "Aucun résultat"
+   },
+   "cj_i18n_00157": {
+      "message": "Actualiser"
+   },
+   "cj_i18n_00158": {
+      "message": "Mettre en ligne une vidéo"
+   },
+   "cj_i18n_00159": {
+      "message": "Rechercher"
+   },
+   "cj_i18n_00160": {
+      "message": "Authoriser"
+   },
+   "cj_i18n_00161": {
+      "message": "À propos de moi"
+   },
+   "cj_i18n_00162": {
+      "message": "Retour"
+   },
+   "cj_i18n_00164": {
+      "message": "Durée"
+   },
+   "cj_i18n_00165": {
+      "message": "Janvier"
+   },
+   "cj_i18n_00166": {
+      "message": "Février"
+   },
+   "cj_i18n_00167": {
+      "message": "Mars"
+   },
+   "cj_i18n_00168": {
+      "message": "Avril"
+   },
+   "cj_i18n_00169": {
+      "message": "Mai"
+   },
+   "cj_i18n_00170": {
+      "message": "Juin"
+   },
+   "cj_i18n_00171": {
+      "message": "Juillet"
+   },
+   "cj_i18n_00172": {
+      "message": "Août"
+   },
+   "cj_i18n_00173": {
+      "message": "Septembre"
+   },
+   "cj_i18n_00174": {
+      "message": "Octobre"
+   },
+   "cj_i18n_00175": {
+      "message": "Novembre"
+   },
+   "cj_i18n_00176": {
+      "message": "Décembre"
+   },
+   "cj_i18n_00178": {
+      "message": "Principale"
+   },
+   "cj_i18n_00181": {
+      "message": "Archive des albums"
+   },
+   "cj_i18n_00183": {
+      "message": "Alertes"
+   },
+   "cj_i18n_00186": {
+      "message": "Statistiques"
+   },
+   "cj_i18n_00187": {
+      "message": "Brouillons"
+   },
+   "cj_i18n_00188": {
+      "message": "Tous les mails"
+   },
+   "cj_i18n_00190": {
+      "message": "Favoris"
+   },
+   "cj_i18n_00191": {
+      "message": "Populaire sur YouTube"
+   },
+   "cj_i18n_00192": {
+      "message": "Meilleurs classements"
+   },
+   "cj_i18n_00193": {
+      "message": "Abonnements"
+   },
+   "cj_i18n_00194": {
+      "message": "Correler"
+   },
+   "cj_i18n_00195": {
+      "message": "Recherches populaires"
+   },
+   "cj_i18n_00196": {
+      "message": "Détail de la tendance"
+   },
+   "cj_i18n_00197": {
+      "message": "Explorer"
+   },
+   "cj_i18n_00198": {
+      "message": "Tous les prix"
+   },
+   "cj_i18n_00199": {
+      "message": "Gratuit"
+   },
+   "cj_i18n_00200": {
+      "message": "Payé"
+   },
+   "cj_i18n_00201": {
+      "message": "Ecouter maintenant"
+   },
+   "cj_i18n_00202": {
+      "message": "Les plus écoutés"
+   },
+   "cj_i18n_00203": {
+      "message": "Nouveautés"
+   },
+   "cj_i18n_00205": {
+      "message": "Artistes"
+   },
+   "cj_i18n_00207": {
+      "message": "Chansons"
+   },
+   "cj_i18n_00209": {
+      "message": "Rechercher des stations"
+   },
+   "cj_i18n_00210": {
+      "message": "Dernier ajout"
+   },
+   "cj_i18n_00211": {
+      "message": "J'aime"
+   },
+   "cj_i18n_00212": {
+      "message": "Pour utiliser Rappels, vous devez donner permission de charger vos données Google Rappels"
+   },
+   "cj_i18n_00213": {
+      "message": "Appeler"
+   },
+   "cj_i18n_00214": {
+      "message": "Envoyer un email"
+   },
+   "cj_i18n_00215": {
+      "message": "Afficher note"
+   },
+   "cj_i18n_00216": {
+      "message": "Applications"
+   },
+   "cj_i18n_00217": {
+      "message": "Jeux"
+   },
+   "cj_i18n_00218": {
+      "message": "Livres"
+   },
+   "cj_i18n_00219": {
+      "message": "Musique"
+   },
+   "cj_i18n_00220": {
+      "message": "Films et TV"
+   },
+   "cj_i18n_00221": {
+      "message": "Kiosque"
+   },
+   "cj_i18n_00222": {
+      "message": "Autre liens"
+   },
+   "cj_i18n_00224": {
+      "message": "Autoriser"
+   },
+   "cj_i18n_00225": {
+      "message": "Aujourd'hui"
+   },
+   "cj_i18n_00226": {
+      "message": "Hier"
+   },
+   "cj_i18n_00227": {
+      "message": "par rapport au même jour de la semaine dernière"
+   },
+   "cj_i18n_00228": {
+      "message": "Ce mois-ci "
+   },
+   "cj_i18n_00229": {
+      "message": "par rapport au même jour du mois dernier"
+   },
+   "cj_i18n_00230": {
+      "message": "Le mois dernier"
+   },
+   "cj_i18n_00231": {
+      "message": "par rapport au mois précédent"
+   },
+   "cj_i18n_00232": {
+      "message": "Durée de vie"
+   },
+   "cj_i18n_00233": {
+      "message": "Il n'y a pas de compte Adsense associé à ce compte Google"
+   },
+   "cj_i18n_00234": {
+      "message": "Changer de compte"
+   },
+   "cj_i18n_00235": {
+      "message": "L'utilisation de cette page nécessite l'autorisation d'accéder à vos données Google Adsense"
+   },
+   "cj_i18n_00236": {
+      "message": "Gains estimés"
+   },
+   "cj_i18n_00237": {
+      "message": "L'utilisation de Classroom nécessite l'accès à la listes de vos classes"
+   },
+   "cj_i18n_00238": {
+      "message": "Il vous faut un compte G Suite pour utiliser Google Admin"
+   },
+   "cj_i18n_00239": {
+      "message": "Contrôles"
+   },
+   "cj_i18n_00240": {
+      "message": "Utilisateurs"
+   },
+   "cj_i18n_00241": {
+      "message": "Applis"
+   },
+   "cj_i18n_00242": {
+      "message": "Rapports"
+   },
+   "cj_i18n_00243": {
+      "message": "Migration des données"
+   },
+   "cj_i18n_00244": {
+      "message": "Domaines"
+   },
+   "cj_i18n_00245": {
+      "message": "Applis App Engine"
+   },
+   "cj_i18n_00246": {
+      "message": "Gestion d'appareil"
+   },
+   "cj_i18n_00248": {
+      "message": "Groupes"
+   },
+   "cj_i18n_00249": {
+      "message": "Profil d'entreprise"
+   },
+   "cj_i18n_00250": {
+      "message": "Sécutité"
+   },
+   "cj_i18n_00251": {
+      "message": "Facturation"
+   },
+   "cj_i18n_00252": {
+      "message": "Rôles"
+   },
+   "cj_i18n_00253": {
+      "message": "Outils"
+   },
+   "cj_i18n_00254": {
+      "message": "Demander de l'aide à un partenaire"
+   },
+   "cj_i18n_00255": {
+      "message": "Statut des applis"
+   },
+   "cj_i18n_00256": {
+      "message": "Tâches courantes"
+   },
+   "cj_i18n_00257": {
+      "message": "Plus d'applis et de services"
+   },
+   "cj_i18n_00258": {
+      "message": "Ajouter votre logo"
+   },
+   "cj_i18n_00259": {
+      "message": "L'utilisation de cette page nécessite l'autorisation d'accéder à vos données Google Blogger"
+   },
+   "cj_i18n_00260": {
+      "message": "Aucun blog trouvé"
+   },
+   "cj_i18n_00261": {
+      "message": "Pour créer un nouveau blog, aller sur blogger.com"
+   },
+   "cj_i18n_00262": {
+      "message": "Chargement des anciens blogs impossible"
+   },
+   "cj_i18n_00263": {
+      "message": "Vérifiez que vous êtes bien connecté à Internet"
+   },
+   "cj_i18n_00264": {
+      "message": "L'utilisation de cette page nécessite l'autorisation d'accès aux données de Google Agenda"
+   },
+   "cj_i18n_00265": {
+      "message": "Pas de nouvel événement"
+   },
+   "cj_i18n_00266": {
+      "message": "Pour ajouter un nouvel événement, cliquer sur le bouton rouge dans le coin en bas à droite"
+   },
+   "cj_i18n_00267": {
+      "message": "Pas d'événement aujourd'hui"
+   },
+   "cj_i18n_00268": {
+      "message": "Nouvel événement"
+   },
+   "cj_i18n_00269": {
+      "message": "Paramètres du produit"
+   },
+   "cj_i18n_00270": {
+      "message": "Outil de Data Testing structuré"
+   },
+   "cj_i18n_00271": {
+      "message": "Aide au Data Markup structuré"
+   },
+   "cj_i18n_00272": {
+      "message": "Envoyer un email au Markup Tester"
+   },
+   "cj_i18n_00274": {
+      "message": "Centre marchand Google"
+   },
+   "cj_i18n_00276": {
+      "message": "Recherche personnalisée"
+   },
+   "cj_i18n_00277": {
+      "message": "Utilisez l'outil de Data Testing structuré pour vérifier si Google peut analyser correctement votre data markup structuré et l'afficher dans les résultats de recherche."
+   },
+   "cj_i18n_00278": {
+      "message": "Vous ne savez pas où commencer pour ajouter du data markup structuré dans votre HTML ? Essayez cet outil de pointer-et-cliquer."
+   },
+   "cj_i18n_00279": {
+      "message": "Validez les contenus de données structurés d'un email en HTML en utilisant Email Markup Tester."
+   },
+   "cj_i18n_00280": {
+      "message": "97% des consommateurs cherchent des projets locaux en ligne. Soyez là quand ils vous cherchent avec Google Places pour entrprises - une plateforme gratuite de Google."
+   },
+   "cj_i18n_00281": {
+      "message": "L'endroit pour télécharger les données de votre produit vers Google et le rendre accessible par Google Product Search et d'autres services de Google."
+   },
+   "cj_i18n_00282": {
+      "message": "Utilisez PageSpeed Insights pour découvrir comment optimiser vos pages web pour tous les appareils."
+   },
+   "cj_i18n_00283": {
+      "message": "Exploitez la puissance de Google pour créer une expérience de recherche personnalisée pour votre propre site."
+   },
+   "cj_i18n_00284": {
+      "message": "Avant de pouvoir utiliser cette page, vous devez donner accès à Google Search Console"
+   },
+   "cj_i18n_00285": {
+      "message": "Play Livres"
+   },
+   "cj_i18n_00286": {
+      "message": "Autres resources"
+   },
+   "cj_i18n_00287": {
+      "message": "Test adapté aux appareils mobiles"
+   },
+   "cj_i18n_00290": {
+      "message": "Carte"
+   },
+   "cj_i18n_00291": {
+      "message": "Accueil"
+   },
+   "cj_i18n_00293": {
+      "message": "Communautés"
+   },
+   "cj_i18n_00294": {
+      "message": "Profil"
+   },
+   "cj_i18n_00295": {
+      "message": "Personnes"
+   },
+   "cj_i18n_00297": {
+      "message": "Partager cette page"
+   },
+   "cj_i18n_00298": {
+      "message": "Paramètres"
+   },
+   "cj_i18n_00299": {
+      "message": "Boîte de réception"
+   },
+   "cj_i18n_00300": {
+      "message": "Suspendu"
+   },
+   "cj_i18n_00301": {
+      "message": "Fait"
+   },
+   "cj_i18n_00302": {
+      "message": "Agenda"
+   },
+   "cj_i18n_00303": {
+      "message": "Envoyé"
+   },
+   "cj_i18n_00304": {
+      "message": "Rappels"
+   },
+   "cj_i18n_00307": {
+      "message": "Voyages"
+   },
+   "cj_i18n_00308": {
+      "message": "Voyage"
+   },
+   "cj_i18n_00309": {
+      "message": "Enregistré"
+   },
+   "cj_i18n_00310": {
+      "message": "Achats"
+   },
+   "cj_i18n_00313": {
+      "message": "Mises à jour"
+   },
+   "cj_i18n_00316": {
+      "message": "Basse priorité"
+   },
+   "cj_i18n_00317": {
+      "message": "Composer"
+   },
+   "cj_i18n_00318": {
+      "message": "Dégroupé"
+   },
+   "cj_i18n_00319": {
+      "message": "Regroupés dans la boîte de réception"
+   },
+   "cj_i18n_00320": {
+      "message": "Avant d'utiliser cette page vous devez autoriser l'accès à vos emails"
+   },
+   "cj_i18n_00321": {
+      "message": "L'utilisation de cette page nécessite l'autorisation d'accès à Google Books ; si vous souhaitez effectuer seulement une recherche utiliser la page de recherche"
+   },
+   "cj_i18n_00322": {
+      "message": "Aucun livre trouvé"
+   },
+   "cj_i18n_00323": {
+      "message": "Mes livres"
+   },
+   "cj_i18n_00324": {
+      "message": "Livres"
+   },
+   "cj_i18n_00325": {
+      "message": "Chargement..."
+   },
+   "cj_i18n_00326": {
+      "message": "Personne n'a encore partagé cette page"
+   },
+   "cj_i18n_00327": {
+      "message": "Une personne a partagé cette page"
+   },
+   "cj_i18n_00328": {
+      "message": "autres personnes ont partagé cette page"
+   },
+   "cj_i18n_00329": {
+      "message": "Nouvelle publication"
+   },
+   "cj_i18n_00330": {
+      "message": "Vous pouvez seulement partager des pages web normales"
+   },
+   "cj_i18n_00331": {
+      "message": "Tout"
+   },
+   "cj_i18n_00334": {
+      "message": "Personnes et pages"
+   },
+   "cj_i18n_00335": {
+      "message": "Le compte actuel n'est pas encore connecté à Google+"
+   },
+   "cj_i18n_00336": {
+      "message": "Google+ n'est pas disponible pour votre organisation. Veuillez contacter votre administrateur pour activer ce service pour au moins un utilisateur dans l'organisation."
+   },
+   "cj_i18n_00337": {
+      "message": "S'inscrire"
+   },
+   "cj_i18n_00338": {
+      "message": "Maintenant"
+   },
+   "cj_i18n_00339": {
+      "message": "Adresse raccourcie"
+   },
+   "cj_i18n_00340": {
+      "message": "Créé"
+   },
+   "cj_i18n_00341": {
+      "message": "Clic"
+   },
+   "cj_i18n_00342": {
+      "message": "Pour pouvoir afficher vos adresses raccourcies précedemment, vous devez"
+   },
+   "cj_i18n_00343": {
+      "message": "Développeurs"
+   },
+   "cj_i18n_00344": {
+      "message": "Raccourcis précedemment"
+   },
+   "cj_i18n_00345": {
+      "message": "Entrez une adresse à raccourcir"
+   },
+   "cj_i18n_00346": {
+      "message": "Raccourcis Google Search"
+   },
+   "cj_i18n_00347": {
+      "message": "Pour ajouter/supprimer des éléments à cette extension, cliquer sur Ajouter, en bas du Black Menu"
+   },
+   "cj_i18n_00348": {
+      "message": "Paramètres de l'extension"
+   },
+   "cj_i18n_00349": {
+      "message": "Aide et commentaires"
+   },
+   "cj_i18n_00350": {
+      "message": "Poser une question"
+   },
+   "cj_i18n_00351": {
+      "message": "Signaler une erreur"
+   },
+   "cj_i18n_00352": {
+      "message": "Demander une fonctionnalité"
+   },
+   "cj_i18n_00353": {
+      "message": "Participer"
+   },
+   "cj_i18n_00354": {
+      "message": "Faire un don"
+   },
+   "cj_i18n_00355": {
+      "message": "Confidentialité"
+   },
+   "cj_i18n_00356": {
+      "message": "Envoyer des données anonymes sur l'utilisation de cette extension"
+   },
+   "cj_i18n_00357": {
+      "message": "Voir notre politique de confidentialité"
+   },
+   "cj_i18n_00358": {
+      "message": "Pour n'importe quelle question, une demande de fonctionalité ou pour signalez un bug, contactez-nous !"
+   },
+   "cj_i18n_00359": {
+      "message": "Si vous aimez cette extension, ce que nous souhaitons sincèrement, merci de faire un don. Cela permettra de l'améliorer au bénéfice de tous."
+   },
+   "cj_i18n_00360": {
+      "message": "Nous prenons très au sérieux la sécurité de vos données. Pour améliorer nos services, nous récoltons certaines statistiques d'utilisation anonymement. Vous pouvez facilement vous y opposer grâce au paramètre ci-dessous."
+   },
+   "cj_i18n_00361": {
+      "message": "Ajouter un compte"
+   },
+   "cj_i18n_00362": {
+      "message": "Déconnecter tous les comptes"
+   },
+   "cj_i18n_00363": {
+      "message": "Compte Spécifique"
+   },
+   "cj_i18n_00364": {
+      "message": "Trafic du site"
+   },
+   "cj_i18n_00365": {
+      "message": "Temps moyen de chargement d'une page"
+   },
+   "cj_i18n_00366": {
+      "message": "Utilisateurs par pays"
+   },
+   "cj_i18n_00367": {
+      "message": "Pages visitées par navigateur"
+   },
+   "cj_i18n_00368": {
+      "message": "L'utilisation de cette page nécessite l'autorisation d'accéder à vos données Google Analytics"
+   },
+   "cj_i18n_00369": {
+      "message": "Sans libellé"
+   },
+   "cj_i18n_00370": {
+      "message": "Aucun favori trouvé"
+   },
+   "cj_i18n_00371": {
+      "message": "Pour ajouter un favori, cliquer sur ajouter "
+   },
+   "cj_i18n_00372": {
+      "message": "Pas d'imprimante trouvée"
+   },
+   "cj_i18n_00373": {
+      "message": "Vous pouvez ajouter une imprimante en cliquant sur le bouton rouge ci-dessous"
+   },
+   "cj_i18n_00374": {
+      "message": "Aucune tâche d'impression trouvée"
+   },
+   "cj_i18n_00375": {
+      "message": "Glisser le service vers la gauche ou cliquer pour ajouter"
+   },
+   "cj_i18n_00376": {
+      "message": "Glisser le service vers la droite ou cliquer pour ajouter"
+   },
+   "cj_i18n_00377": {
+      "message": "L'utilisation de cette page nécessite l'autorisation d'accès à la listes des Applis Google"
+   },
+   "cj_i18n_00378": {
+      "message": "Des autorisations supplémentaires sont nécessaires pour le bon fonctionnement de cette page"
+   },
+   "cj_i18n_00379": {
+      "message": "Avant de pouvoir utiliser cette page, vous devez donner accès à Google Play Films"
+   },
+   "cj_i18n_00380": {
+      "message": "Film"
+   },
+   "cj_i18n_00381": {
+      "message": "Regarder maintenant"
+   },
+   "cj_i18n_00382": {
+      "message": "Mes films"
+   },
+   "cj_i18n_00383": {
+      "message": "Pour rajouter un nouveau groupe, cliquez le bouton Ajouter"
+   },
+   "cj_i18n_00384": {
+      "message": "Impossible de charger vos groupes"
+   },
+   "cj_i18n_00385": {
+      "message": "Si vous pensez que c'est une erreur, merci de la signaler au développeur de l'extension "
+   },
+   "cj_i18n_00386": {
+      "message": "Ancun groupe"
+   },
+   "cj_i18n_00387": {
+      "message": "Aucun groupe récent"
+   },
+   "cj_i18n_00388": {
+      "message": "Mes groupes"
+   },
+   "cj_i18n_00389": {
+      "message": "Récemment vus"
+   },
+   "cj_i18n_00392": {
+      "message": "Créer un nouveau groupe"
+   },
+   "cj_i18n_00393": {
+      "message": "Tableaux"
+   },
+   "cj_i18n_00394": {
+      "message": "Pas d'appels récents"
+   },
+   "cj_i18n_00395": {
+      "message": "Ajouter des crédits"
+   },
+   "cj_i18n_00396": {
+      "message": "Impossible de trouver vos crédits. Etes-vous sûr d'avoir autorisé Google Voice pour votre compte"
+   },
+   "cj_i18n_00397": {
+      "message": "Historique des appels"
+   },
+   "cj_i18n_00398": {
+      "message": "Crédits"
+   },
+   "cj_i18n_00401": {
+      "message": "Pour ajouter des pages à la barre de Black Menu, cliquez sur \"Ajouter\" en bas de la barre latérale et cliquez ou glissez le services que vous voulez ajouter. Si vouz voulez retirer des services, vous pouvez les glisser jusqu'au côté gauche de l'extension."
+   },
+   "cj_i18n_00403": {
+      "message": "Pour activer ou mettre à jour les notifications, sélectionnez le service et suivez les instructions."
+   },
+   "cj_i18n_00404": {
+      "message": "Sélectionnez les services"
+   },
+   "cj_i18n_00405": {
+      "message": "Modèles"
+   },
+   "cj_i18n_00406": {
+      "message": "Recherche avancée"
+   },
+   "cj_i18n_00407": {
+      "message": "Présentations"
+   },
+   "cj_i18n_00408": {
+      "message": "Formulaires"
+   },
+   "cj_i18n_00409": {
+      "message": "Dessins"
+   },
+   "cj_i18n_00410": {
+      "message": "Mes Cartes"
+   },
+   "cj_i18n_00414": {
+      "message": "Vols"
+   },
+   "cj_i18n_00415": {
+      "message": "Polices"
+   },
+   "cj_i18n_00418": {
+      "message": "Groupes"
+   },
+   "cj_i18n_00419": {
+      "message": "Mon compte"
+   },
+   "cj_i18n_00424": {
+      "message": "Play Films"
+   },
+   "cj_i18n_00425": {
+      "message": "Actualités"
+   },
+   "cj_i18n_00426": {
+      "message": "Play Kiosque"
+   },
+   "cj_i18n_00427": {
+      "message": "Brevets"
+   },
+   "cj_i18n_00428": {
+      "message": "Centre de Payment"
+   },
+   "cj_i18n_00431": {
+      "message": "Play Musique"
+   },
+   "cj_i18n_00432": {
+      "message": "Enregistrer"
+   },
+   "cj_i18n_00434": {
+      "message": "Recherche"
+   },
+   "cj_i18n_00438": {
+      "message": "Support"
+   },
+   "cj_i18n_00439": {
+      "message": "Liste de tâches"
+   },
+   "cj_i18n_00440": {
+      "message": "Traduction"
+   },
+   "cj_i18n_00442": {
+      "message": "Réducteur URL"
+   },
+   "cj_i18n_00444": {
+      "message": "Console de Recherche"
+   },
+   "cj_i18n_00446": {
+      "message": "Tables de fusion"
+   },
+   "cj_i18n_00447": {
+      "message": "Scripts d'applications"
+   },
+   "cj_i18n_00450": {
+      "message": "A propos de Google"
+   },
+   "cj_i18n_00451": {
+      "message": "Double-Cliquer pour Publishers"
+   },
+   "cj_i18n_00452": {
+      "message": "Afficher le calendrier"
+   },
+   "cj_i18n_00453": {
+      "message": "Mon espace client"
+   },
+   "cj_i18n_00454": {
+      "message": "Explorateur de l'API"
+   },
+   "cj_i18n_00459": {
+      "message": "Blogs et médias sociaux"
+   },
+   "cj_i18n_00460": {
+      "message": "Livres"
+   },
+   "cj_i18n_00461": {
+      "message": "Experiences Chrome"
+   },
+   "cj_i18n_00463": {
+      "message": "Dashboard développeur"
+   },
+   "cj_i18n_00465": {
+      "message": "Thèmes"
+   },
+   "cj_i18n_00467": {
+      "message": "Sondages"
+   },
+   "cj_i18n_00468": {
+      "message": "Nouveau sondage"
+   },
+   "cj_i18n_00473": {
+      "message": "Politique et élections"
+   },
+   "cj_i18n_00476": {
+      "message": "Nouvel email"
+   },
+   "cj_i18n_00477": {
+      "message": "Outils de saisie"
+   },
+   "cj_i18n_00480": {
+      "message": "Films"
+   },
+   "cj_i18n_00481": {
+      "message": "Compte"
+   },
+   "cj_i18n_00482": {
+      "message": "Magasins de marchandises"
+   },
+   "cj_i18n_00484": {
+      "message": "Événements"
+   },
+   "cj_i18n_00485": {
+      "message": "À découvrir"
+   },
+   "cj_i18n_00486": {
+      "message": "Demandes du gouvernement"
+   },
+   "cj_i18n_00487": {
+      "message": "Environnement"
+   },
+   "cj_i18n_00489": {
+      "message": "Archive de photos LIFE"
+   },
+   "cj_i18n_00493": {
+      "message": "Centre marchand"
+   },
+   "cj_i18n_00494": {
+      "message": "Lune"
+   },
+   "cj_i18n_00495": {
+      "message": "Mes appareils"
+   },
+   "cj_i18n_00496": {
+      "message": "Archive des actualités"
+   },
+   "cj_i18n_00498": {
+      "message": "Alertes Publiques"
+   },
+   "cj_i18n_00499": {
+      "message": "Explorateur de données publiques"
+   },
+   "cj_i18n_00500": {
+      "message": "Paramètres de recherche"
+   },
+   "cj_i18n_00501": {
+      "message": "Ciel"
+   },
+   "cj_i18n_00502": {
+      "message": "Forums du produit"
+   },
+   "cj_i18n_00505": {
+      "message": "Outil de traduction"
+   },
+   "cj_i18n_00506": {
+      "message": "Rapport de transparence"
+   },
+   "cj_i18n_00507": {
+      "message": "Boutiques de confiance"
+   },
+   "cj_i18n_00508": {
+      "message": "Testeur de confiance"
+   },
+   "cj_i18n_00509": {
+      "message": "Vidéos"
+   },
+   "cj_i18n_00510": {
+      "message": "Statistiques"
+   },
+   "cj_i18n_00514": {
+      "message": "Recherche de tableaux"
+   },
+   "cj_i18n_00515": {
+      "message": "AdWords Express"
+   },
+   "cj_i18n_00516": {
+      "message": "Ajouter ceci"
+   },
+   "cj_i18n_00517": {
+      "message": "Envoyer ceci"
+   },
+   "cj_i18n_00518": {
+      "message": "Localiser ceci"
+   },
+   "cj_i18n_00519": {
+      "message": "Url réduite"
+   },
+   "cj_i18n_00521": {
+      "message": "Mes abonnements"
+   },
+   "cj_i18n_00522": {
+      "message": "Retour d'opinions"
+   },
+   "cj_i18n_00530": {
+      "message": "Recherche de personnes"
+   },
+   "cj_i18n_00534": {
+      "message": "Partenaires"
+   },
+   "cj_i18n_00537": {
+      "message": "Astuces Google"
+   },
+   "cj_i18n_00539": {
+      "message": "Centre de partenaires des livres Google Play"
+   },
+   "cj_i18n_00546": {
+      "message": "Ajouter un contact"
+   },
+   "cj_i18n_00547": {
+      "message": "Nouveau moteur de recherche"
+   },
+   "cj_i18n_00548": {
+      "message": "Suivez Votre Monde"
+   },
+   "cj_i18n_00550": {
+      "message": "Liste de voeux"
+   },
+   "cj_i18n_00551": {
+      "message": "Démos OAuth 2.0"
+   },
+   "cj_i18n_00555": {
+      "message": "Ajouter Localisation"
+   },
+   "cj_i18n_00559": {
+      "message": "Editeur"
+   },
+   "cj_i18n_00560": {
+      "message": "Carrière"
+   },
+   "cj_i18n_00561": {
+      "message": "Stockage Drive"
+   },
+   "cj_i18n_00566": {
+      "message": "Vérification en deux étapes"
+   },
+   "cj_i18n_00572": {
+      "message": "Publicité"
+   },
+   "cj_i18n_00574": {
+      "message": "Google pour l'Education"
+   },
+   "cj_i18n_00822": {
+      "message": "Configuration"
+   },
+   "cj_i18n_00823": {
+      "message": "Mode dense"
+   },
+   "cj_i18n_00824": {
+      "message": "Activer le mode dense (experimental)"
+   }
+}

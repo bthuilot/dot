@@ -1,0 +1,1 @@
+cjModules.define(function(){"use strict";return function(e,n){var i=bmElements.createElement("fulldialog",{serviceLogo:{label:bmRuntime.i18n("cj_i18n_00424","Play Movies")},iconName:"play_movies",message:"This page is under maintainance. Sorry for any inconveniences"});e.appendChild(i)}});

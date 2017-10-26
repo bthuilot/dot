@@ -1,0 +1,22 @@
+{
+   "api_console_project_id": "298830041920",
+   "app": {
+      "launch": {
+         "container": "tab",
+         "web_url": "http://sqliteviewer.flowsoft7.com/"
+      },
+      "urls": [ "http://sqliteviewer.flowsoft7.com/" ]
+   },
+   "container": "GOOGLE_DRIVE",
+   "default_locale": "en_US",
+   "description": "__MSG_ext_description__",
+   "icons": {
+      "128": "icon128.png"
+   },
+   "key": "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCqoEf4wdB4WmdGj060YgILANteCv4MomIgtkKoUmzE2czbLrPf6A4w5M/QigrT3GOlo0/PiONaxE15Mk0GnuzifFF/FNF+OpusBIl0E9o63jWrfodoj/FX/3UReuYDobXaQG2R163Io/RQm/IN3POmmYiXmPb7X2iSZLLgRjVy+wIDAQAB",
+   "manifest_version": 2,
+   "name": "__MSG_ext_name__",
+   "permissions": [ "unlimitedStorage" ],
+   "update_url": "http://clients2.google.com/service/update2/crx",
+   "version": "1.0.2.1"
+}

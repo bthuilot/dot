@@ -1,0 +1,305 @@
+{
+   "cj_i18n_00003": {
+      "message": "Recente"
+   },
+   "cj_i18n_00005": {
+      "message": "Gunoi"
+   },
+   "cj_i18n_00006": {
+      "message": "modificat"
+   },
+   "cj_i18n_00007": {
+      "message": "Adaugat"
+   },
+   "cj_i18n_00008": {
+      "message": "Toate bookmark-urile"
+   },
+   "cj_i18n_00009": {
+      "message": "Adauga bookmark"
+   },
+   "cj_i18n_00010": {
+      "message": "Gestioneaza etichetele"
+   },
+   "cj_i18n_00011": {
+      "message": "creat"
+   },
+   "cj_i18n_00013": {
+      "message": "ale mele"
+   },
+   "cj_i18n_00014": {
+      "message": "Videoclipuri"
+   },
+   "cj_i18n_00015": {
+      "message": "Cumparaturi"
+   },
+   "cj_i18n_00016": {
+      "message": "Brevete"
+   },
+   "cj_i18n_00017": {
+      "message": "Imagini"
+   },
+   "cj_i18n_00018": {
+      "message": "Stiri"
+   },
+   "cj_i18n_00019": {
+      "message": "Carti"
+   },
+   "cj_i18n_00020": {
+      "message": "Stiri de Top"
+   },
+   "cj_i18n_00021": {
+      "message": "Stiri internationale"
+   },
+   "cj_i18n_00022": {
+      "message": "In tara ta"
+   },
+   "cj_i18n_00024": {
+      "message": "Stiinta si Tehnologie"
+   },
+   "cj_i18n_00026": {
+      "message": "Sport"
+   },
+   "cj_i18n_00027": {
+      "message": "Sanatate"
+   },
+   "cj_i18n_00028": {
+      "message": "Stiri Populare"
+   },
+   "cj_i18n_00030": {
+      "message": "Manager de Dispozitive"
+   },
+   "cj_i18n_00031": {
+      "message": "Centru de muzicieni"
+   },
+   "cj_i18n_00032": {
+      "message": "Trafic"
+   },
+   "cj_i18n_00033": {
+      "message": "Transport Public"
+   },
+   "cj_i18n_00034": {
+      "message": "Ciclism"
+   },
+   "cj_i18n_00035": {
+      "message": "Sorteaza dupa data"
+   },
+   "cj_i18n_00036": {
+      "message": "Sorteaza dupa rating"
+   },
+   "cj_i18n_00037": {
+      "message": "Sorteaza dupa relevanta"
+   },
+   "cj_i18n_00038": {
+      "message": "Sorteaza dupa titlu"
+   },
+   "cj_i18n_00039": {
+      "message": "Sorteaza dupa vizionari"
+   },
+   "cj_i18n_00040": {
+      "message": "Mai lung de 20 de minute"
+   },
+   "cj_i18n_00041": {
+      "message": "Intre 4 si 20 de minute"
+   },
+   "cj_i18n_00042": {
+      "message": "Sub 4 minute"
+   },
+   "cj_i18n_00043": {
+      "message": "Episoade"
+   },
+   "cj_i18n_00044": {
+      "message": "Filme"
+   },
+   "cj_i18n_00045": {
+      "message": "Deschide videoclip in tab nou"
+   },
+   "cj_i18n_00046": {
+      "message": "Va rugam introduceti termeni de cautare"
+   },
+   "cj_i18n_00047": {
+      "message": "Mai mult"
+   },
+   "cj_i18n_00048": {
+      "message": "Apasati CTRL-C pentru a copia"
+   },
+   "cj_i18n_00049": {
+      "message": "Acum 0 minute"
+   },
+   "cj_i18n_00050": {
+      "message": "Va rugam introduceti un URL valid"
+   },
+   "cj_i18n_00051": {
+      "message": "A avut loc o eroare in timp ge generam URL-ul scurt"
+   },
+   "cj_i18n_00052": {
+      "message": "Slujbe de Printing"
+   },
+   "cj_i18n_00053": {
+      "message": "Imprimante"
+   },
+   "cj_i18n_00054": {
+      "message": "Site-urile mele"
+   },
+   "cj_i18n_00055": {
+      "message": "Nu s-au gasit site-uri"
+   },
+   "cj_i18n_00056": {
+      "message": "Cautare Web"
+   },
+   "cj_i18n_00057": {
+      "message": "Cautare de Imagini"
+   },
+   "cj_i18n_00058": {
+      "message": "Cautare de Stiri"
+   },
+   "cj_i18n_00060": {
+      "message": "Cautare YouTube"
+   },
+   "cj_i18n_00061": {
+      "message": "Explora"
+   },
+   "cj_i18n_00062": {
+      "message": "Cautari asemanatoare"
+   },
+   "cj_i18n_00063": {
+      "message": "Cautari"
+   },
+   "cj_i18n_00064": {
+      "message": "Articole de Stiri"
+   },
+   "cj_i18n_00065": {
+      "message": "Portofolii"
+   },
+   "cj_i18n_00066": {
+      "message": "Piete"
+   },
+   "cj_i18n_00067": {
+      "message": "Stiri"
+   },
+   "cj_i18n_00068": {
+      "message": "Rezumatul sectorului"
+   },
+   "cj_i18n_00070": {
+      "message": "Schimb"
+   },
+   "cj_i18n_00071": {
+      "message": "% jos / sus"
+   },
+   "cj_i18n_00072": {
+      "message": "Inalt"
+   },
+   "cj_i18n_00073": {
+      "message": "Jos"
+   },
+   "cj_i18n_00074": {
+      "message": "Capac de piata"
+   },
+   "cj_i18n_00075": {
+      "message": "Stiri de piata"
+   },
+   "cj_i18n_00076": {
+      "message": "Vizioneaza mai tarziu"
+   },
+   "cj_i18n_00077": {
+      "message": "Creste spatiul de stocare"
+   },
+   "cj_i18n_00078": {
+      "message": "Aplicatii Chrome"
+   },
+   "cj_i18n_00079": {
+      "message": "Bookmark-uri Chrome"
+   },
+   "cj_i18n_00080": {
+      "message": "Cele mai vizitate"
+   },
+   "cj_i18n_00081": {
+      "message": "Memento-uri"
+   },
+   "cj_i18n_00082": {
+      "message": "Adauga"
+   },
+   "cj_i18n_00085": {
+      "message": "Căutare"
+   },
+   "cj_i18n_00112": {
+      "message": "Site-uri"
+   },
+   "cj_i18n_00183": {
+      "message": "Alerte"
+   },
+   "cj_i18n_00291": {
+      "message": "Acasă"
+   },
+   "cj_i18n_00292": {
+      "message": "Colecții"
+   },
+   "cj_i18n_00293": {
+      "message": "Comunități"
+   },
+   "cj_i18n_00294": {
+      "message": "Profil"
+   },
+   "cj_i18n_00295": {
+      "message": "Persoane"
+   },
+   "cj_i18n_00296": {
+      "message": "Notificări"
+   },
+   "cj_i18n_00298": {
+      "message": "Setări"
+   },
+   "cj_i18n_00314": {
+      "message": "Persoane de contact"
+   },
+   "cj_i18n_00391": {
+      "message": "Documente"
+   },
+   "cj_i18n_00412": {
+      "message": "Finanțe"
+   },
+   "cj_i18n_00414": {
+      "message": "Zboruri"
+   },
+   "cj_i18n_00418": {
+      "message": "Grupuri"
+   },
+   "cj_i18n_00419": {
+      "message": "Contul meu"
+   },
+   "cj_i18n_00423": {
+      "message": "Hărți"
+   },
+   "cj_i18n_00425": {
+      "message": "Știri"
+   },
+   "cj_i18n_00427": {
+      "message": "Brevete"
+   },
+   "cj_i18n_00429": {
+      "message": "Fotografii"
+   },
+   "cj_i18n_00431": {
+      "message": "Muzică Play"
+   },
+   "cj_i18n_00434": {
+      "message": "Căutare"
+   },
+   "cj_i18n_00435": {
+      "message": "Cumpărături"
+   },
+   "cj_i18n_00440": {
+      "message": "Traducere"
+   },
+   "cj_i18n_00460": {
+      "message": "Cărți"
+   },
+   "cj_i18n_00484": {
+      "message": "Evenimente"
+   },
+   "cj_i18n_00488": {
+      "message": "Imagini"
+   },
+   "cj_i18n_00509": {
+      "message": "Videoclipuri"
+   }
+}

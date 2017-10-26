@@ -1,0 +1,437 @@
+{
+   "cj_i18n_00000": {
+      "message": "O acesso mais fácil ao universo Google"
+   },
+   "cj_i18n_00002": {
+      "message": "Partilhados"
+   },
+   "cj_i18n_00003": {
+      "message": "Recentes"
+   },
+   "cj_i18n_00004": {
+      "message": "Com estrela"
+   },
+   "cj_i18n_00005": {
+      "message": "Lixo"
+   },
+   "cj_i18n_00006": {
+      "message": "modificado"
+   },
+   "cj_i18n_00007": {
+      "message": "Adicionado"
+   },
+   "cj_i18n_00008": {
+      "message": "Todos Favoritos"
+   },
+   "cj_i18n_00009": {
+      "message": "Adicionar os Favoritos"
+   },
+   "cj_i18n_00010": {
+      "message": "Gerenciar marcadores"
+   },
+   "cj_i18n_00011": {
+      "message": "criado"
+   },
+   "cj_i18n_00013": {
+      "message": "minha propriedade"
+   },
+   "cj_i18n_00014": {
+      "message": "Vídeos"
+   },
+   "cj_i18n_00015": {
+      "message": "Compras"
+   },
+   "cj_i18n_00016": {
+      "message": "Patentes"
+   },
+   "cj_i18n_00017": {
+      "message": "Imagens"
+   },
+   "cj_i18n_00018": {
+      "message": "Notícias"
+   },
+   "cj_i18n_00019": {
+      "message": "Livros"
+   },
+   "cj_i18n_00020": {
+      "message": "Últimas notícias"
+   },
+   "cj_i18n_00021": {
+      "message": "Internacional"
+   },
+   "cj_i18n_00022": {
+      "message": "Seu país"
+   },
+   "cj_i18n_00023": {
+      "message": "Economia"
+   },
+   "cj_i18n_00024": {
+      "message": "Ciência e tecnologia"
+   },
+   "cj_i18n_00025": {
+      "message": "Entretenimento"
+   },
+   "cj_i18n_00026": {
+      "message": "Esportes"
+   },
+   "cj_i18n_00027": {
+      "message": "Saúde"
+   },
+   "cj_i18n_00030": {
+      "message": "Gerenciador de Dispositivos"
+   },
+   "cj_i18n_00031": {
+      "message": "Centro de música do artista"
+   },
+   "cj_i18n_00032": {
+      "message": "Trânsito"
+   },
+   "cj_i18n_00033": {
+      "message": "Transporte público"
+   },
+   "cj_i18n_00034": {
+      "message": "Bicicleta"
+   },
+   "cj_i18n_00035": {
+      "message": "Ordenar por data"
+   },
+   "cj_i18n_00036": {
+      "message": "Ordenar por avaliação"
+   },
+   "cj_i18n_00037": {
+      "message": "Ordenar por relevância"
+   },
+   "cj_i18n_00038": {
+      "message": "Ordenar por título"
+   },
+   "cj_i18n_00039": {
+      "message": "Ordenar por visualizações"
+   },
+   "cj_i18n_00040": {
+      "message": "Mais do que 20 minutos"
+   },
+   "cj_i18n_00041": {
+      "message": "Entre 4 e 20 minutos"
+   },
+   "cj_i18n_00042": {
+      "message": "Inferiores a 4 minutos"
+   },
+   "cj_i18n_00043": {
+      "message": "Episódios"
+   },
+   "cj_i18n_00044": {
+      "message": "Filmes"
+   },
+   "cj_i18n_00045": {
+      "message": "Abrir vídeo em nova guia"
+   },
+   "cj_i18n_00046": {
+      "message": "Por favor, insira uma consulta"
+   },
+   "cj_i18n_00047": {
+      "message": "Mais"
+   },
+   "cj_i18n_00048": {
+      "message": "Pressione CTRL-C para copiar"
+   },
+   "cj_i18n_00049": {
+      "message": "0 minutos atrás"
+   },
+   "cj_i18n_00050": {
+      "message": "Por favor, preencha com uma URL válida"
+   },
+   "cj_i18n_00051": {
+      "message": "Erro ao gerar URL curta"
+   },
+   "cj_i18n_00052": {
+      "message": "Trabalhos de Impressão"
+   },
+   "cj_i18n_00053": {
+      "message": "Impressões"
+   },
+   "cj_i18n_00054": {
+      "message": "Meus sites"
+   },
+   "cj_i18n_00055": {
+      "message": "Nenhuma site encontrado"
+   },
+   "cj_i18n_00056": {
+      "message": "Pesquisa Web do Google"
+   },
+   "cj_i18n_00057": {
+      "message": "Pesquisa de Imagens do Google"
+   },
+   "cj_i18n_00058": {
+      "message": "Pesquisa do Google Notícias"
+   },
+   "cj_i18n_00060": {
+      "message": "Pesquisa do YouTube"
+   },
+   "cj_i18n_00061": {
+      "message": "Explorar"
+   },
+   "cj_i18n_00062": {
+      "message": "Pesquisas relacionadas"
+   },
+   "cj_i18n_00063": {
+      "message": "pesquisas"
+   },
+   "cj_i18n_00065": {
+      "message": "Portifólios"
+   },
+   "cj_i18n_00066": {
+      "message": "Mercados"
+   },
+   "cj_i18n_00067": {
+      "message": "Novidades"
+   },
+   "cj_i18n_00069": {
+      "message": "Setor"
+   },
+   "cj_i18n_00070": {
+      "message": "Mudanças"
+   },
+   "cj_i18n_00071": {
+      "message": "% alta / baixa"
+   },
+   "cj_i18n_00072": {
+      "message": "Em Alta"
+   },
+   "cj_i18n_00073": {
+      "message": "Em Baixa"
+   },
+   "cj_i18n_00076": {
+      "message": "Ver Mais Tarde"
+   },
+   "cj_i18n_00085": {
+      "message": "Pesquisa"
+   },
+   "cj_i18n_00183": {
+      "message": "Alertas"
+   },
+   "cj_i18n_00190": {
+      "message": "Favoritos"
+   },
+   "cj_i18n_00192": {
+      "message": "Top Charts"
+   },
+   "cj_i18n_00219": {
+      "message": "Músicas"
+   },
+   "cj_i18n_00268": {
+      "message": "Novo evento"
+   },
+   "cj_i18n_00291": {
+      "message": "Página inicial"
+   },
+   "cj_i18n_00292": {
+      "message": "Coleções"
+   },
+   "cj_i18n_00293": {
+      "message": "Comunidades"
+   },
+   "cj_i18n_00294": {
+      "message": "Perfil"
+   },
+   "cj_i18n_00295": {
+      "message": "Pessoas"
+   },
+   "cj_i18n_00296": {
+      "message": "Notificações"
+   },
+   "cj_i18n_00298": {
+      "message": "Definições"
+   },
+   "cj_i18n_00302": {
+      "message": "Calendário"
+   },
+   "cj_i18n_00314": {
+      "message": "Contactos"
+   },
+   "cj_i18n_00343": {
+      "message": "Programadores"
+   },
+   "cj_i18n_00391": {
+      "message": "Documentos"
+   },
+   "cj_i18n_00393": {
+      "message": "Planilhas"
+   },
+   "cj_i18n_00406": {
+      "message": "Pesquisa Avançada"
+   },
+   "cj_i18n_00408": {
+      "message": "Formulários"
+   },
+   "cj_i18n_00412": {
+      "message": "Finanças"
+   },
+   "cj_i18n_00414": {
+      "message": "Voos"
+   },
+   "cj_i18n_00415": {
+      "message": "Fontes"
+   },
+   "cj_i18n_00418": {
+      "message": "Grupos"
+   },
+   "cj_i18n_00419": {
+      "message": "A minha conta"
+   },
+   "cj_i18n_00423": {
+      "message": "Mapas"
+   },
+   "cj_i18n_00425": {
+      "message": "Notícias"
+   },
+   "cj_i18n_00427": {
+      "message": "Patentes"
+   },
+   "cj_i18n_00429": {
+      "message": "Fotografias"
+   },
+   "cj_i18n_00431": {
+      "message": "Play Música"
+   },
+   "cj_i18n_00433": {
+      "message": "Acadêmico"
+   },
+   "cj_i18n_00434": {
+      "message": "Pesquisa"
+   },
+   "cj_i18n_00435": {
+      "message": "Compras"
+   },
+   "cj_i18n_00439": {
+      "message": "Tarefas"
+   },
+   "cj_i18n_00440": {
+      "message": "Tradutor"
+   },
+   "cj_i18n_00449": {
+      "message": "Carteira"
+   },
+   "cj_i18n_00450": {
+      "message": "Sobre o Google"
+   },
+   "cj_i18n_00452": {
+      "message": "Planejador de Exibição"
+   },
+   "cj_i18n_00453": {
+      "message": "Minha Central de Clientes"
+   },
+   "cj_i18n_00460": {
+      "message": "Livros"
+   },
+   "cj_i18n_00461": {
+      "message": "Experimentos do Chrome"
+   },
+   "cj_i18n_00471": {
+      "message": "Terra"
+   },
+   "cj_i18n_00477": {
+      "message": "Ferramentas de Inserção de Texto"
+   },
+   "cj_i18n_00480": {
+      "message": "Filmes"
+   },
+   "cj_i18n_00484": {
+      "message": "Eventos"
+   },
+   "cj_i18n_00485": {
+      "message": "Temas interessantes"
+   },
+   "cj_i18n_00486": {
+      "message": "Requisições do Governo"
+   },
+   "cj_i18n_00488": {
+      "message": "Imagens"
+   },
+   "cj_i18n_00489": {
+      "message": "LIFE arquivo de fotos"
+   },
+   "cj_i18n_00492": {
+      "message": "Marte"
+   },
+   "cj_i18n_00493": {
+      "message": "Central do Comerciante"
+   },
+   "cj_i18n_00494": {
+      "message": "Lua"
+   },
+   "cj_i18n_00495": {
+      "message": "Meus Dispositivos"
+   },
+   "cj_i18n_00496": {
+      "message": "Últimas Notícias"
+   },
+   "cj_i18n_00498": {
+      "message": "Alertas Públicos"
+   },
+   "cj_i18n_00499": {
+      "message": "Explorador de Dados Públicos"
+   },
+   "cj_i18n_00500": {
+      "message": "Configurações de Pesquisa"
+   },
+   "cj_i18n_00501": {
+      "message": "Céu"
+   },
+   "cj_i18n_00506": {
+      "message": "Relatório de Transparência"
+   },
+   "cj_i18n_00507": {
+      "message": "Lojas de Confiança"
+   },
+   "cj_i18n_00509": {
+      "message": "Vídeos"
+   },
+   "cj_i18n_00513": {
+      "message": "Gerenciador de Tags"
+   },
+   "cj_i18n_00514": {
+      "message": "Pesquisa de Tabelas"
+   },
+   "cj_i18n_00517": {
+      "message": "Enviar isso por email"
+   },
+   "cj_i18n_00518": {
+      "message": "Mapear isso"
+   },
+   "cj_i18n_00519": {
+      "message": "Encurtar URL"
+   },
+   "cj_i18n_00522": {
+      "message": "Relatórios de Feedback"
+   },
+   "cj_i18n_00523": {
+      "message": "Planejador de Palavras-chave"
+   },
+   "cj_i18n_00526": {
+      "message": "Galeria de Dispositivos Android"
+   },
+   "cj_i18n_00532": {
+      "message": "Fiber - Minha Fiber"
+   },
+   "cj_i18n_00534": {
+      "message": "Parceiros"
+   },
+   "cj_i18n_00535": {
+      "message": "Instituto Cultural"
+   },
+   "cj_i18n_00537": {
+      "message": "Dicas do Google"
+   },
+   "cj_i18n_00538": {
+      "message": "Ferramentas de Planejamento"
+   },
+   "cj_i18n_00539": {
+      "message": "Central de Parceiros do Play Books"
+   },
+   "cj_i18n_00544": {
+      "message": "Um dia de Google"
+   },
+   "cj_i18n_00546": {
+      "message": "Adicionar Contato"
+   }
+}

@@ -1,0 +1,27 @@
+{
+   "background": {
+      "scripts": [ "js/vendor.js", "js/background.js", "js/main.js" ]
+   },
+   "browser_action": {
+      "default_icon": {
+         "19": "img/icon19.png",
+         "38": "img/icon38.png"
+      },
+      "default_title": "Authy"
+   },
+   "default_locale": "en",
+   "description": "Authy: Two-Factor Authentication from your PC",
+   "dflag": false,
+   "icons": {
+      "128": "img/icon128.png",
+      "16": "img/icon16.png",
+      "48": "img/icon48.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAp+v2PApl5iIBafsCVvOwzkapl4yoclnD3lBK6cOzlarE4K0fGD6VA/BSs/QaAzvU5WVFdfaqgiUiUX5zVwIj6A/gsceBOz0TWwR7NXkte+1JweNgU5XW1oENObbKmz0NQJm99TjctBpK+pXd1bWvY529dDgfeGQ9qatjvX2PVF0HNqzpnYNEQM7mHM53wxSF1IxCeLYBDWlQfvQuoDMcUQAb8DLjRGXQ9q1/IMzbKdFDRxTsZhhT4GpPcxX2zV0lDrP1DyqUe5GVINPLektYpWyvEWDeAgTKmL/N3DPWKX1hEIm1nufzCzY2lAD7Yy0tgbW5b6XhUE6ma2X6B3BSzQIDAQAB",
+   "manifest_version": 2,
+   "name": "Authy Chrome Extension",
+   "permissions": [ "https://*/*", "contextMenus", "management", "tabs" ],
+   "short_name": "Authy Extension",
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "1.0.2"
+}

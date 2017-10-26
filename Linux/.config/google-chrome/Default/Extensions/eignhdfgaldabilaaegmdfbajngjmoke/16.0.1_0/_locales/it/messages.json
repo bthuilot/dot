@@ -1,0 +1,290 @@
+{
+   "cj_i18n_00000": {
+      "message": "Il modo più facile per accedere all'universo Google"
+   },
+   "cj_i18n_00002": {
+      "message": "Condivisi con me"
+   },
+   "cj_i18n_00003": {
+      "message": "Recenti"
+   },
+   "cj_i18n_00004": {
+      "message": "Speciali"
+   },
+   "cj_i18n_00005": {
+      "message": "Cestino"
+   },
+   "cj_i18n_00012": {
+      "message": "stati"
+   },
+   "cj_i18n_00014": {
+      "message": "Video"
+   },
+   "cj_i18n_00016": {
+      "message": "Brevetti"
+   },
+   "cj_i18n_00017": {
+      "message": "Immagini"
+   },
+   "cj_i18n_00018": {
+      "message": "Notizie"
+   },
+   "cj_i18n_00019": {
+      "message": "Libri"
+   },
+   "cj_i18n_00020": {
+      "message": "Prima pagina"
+   },
+   "cj_i18n_00021": {
+      "message": "Dal mondo"
+   },
+   "cj_i18n_00023": {
+      "message": "Economia"
+   },
+   "cj_i18n_00024": {
+      "message": "Scienze e tecnologie"
+   },
+   "cj_i18n_00025": {
+      "message": "Spettacolo"
+   },
+   "cj_i18n_00026": {
+      "message": "Sport"
+   },
+   "cj_i18n_00027": {
+      "message": "Salute"
+   },
+   "cj_i18n_00028": {
+      "message": "Più letti"
+   },
+   "cj_i18n_00033": {
+      "message": "Trasporto pubblico"
+   },
+   "cj_i18n_00035": {
+      "message": "Ordina per data"
+   },
+   "cj_i18n_00036": {
+      "message": "Ordina per punteggio"
+   },
+   "cj_i18n_00037": {
+      "message": "Ordina per rilevanza"
+   },
+   "cj_i18n_00038": {
+      "message": "Ordina per titolo"
+   },
+   "cj_i18n_00039": {
+      "message": "Ordina per visualizzazioni"
+   },
+   "cj_i18n_00040": {
+      "message": "Maggiore di 20 minuti"
+   },
+   "cj_i18n_00041": {
+      "message": "Tra i 4 e 20 minuti"
+   },
+   "cj_i18n_00042": {
+      "message": "Minore di 4 minuti"
+   },
+   "cj_i18n_00045": {
+      "message": "Apri video in una nuova tab"
+   },
+   "cj_i18n_00046": {
+      "message": "Prego, inserire una query di ricerca"
+   },
+   "cj_i18n_00047": {
+      "message": "Altro"
+   },
+   "cj_i18n_00049": {
+      "message": "0 minuti fa"
+   },
+   "cj_i18n_00050": {
+      "message": "Prego, inserire un URL valido"
+   },
+   "cj_i18n_00053": {
+      "message": "Stampanti"
+   },
+   "cj_i18n_00054": {
+      "message": "I miei siti"
+   },
+   "cj_i18n_00055": {
+      "message": "Nessun sito trovato"
+   },
+   "cj_i18n_00056": {
+      "message": "Ricerca Google"
+   },
+   "cj_i18n_00057": {
+      "message": "Google Immagini"
+   },
+   "cj_i18n_00058": {
+      "message": "Google News"
+   },
+   "cj_i18n_00060": {
+      "message": "Ricerca di YouTube"
+   },
+   "cj_i18n_00076": {
+      "message": "Guarda più tardi"
+   },
+   "cj_i18n_00085": {
+      "message": "Ricerca"
+   },
+   "cj_i18n_00183": {
+      "message": "Alert"
+   },
+   "cj_i18n_00190": {
+      "message": "Preferiti"
+   },
+   "cj_i18n_00218": {
+      "message": "Libri"
+   },
+   "cj_i18n_00219": {
+      "message": "Musica"
+   },
+   "cj_i18n_00221": {
+      "message": "Edicola"
+   },
+   "cj_i18n_00240": {
+      "message": "Utenti"
+   },
+   "cj_i18n_00241": {
+      "message": "App"
+   },
+   "cj_i18n_00243": {
+      "message": "Migrazione di dati"
+   },
+   "cj_i18n_00244": {
+      "message": "Domini"
+   },
+   "cj_i18n_00246": {
+      "message": "Gestione dispositivi"
+   },
+   "cj_i18n_00247": {
+      "message": "Supporto"
+   },
+   "cj_i18n_00248": {
+      "message": "Gruppi"
+   },
+   "cj_i18n_00250": {
+      "message": "Sicurezza"
+   },
+   "cj_i18n_00251": {
+      "message": "Fatturazione"
+   },
+   "cj_i18n_00268": {
+      "message": "Nuovo evento"
+   },
+   "cj_i18n_00292": {
+      "message": "Raccolte"
+   },
+   "cj_i18n_00293": {
+      "message": "Community"
+   },
+   "cj_i18n_00294": {
+      "message": "Profilo"
+   },
+   "cj_i18n_00295": {
+      "message": "Persone"
+   },
+   "cj_i18n_00296": {
+      "message": "Notifiche"
+   },
+   "cj_i18n_00298": {
+      "message": "Impostazioni"
+   },
+   "cj_i18n_00300": {
+      "message": "Posticipati"
+   },
+   "cj_i18n_00301": {
+      "message": "Completati"
+   },
+   "cj_i18n_00307": {
+      "message": "Viaggi"
+   },
+   "cj_i18n_00309": {
+      "message": "Salvato"
+   },
+   "cj_i18n_00314": {
+      "message": "Contatti"
+   },
+   "cj_i18n_00391": {
+      "message": "Documenti"
+   },
+   "cj_i18n_00393": {
+      "message": "Fogli"
+   },
+   "cj_i18n_00400": {
+      "message": "Album"
+   },
+   "cj_i18n_00406": {
+      "message": "Ricerca avanzata"
+   },
+   "cj_i18n_00407": {
+      "message": "Presentazioni"
+   },
+   "cj_i18n_00408": {
+      "message": "Moduli"
+   },
+   "cj_i18n_00409": {
+      "message": "Disegni"
+   },
+   "cj_i18n_00412": {
+      "message": "Finanza"
+   },
+   "cj_i18n_00414": {
+      "message": "Voli"
+   },
+   "cj_i18n_00418": {
+      "message": "Gruppi"
+   },
+   "cj_i18n_00419": {
+      "message": "Account personale"
+   },
+   "cj_i18n_00427": {
+      "message": "Brevetti"
+   },
+   "cj_i18n_00429": {
+      "message": "Foto"
+   },
+   "cj_i18n_00431": {
+      "message": "Play Musica"
+   },
+   "cj_i18n_00434": {
+      "message": "Ricerca"
+   },
+   "cj_i18n_00439": {
+      "message": "Eventi"
+   },
+   "cj_i18n_00440": {
+      "message": "Traduttore"
+   },
+   "cj_i18n_00460": {
+      "message": "Libri"
+   },
+   "cj_i18n_00464": {
+      "message": "Estensioni"
+   },
+   "cj_i18n_00465": {
+      "message": "Temi"
+   },
+   "cj_i18n_00484": {
+      "message": "Eventi"
+   },
+   "cj_i18n_00488": {
+      "message": "Immagini"
+   },
+   "cj_i18n_00492": {
+      "message": "Marte"
+   },
+   "cj_i18n_00494": {
+      "message": "Luna"
+   },
+   "cj_i18n_00496": {
+      "message": "Archivio notizie"
+   },
+   "cj_i18n_00501": {
+      "message": "Cielo"
+   },
+   "cj_i18n_00505": {
+      "message": "Toolkit"
+   },
+   "cj_i18n_00509": {
+      "message": "Video"
+   }
+}

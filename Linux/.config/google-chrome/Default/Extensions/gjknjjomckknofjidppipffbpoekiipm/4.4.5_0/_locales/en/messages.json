@@ -1,0 +1,58 @@
+{
+   "connection_button_connected": {
+      "description": "",
+      "message": "disconnect"
+   },
+   "connection_button_connecting": {
+      "description": "",
+      "message": "connecting"
+   },
+   "connection_button_disconnected": {
+      "description": "",
+      "message": "connect"
+   },
+   "country_title": {
+      "description": "",
+      "message": "Select Location"
+   },
+   "description": {
+      "description": "",
+      "message": "Betternet unlimited free VPN Proxy for Chrome enables you to access to all blocked websites and makes you secure"
+   },
+   "name": {
+      "description": "",
+      "message": "Betternet Unlimited Free VPN Proxy"
+   },
+   "rate_us_thanks": {
+      "description": "",
+      "message": "Thank you!"
+   },
+   "rate_us_thanks_and_redirect": {
+      "description": "",
+      "message": "Thank you so much for spreading the love!"
+   },
+   "rate_us_title": {
+      "description": "",
+      "message": "Share us on social media and spread the love!"
+   },
+   "select_country": {
+      "description": "",
+      "message": "Select Location"
+   },
+   "shortName": {
+      "description": "",
+      "message": "Betternet Unlimited Free VPN Proxy"
+   },
+   "unavailableDescription": {
+      "description": "",
+      "message": "Please disable other extensions (ad-blockers, other VPN services, etc.) that control your proxy settings."
+   },
+   "unavailableDisableOthersButton": {
+      "description": "",
+      "message": "Disable Other VPN Extensions"
+   },
+   "unavailableTitle": {
+      "description": "",
+      "message": "Betternet is being interrupted by another Chrome extension that is controlling your proxy settings."
+   }
+}

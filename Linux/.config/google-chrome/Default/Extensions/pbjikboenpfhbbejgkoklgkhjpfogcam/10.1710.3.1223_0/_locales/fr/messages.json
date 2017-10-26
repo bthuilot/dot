@@ -1,0 +1,47 @@
+{
+   "appDesc": {
+      "message": "Extension du navigateur officiel d'Amazon. En procédant à l'installation vous acceptez les conditions à amazon.fr/gp/BIT/TOU"
+   },
+   "appName": {
+      "message": "Amazon Assistant for Chrome"
+   },
+   "appTitle": {
+      "message": "Amazon Assistant"
+   },
+   "emailBody1": {
+      "message": "Aidez-moi à améliorer! S'il vous plaît me dire ce qui est arrivé, donc je peux le réparer."
+   },
+   "emailBody2": {
+      "message": "Ce qui s'est passé?"
+   },
+   "emailBody3": {
+      "message": "Tout ce que vous pouvez me dire sur votre ordinateur, navigateur ou une connexion réseau?"
+   },
+   "emailBody4": {
+      "message": "ID de référence: "
+   },
+   "emailSubject": {
+      "message": "Feedback pour Amazon Assistant"
+   },
+   "feedbackString": {
+      "message": "retour d'information"
+   },
+   "improveString": {
+      "message": "Pourriez- vous me faire savoir ce qui se passe si je peux améliorer ?"
+   },
+   "noLuckString": {
+      "message": "Toujours pas de chance ?"
+   },
+   "resetAgainString": {
+      "message": "Essayez de fermer et réinitialiser à nouveau"
+   },
+   "resetString": {
+      "message": "Fermer et réinitialisation"
+   },
+   "sorryString1": {
+      "message": "Désolé à ce sujet,"
+   },
+   "sorryString2": {
+      "message": "je vais avoir du mal chargement."
+   }
+}

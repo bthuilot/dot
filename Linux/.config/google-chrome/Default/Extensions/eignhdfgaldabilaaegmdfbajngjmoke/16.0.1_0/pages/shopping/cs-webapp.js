@@ -1,0 +1,1 @@
+!function(){"use strict";location.href.indexOf("bm_contentscript=shopping")!==-1&&window.addEventListener("load",function(){var e=document.createElement("base");e.target="_blank",document.head.appendChild(e)})}();

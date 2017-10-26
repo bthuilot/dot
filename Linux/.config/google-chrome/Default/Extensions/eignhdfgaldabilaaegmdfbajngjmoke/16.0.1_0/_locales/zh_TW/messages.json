@@ -1,0 +1,224 @@
+{
+   "cj_i18n_00002": {
+      "message": "與我共享"
+   },
+   "cj_i18n_00003": {
+      "message": " 最近"
+   },
+   "cj_i18n_00004": {
+      "message": "已加星標"
+   },
+   "cj_i18n_00005": {
+      "message": "已刪除"
+   },
+   "cj_i18n_00006": {
+      "message": "更改於"
+   },
+   "cj_i18n_00007": {
+      "message": "添加"
+   },
+   "cj_i18n_00008": {
+      "message": "全部書籤"
+   },
+   "cj_i18n_00009": {
+      "message": "添加書籤"
+   },
+   "cj_i18n_00013": {
+      "message": "我擁有的"
+   },
+   "cj_i18n_00014": {
+      "message": "影片"
+   },
+   "cj_i18n_00015": {
+      "message": "購物"
+   },
+   "cj_i18n_00016": {
+      "message": "專利"
+   },
+   "cj_i18n_00017": {
+      "message": "圖片"
+   },
+   "cj_i18n_00018": {
+      "message": "新聞"
+   },
+   "cj_i18n_00019": {
+      "message": "書籍"
+   },
+   "cj_i18n_00020": {
+      "message": "焦點新聞"
+   },
+   "cj_i18n_00021": {
+      "message": "世界"
+   },
+   "cj_i18n_00022": {
+      "message": "您的國家"
+   },
+   "cj_i18n_00023": {
+      "message": "商業"
+   },
+   "cj_i18n_00024": {
+      "message": "科學/科技"
+   },
+   "cj_i18n_00025": {
+      "message": "娛樂"
+   },
+   "cj_i18n_00026": {
+      "message": "運動"
+   },
+   "cj_i18n_00027": {
+      "message": "健康"
+   },
+   "cj_i18n_00028": {
+      "message": "流行"
+   },
+   "cj_i18n_00030": {
+      "message": "設備管理"
+   },
+   "cj_i18n_00031": {
+      "message": "歌手中心"
+   },
+   "cj_i18n_00032": {
+      "message": "交通"
+   },
+   "cj_i18n_00033": {
+      "message": "公共交通"
+   },
+   "cj_i18n_00034": {
+      "message": "自行車"
+   },
+   "cj_i18n_00081": {
+      "message": "提醒"
+   },
+   "cj_i18n_00085": {
+      "message": "搜尋"
+   },
+   "cj_i18n_00112": {
+      "message": "協作平台"
+   },
+   "cj_i18n_00183": {
+      "message": "快訊"
+   },
+   "cj_i18n_00291": {
+      "message": "首頁"
+   },
+   "cj_i18n_00292": {
+      "message": "最愛"
+   },
+   "cj_i18n_00293": {
+      "message": "社群"
+   },
+   "cj_i18n_00294": {
+      "message": "個人資料"
+   },
+   "cj_i18n_00295": {
+      "message": "使用者"
+   },
+   "cj_i18n_00296": {
+      "message": "通知"
+   },
+   "cj_i18n_00298": {
+      "message": "設定"
+   },
+   "cj_i18n_00302": {
+      "message": "日曆"
+   },
+   "cj_i18n_00314": {
+      "message": "聯絡人"
+   },
+   "cj_i18n_00390": {
+      "message": "雲端硬碟"
+   },
+   "cj_i18n_00391": {
+      "message": "文件"
+   },
+   "cj_i18n_00412": {
+      "message": "財經"
+   },
+   "cj_i18n_00414": {
+      "message": "航班"
+   },
+   "cj_i18n_00418": {
+      "message": "網上論壇"
+   },
+   "cj_i18n_00419": {
+      "message": "我的帳戶"
+   },
+   "cj_i18n_00423": {
+      "message": "地圖"
+   },
+   "cj_i18n_00425": {
+      "message": "新聞"
+   },
+   "cj_i18n_00427": {
+      "message": "專利"
+   },
+   "cj_i18n_00429": {
+      "message": "相片"
+   },
+   "cj_i18n_00431": {
+      "message": "Play 音樂"
+   },
+   "cj_i18n_00432": {
+      "message": "儲存"
+   },
+   "cj_i18n_00434": {
+      "message": "搜尋"
+   },
+   "cj_i18n_00435": {
+      "message": "購物"
+   },
+   "cj_i18n_00440": {
+      "message": "翻譯"
+   },
+   "cj_i18n_00441": {
+      "message": "搜尋趨勢"
+   },
+   "cj_i18n_00443": {
+      "message": "語音服務"
+   },
+   "cj_i18n_00449": {
+      "message": "電子錢包"
+   },
+   "cj_i18n_00450": {
+      "message": "關於谷歌"
+   },
+   "cj_i18n_00458": {
+      "message": "藝術與文化"
+   },
+   "cj_i18n_00460": {
+      "message": "圖書"
+   },
+   "cj_i18n_00463": {
+      "message": "開發者儀表板"
+   },
+   "cj_i18n_00484": {
+      "message": "活動"
+   },
+   "cj_i18n_00488": {
+      "message": "圖片"
+   },
+   "cj_i18n_00509": {
+      "message": "影片"
+   },
+   "cj_i18n_00515": {
+      "message": "AdWords  Express"
+   },
+   "cj_i18n_00616": {
+      "message": "保管箱"
+   },
+   "cj_i18n_00837": {
+      "message": "安卓"
+   },
+   "cj_i18n_00851": {
+      "message": "安卓開源"
+   },
+   "cj_i18n_00852": {
+      "message": "跳轉"
+   },
+   "cj_i18n_00853": {
+      "message": "安卓工作室"
+   },
+   "cj_i18n_00854": {
+      "message": "安卓開發者"
+   }
+}

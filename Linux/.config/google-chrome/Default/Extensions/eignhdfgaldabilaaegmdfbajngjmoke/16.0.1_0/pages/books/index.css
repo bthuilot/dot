@@ -1,0 +1,1 @@
+.bm-p-books .cj-md-appbar:not([data-selected=mybooks]) [data-view=mybooks],.bm-p-books .cj-md-appbar:not([data-selected=search]) [data-view=search]{display:none}.bm-p-books .bookitem__thumbnail{height:200px;background-size:cover;background-position:50%;background-repeat:no-repeat}
