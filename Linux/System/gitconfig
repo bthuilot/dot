@@ -1,0 +1,6 @@
+[user]
+	email = bthuilot@gmail.com
+	name = Bryce Thuilot
+	signingkey = 9CCF0D733C319F8D43C310C20008636263A7EEAA
+[gpg]
+	program = gpg2

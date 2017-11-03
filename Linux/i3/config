@@ -198,7 +198,7 @@ gaps inner 5
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # Background 
-exec_always feh --bg-scale ~/.config/i3/background.png
+exec_always feh --bg-scale ~/.config/i3/backgrounds/beach.jpg
 
 # Lock Screen 
 bindsym $mod+q exec lock
