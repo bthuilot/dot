@@ -51,7 +51,7 @@ font-4 = "Knack Nerd Font Mono:pixelsize=30;0"
 
 modules-left = bspwm i3
 modules-center = 
-modules-right = filesystem volume cpu wlan eth battery temperature date powermenu
+modules-right = filesystem volume wlan battery temperature date powermenu
 
 ;xbacklight 
 ;xkeyboard
@@ -297,9 +297,10 @@ format-discharging-underline = ${self.format-charging-underline}
 format-full-prefix = ""
 format-full-underline = ${self.format-charging-underline}
 
-ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 = 
+#ramp-capacity-0 = 
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
 ramp-capacity-foreground = ${colors.foreground-alt}
 
 animation-charging-0 = 
