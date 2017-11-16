@@ -55,14 +55,20 @@ sudo systemctl enable NetworkManager
 # Make build dir
 mkdir -p builddir
 
+
+
+
 # Set up touch pad
 cd builddir
 git clone git://anongit.freedesktop.org/wayland/libinput 
 cd libinput
+
 ## Download patch
 wget https://gist.githubusercontent.com/peterychuang/5cf9bf527bc26adef47d714c758a5509/raw/eace1794287bb2e9903f7a7f3c6e2496346b321e/0001-udev-Add-Apple-SPI-Keyboard-and-Touchpad.patch
+
 ### Get patch
 git apply 0001-udev-Add-Apple-SPI-Keyboard-and-Touchpad.patch
+
 ### Build patch
 meson --prefix=/usr builddir/
 ninja -C builddir/
@@ -70,5 +76,35 @@ sudo ninja -C builddir/ install
 sudo udevadm hwdb --update
 
 echo "Option \"ClickMethod\" \"clickfinger\""
+
+
+
+# Set up OhMyZsh
+chsh -s /usr/bin/zsh
+
+## Download OhMyZsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+
+# RUBY :D
+
+## Download and install
+git clone https://github.com/rbenv/rbenv.git ~/.rbenv
+
+cd ~/.rbenv && src/configure && make -C src
+
+# Init
+~/.rbenv/bin/rbenv init
+
+## Check to make sure
+curl -fsSL https://github.com/rbenv/rbenv-installer/raw/master/bin/rbenv-doctor | bash
+
+mkdir -p "$(rbenv root)"/plugins
+git clone https://github.com/rbenv/ruby-build.git "$(rbenv root)"/plugins/ruby-build 
+
+#Install Ruby :)
+
+VERSION="2.4.2"
+rbenv install 2.4.2
 
 
