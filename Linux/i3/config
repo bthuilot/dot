@@ -49,7 +49,7 @@ bindsym $mod+g exec google-chrome-stable
 # change focus
 bindsym $mod+j focus left
 bindsym $mod+k focus down
-#bindsym $mod+l focus up
+bindsym $mod+l focus up
 bindsym $mod+semicolon focus right
 
 # alternatively, you can use the cursor keys:
@@ -205,4 +205,4 @@ exec_always feh --bg-scale ~/.config/i3/backgrounds/LinuxText.png
 bindsym $mod+control+b exec feh --bg-scale ~/.config/i3/backgrounds/LinuxText.png
 
 # Lock Screen 
-bindsym $mod+l exec i3lock-fancy
+bindsym $mod+control+l exec i3lock-fancy

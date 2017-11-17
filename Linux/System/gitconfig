@@ -5,4 +5,5 @@
 [gpg]
 	program = gpg2
 [commit]
+	gpgsing = true
 	gpgsign = true
