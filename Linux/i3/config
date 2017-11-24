@@ -190,8 +190,8 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
 # Keyboard
-bindsym XF86KbdBrightnessDown exec sudo keyboard-backlight down
-bindsym XF86KbdBrightnessUp exec sudo keyboard-backlight up
+bindsym XF86KbdBrightnessDown exec sudo keyboard-light down
+bindsym XF86KbdBrightnessUp exec sudo keyboard-light up
 
 # No borders pls
 new_window 1pixel
@@ -201,8 +201,8 @@ gaps inner 10
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # Background 
-exec_always feh --bg-scale ~/.config/i3/backgrounds/LinuxText.png
-bindsym $mod+control+b exec feh --bg-scale ~/.config/i3/backgrounds/LinuxText.png
+exec_always feh --bg-scale ~/.config/i3/backgrounds/ArchMountains.png
+bindsym $mod+control+b exec feh --bg-scale ~/.config/i3/backgrounds/ArchMountains.png
 
 # Lock Screen 
 bindsym $mod+control+l exec i3lock-fancy
