@@ -39,12 +39,21 @@ sudo gem install lolcat
 sudo gem install sugarpaccione
 
 # Applications
- brew cask install iterm2 atom google-chrome spotify pibakery etcher lastpass sonos the-unarchiver gpgtools bittorrent discord steam thunderbird
+brew cask install iterm2 dropbox atom google-chrome spotify pibakery etcher lastpass the-unarchiver gpg-suite bittorrent discord steam thunderbird
 
+gpg2 --import
 
 # Set up github folder
 mkdir ~/GitHub
 
-echo 'Authy still needs to be installed from chrome'
-echo 'Files still need to be added from flash drive'
-echo 'Please add your ssh key to GitHub'
+#Set up git
+git config --global user.name "Bryce Thuilot"
+git config --global user.email bthuilot@gmail.com
+git config --global commit.gpgsign true
+git config --global gpg.program gpg2
+git config --global user.signingkey $(gpg2 --list-secret-keys --keyid-format LONG | grep sec |awk -F'/' '{print $2}' | awk -F' ' '{print $1}')
+
+
+# Background
+
+osascript -e ‘tell application “Finder” to set desktop picture to POSIX file “/path/to/picture.jpg”’

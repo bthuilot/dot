@@ -1,8 +1,11 @@
 # InstallScript
 
-This script is designed to allow me to easily reinstall my macOS without fear of needing to spend a whole day trying to remember what applications I had installed and then trying to reinstall them. This script currently installs:
+My install script for both Arch Linux and MacOS
 
-## Command Line
+
+## MacOS
+
+### Command Line
 - Zsh
 - Oh-My-Zsh
 - Homebrew
@@ -10,7 +13,7 @@ This script is designed to allow me to easily reinstall my macOS without fear of
 - GPG
 - lolcat, cowsay, fortune, sugarpaccione
 
-## Applications
+### Applications
 - iTerm2
 - Atom
 - Google Chrome
@@ -18,13 +21,13 @@ This script is designed to allow me to easily reinstall my macOS without fear of
 - PiBakery
 - Etcher
 - Last Pass
-- Sonos
 - The Unarchiver
-- f.Lux
 - VLC
-- GPG Tools
-- Paragon NFTS for Mac
+- GPG Suite
 - uTorrent
 - Steam
 - Discord
 - Thunderbird
+
+
+## Linux
