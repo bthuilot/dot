@@ -52,8 +52,3 @@ git config --global user.email bthuilot@gmail.com
 git config --global commit.gpgsign true
 git config --global gpg.program gpg2
 git config --global user.signingkey $(gpg2 --list-secret-keys --keyid-format LONG | grep sec |awk -F'/' '{print $2}' | awk -F' ' '{print $1}')
-
-
-# Background
-
-osascript -e ‘tell application “Finder” to set desktop picture to POSIX file “/path/to/picture.jpg”’
