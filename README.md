@@ -1,10 +1,10 @@
-# InstallScript
+# Dot files
 
 My install script for both Arch Linux and MacOS
 
+*Screenshots to go here soon*
 
 ## MacOS
-
 ### Command Line
 - Zsh
 - Oh-My-Zsh

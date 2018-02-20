@@ -7,48 +7,67 @@ fi
 
 # Add cask
 brew tap caskroom/cask
+# Add fonts
+brew tap caskroom/fonts
+
+# Install Applications
+brew install git cowsay fortune gnupg chromedriver neovim rbenv npm zsh
+brew cask install iterm2 dropbox atom google-chrome spotify etcher lastpass the-unarchiver gpg-suite deluge discord steam thunderbird font-fira-code
+
 
 # Install zsh
-if [ -d "/bin/zsh"]
+if [ -d "/usr/local/bin/zsh"]
 then
-  chsh -s /bin/zsh
+  chsh -s /usr/local/bin/zsh
 else
   brew install zsh
-  chsh -s /bin/zsh
+  chsh -s /usr/local/bin/zsh
 fi
 
 # Install Oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
-# The essentials
+# Set up fonts
+cp ../Universal/KnackFont.ttf /Library/Fonts/
 
-# Command line stuff
-brew install git cowsay fortune gnupg chromedriver neovim rbenv npm
+# Set up shell
+cp terminal/zshrc ~/.zshrc
+source ~/.zshrc
 
-npm install -g spaceship-zsh-theme
+read -p "Do you want to install files from USB [Y/n]" installFromUSB
+USBLOCATION=/Volumes/USB
 
-cp files/zshrc ~/.zshrc
+if [[ installFromUSB -ne 'n' ]]; then
+  # Move SSH
+  mkdir -p ~/.ssh
+  cp $USBLOCATION/Keys/SSH/id* ~/.ssh/
+  ssh-add
 
-source .zshrc
+  # Move GPG
+  gpg2 --import $USBLOCATION/Keys/GPG/pub.asc
+  gpg2 --import $USBLOCATION/Keys/GPG/sec.asc
+fi
 
-rbenv install 2.4.2
-rbenv global 2.4.2
-rbenv shell 2.4.2
 
-sudo gem install lolcat
-sudo gem install sugarpaccione
+# Install ruby
 
-# Applications
-brew cask install iterm2 dropbox atom google-chrome spotify pibakery etcher lastpass the-unarchiver gpg-suite bittorrent discord steam thunderbird
+RUBY_VERSION='2.5.0'
+rbenv install $RUBY_VERSION
+rbenv global $RUBY_VERSION
+rbenv shell $RUBY_VERSION
 
-gpg2 --import
+gem install lolcat sugarpaccione
+
 
 # Set up github folder
 mkdir ~/GitHub
 
 #Set up git
-git config --global user.name "Bryce Thuilot"
-git config --global user.email bthuilot@gmail.com
-git config --global commit.gpgsign true
-git config --global gpg.program gpg2
-git config --global user.signingkey $(gpg2 --list-secret-keys --keyid-format LONG | grep sec |awk -F'/' '{print $2}' | awk -F' ' '{print $1}')
+read -p "Set up git as Bryce? [Y/n]" setUpGit
+if [[ setUpGit -ne 'n' ]]; then
+  git config --global user.name "Bryce Thuilot"
+  git config --global user.email bthuilot@gmail.com
+  git config --global commit.gpgsign true
+  git config --global gpg.program gpg2
+  git config --global user.signingkey $(gpg2 --list-secret-keys --keyid-format LONG | grep sec |awk -F'/' '{print $2}' | awk -F' ' '{print $1}')
+fi
