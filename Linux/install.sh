@@ -34,7 +34,7 @@ done
 
 
 # Install my fav font
-fc-query KnackFont.ttf
+fc-query ../Universal/KnackFont.ttf
 fc-cache
 
 
@@ -60,7 +60,7 @@ mkdir -p builddir
 
 # Set up touch pad
 cd builddir
-git clone git://anongit.freedesktop.org/wayland/libinput 
+git clone git://anongit.freedesktop.org/wayland/libinput
 cd libinput
 
 ## Download patch
@@ -79,7 +79,7 @@ echo "Option \"ClickMethod\" \"clickfinger\""
 
 
 
-# Set up OhMyZsh
+# Change to ZSH
 chsh -s /usr/bin/zsh
 
 ## Download OhMyZsh
@@ -93,18 +93,16 @@ git clone https://github.com/rbenv/rbenv.git ~/.rbenv
 
 cd ~/.rbenv && src/configure && make -C src
 
-# Init
+# Init ruby
 ~/.rbenv/bin/rbenv init
 
 ## Check to make sure
 curl -fsSL https://github.com/rbenv/rbenv-installer/raw/master/bin/rbenv-doctor | bash
 
 mkdir -p "$(rbenv root)"/plugins
-git clone https://github.com/rbenv/ruby-build.git "$(rbenv root)"/plugins/ruby-build 
+git clone https://github.com/rbenv/ruby-build.git "$(rbenv root)"/plugins/ruby-build
 
 #Install Ruby :)
 
 VERSION="2.4.2"
-rbenv install 2.4.2
-
-
+rbenv install $VERSION
