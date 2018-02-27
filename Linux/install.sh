@@ -1,27 +1,9 @@
 #!/bin/sh
 
-#Install Pacuar
-
-if ! command -v pacaur >/dev/null; then
-    tmp=$(mktemp -d)
-    function finish {
-        rm -rf "$tmp"
-    }
-    trap finish EXIT
-
-    pushd $tmp
-    for pkg in cower pacaur; do
-        curl -o PKGBUILD https://aur.archlinux.org/cgit/aur.git/plain/PKGBUILD?h=$pkg && \
-            makepkg --needed --noconfirm --skippgpcheck -sri
-    done
-    popd
-
-    if ! command -v pacaur >/dev/null; then
-        >&2 echo "Pacaur wasn't successfully installed"
-        exit 1
-    fi
-fi
-
+# Install Trizen - RIP Pacaur :(
+git clone https://aur.archlinux.org/trizen.git
+cd trizen
+makepkg -si
 
 # Copy Files
 cp -r i3 ~/.config
@@ -39,7 +21,7 @@ fc-cache
 
 
 
-SYSTEM="zsh git wget dkms macbook12-spi-driver-dkms ninja graphviz light"
+SYSTEM="zsh git wget dkms macbook12-spi-driver-dkms ninja graphviz light dmenu"
 WIRELESS="openssh networkmanager network-manager-applet stalonetray wireless_tools"
 DISPLAY="xorg-server xorg xorg-apps xorg-init i3"
 PACKAGES="vim neovim feh atom google-chrome-stable"
@@ -75,9 +57,15 @@ ninja -C builddir/
 sudo ninja -C builddir/ install
 sudo udevadm hwdb --update
 
+# TODO add this to the correct file
 echo "Option \"ClickMethod\" \"clickfinger\""
 
-
+# Background
+mkdir -p ~/.background/
+cp archBackgrounds.zip ~/.background/
+unzip ~/.background/archBackgrounds.zip
+cp ~/.background/archBackgrounds/* ~/.background/
+rm -f ~/.background/archBackgrounds.zip
 
 # Change to ZSH
 chsh -s /usr/bin/zsh
@@ -106,3 +94,30 @@ git clone https://github.com/rbenv/ruby-build.git "$(rbenv root)"/plugins/ruby-b
 
 VERSION="2.4.2"
 rbenv install $VERSION
+
+# Move from usb
+read -p "Do you want to install files from USB [Y/n]" installFromUSB
+# TODO get correct USBLOCATION
+USBLOCATION=/Volumes/USB
+
+if [[ installFromUSB -ne 'n' ]]; then
+  # Move SSH
+  mkdir -p ~/.ssh
+  cp $USBLOCATION/Keys/SSH/id* ~/.ssh/
+  ssh-add
+
+  # Move GPG
+  gpg2 --import $USBLOCATION/Keys/GPG/pub.asc
+  gpg2 --import $USBLOCATION/Keys/GPG/sec.asc
+
+  # Install git essentails
+  read -p "Set up git as Bryce? [Y/n]" setUpGit
+  if [[ setUpGit -ne 'n' ]]; then
+    git config --global user.name "Bryce Thuilot"
+    git config --global user.email bthuilot@gmail.com
+    git config --global commit.gpgsign true
+    git config --global gpg.program gpg2
+    git config --global user.signingkey $(gpg2 --list-secret-keys --keyid-format LONG | grep sec |awk -F'/' '{print $2}' | awk -F' ' '{print $1}')
+  fi
+
+fi
