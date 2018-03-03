@@ -6,31 +6,30 @@ cd trizen
 makepkg -si
 
 # Copy Files
-cp -r i3 ~/.config
-cp -r polybar ~/.config
-cp -r termite ~/.config
+mkdir -p ~/.config/
+cp -r i3/ ~/.config/
+cp -r polybar/ ~/.config/
+cp -r termite/ ~/.config/
 for file in System/*
 do
   cp $file ~/.$file
 done
 
-
-# Install my fav font
-fc-query ../Universal/KnackFont.ttf
-fc-cache
-
-
-
-SYSTEM="zsh git wget dkms macbook12-spi-driver-dkms ninja graphviz light dmenu"
+SYSTEM="zsh git wget dkms ninja graphviz light dmenu"
 WIRELESS="openssh networkmanager network-manager-applet stalonetray wireless_tools"
 DISPLAY="xorg-server xorg xorg-apps xorg-init i3"
 PACKAGES="vim neovim feh atom google-chrome-stable"
 SOUND="alsa-lib pulseaudio playerctl i3lock-fancy-git compton"
 FUN="ttf-google-fonts-git ttf-font-awesome spotify"
 
-
 # Install
 trizen -S $SYSTEM $WIRELESS $DISPLAY $PACKAGES $SOUND $FUN
+
+
+# Install my fav font
+fc-query ../Universal/KnackFont.ttf
+fc-cache
+
 
 sudo systemctl enable NetworkManager
 
@@ -41,6 +40,7 @@ mkdir -p builddir
 read -p "Set up MacBook14 track pad? [Y/n]" setUpTrackPad
 if [[ setUpTrackPad -ne 'n' ]]; then
 
+  trizen -S macbook12-spi-driver-dkms
   # Set up touch pad
   cd builddir
   git clone git://anongit.freedesktop.org/wayland/libinput
