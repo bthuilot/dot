@@ -20,8 +20,7 @@ if [ -d "/usr/local/bin/zsh"]
 then
   chsh -s /usr/local/bin/zsh
 else
-  brew install zsh
-  chsh -s /usr/local/bin/zsh
+  chsh -s /bin/zsh
 fi
 
 # Install Oh-my-zsh

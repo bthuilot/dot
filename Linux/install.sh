@@ -11,7 +11,7 @@ cp -r polybar ~/.config
 cp -r termite ~/.config
 for file in System/*
 do
-  mv $file ~/.$file
+  cp $file ~/.$file
 done
 
 
@@ -30,7 +30,7 @@ FUN="ttf-google-fonts-git ttf-font-awesome spotify"
 
 
 # Install
-pacaur -S $SYSTEM $WIRELESS $DISPLAY $PACKAGES $SOUND $FUN
+trizen -S $SYSTEM $WIRELESS $DISPLAY $PACKAGES $SOUND $FUN
 
 sudo systemctl enable NetworkManager
 
@@ -38,28 +38,31 @@ sudo systemctl enable NetworkManager
 mkdir -p builddir
 
 
+read -p "Set up MacBook14 track pad? [Y/n]" setUpTrackPad
+if [[ setUpTrackPad -ne 'n' ]]; then
 
+  # Set up touch pad
+  cd builddir
+  git clone git://anongit.freedesktop.org/wayland/libinput
+  cd libinput
 
-# Set up touch pad
-cd builddir
-git clone git://anongit.freedesktop.org/wayland/libinput
-cd libinput
+  ## Download patch
+  wget https://gist.githubusercontent.com/peterychuang/5cf9bf527bc26adef47d714c758a5509/raw/eace1794287bb2e9903f7a7f3c6e2496346b321e/0001-udev-Add-Apple-SPI-Keyboard-and-Touchpad.patch
 
-## Download patch
-wget https://gist.githubusercontent.com/peterychuang/5cf9bf527bc26adef47d714c758a5509/raw/eace1794287bb2e9903f7a7f3c6e2496346b321e/0001-udev-Add-Apple-SPI-Keyboard-and-Touchpad.patch
+  ### Get patch
+  git apply 0001-udev-Add-Apple-SPI-Keyboard-and-Touchpad.patch
 
-### Get patch
-git apply 0001-udev-Add-Apple-SPI-Keyboard-and-Touchpad.patch
+  ### Build patch
+  meson --prefix=/usr builddir/
+  ninja -C builddir/
+  sudo ninja -C builddir/ install
+  sudo udevadm hwdb --update
 
-### Build patch
-meson --prefix=/usr builddir/
-ninja -C builddir/
-sudo ninja -C builddir/ install
-sudo udevadm hwdb --update
+  cd
 
-# TODO add this to the correct file
-echo "Option \"ClickMethod\" \"clickfinger\""
-
+  # TODO add this to the correct file
+  echo "Option \"ClickMethod\" \"clickfinger\""
+fi
 # Background
 mkdir -p ~/.background/
 cp archBackgrounds.zip ~/.background/
@@ -83,6 +86,7 @@ cd ~/.rbenv && src/configure && make -C src
 
 # Init ruby
 ~/.rbenv/bin/rbenv init
+cd
 
 ## Check to make sure
 curl -fsSL https://github.com/rbenv/rbenv-installer/raw/master/bin/rbenv-doctor | bash
