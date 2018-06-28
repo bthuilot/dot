@@ -33,6 +33,10 @@ cp ../Universal/KnackFont.ttf /Library/Fonts/
 cp terminal/zshrc ~/.zshrc
 source ~/.zshrc
 
+# Set up neovim
+mkdir -p ~/.config/nvim/
+cp terminal/init.vim ~/.config/nvim/
+
 read -p "Do you want to install files from USB [Y/n]" installFromUSB
 USBLOCATION=/Volumes/USB
 
