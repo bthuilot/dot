@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Install command line tools from xcode
+xcode-select --install
+
 # Install Homebrew
 if ! type "$brew" > /dev/null; then
   /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
@@ -13,7 +16,7 @@ brew tap caskroom/fonts
 # Install Applications
 PACKAGES="git cmatrix cowsay fortune gnupg neofetch chromedriver neovim rbenv pandoc npm zsh"
 
-APPLICATIONS="iterm2 dropbox atom google-chrome spotify spotmenu torbrowser etcher lastpass the-unarchiver gpg-suite deluge discord steam nordvpn electrum slack font-fira-code istycal"
+APPLICATIONS="iterm2 atom google-chrome spotify spotmenu torbrowser etcher lastpass the-unarchiver gpg-suite deluge discord steam nordvpn electrum slack font-fira-code istycal daisydisk helium"
 
 brew install $PACKAGES
 brew cask install $APPLICATIONS
