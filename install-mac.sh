@@ -111,4 +111,6 @@ cp backgrounds/* ~/Pictures/backgrounds
 BACKGOUND_IMAGE="Boston_Trippy.jpg"
 osascript -e 'tell application "System Events" to tell every desktop to set picture to "~/Pictures/backgrounds/'$BACKGROUND_IMAGE'"' 
 
-
+# Install coin bar
+curl "https://github.com/adamwaite/CoinBar/releases/download/2.0/CoinBar.app.zip" >> /tmp/CoinBar.app.zip
+unzip /tmp/CoinBar.app.zip -d /Applications
