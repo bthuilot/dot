@@ -23,9 +23,9 @@ Currently the scrips;
 - Sets up iTerm2 profile
 
 
-![MacOS background](Background.png)
+![MacOS background](screenshots/Background.png)
 
-![iTerm and Finder](iTerm-Finder.png)
+![iTerm and Finder](screenshots/iTerm-Finder.png)
 
 ## Linux
 
