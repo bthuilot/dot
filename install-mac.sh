@@ -103,8 +103,12 @@ else
     defaults read ~/GitHub/dot/iTerm2/com.googlecode.iterm2.plist
 fi
 
+# Move backgrounds to ~/Pictures
+mkdir -p ~/Pictures/backgrounds/
+cp backgrounds/* ~/Pictures/backgrounds
+
 # Set backgound
 BACKGOUND_IMAGE="Boston_Trippy.jpg"
-osascript -e 'tell application "System Events" to tell every desktop to set picture to "/Users/'$USER'/GitHub/dot/backgrounds/'$BACKGROUND_IMAGE'"' 
+osascript -e 'tell application "System Events" to tell every desktop to set picture to "~/Pictures/backgrounds/'$BACKGROUND_IMAGE'"' 
 
 
