@@ -30,7 +30,7 @@ fi
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 # Set up fonts
-cp ../fonts/KnackFont.ttf /Library/Fonts/
+cp ../fonts/* /Library/Fonts/
 
 # Set up shell
 cp zsh/zshrc ~/.zshrc
@@ -80,11 +80,6 @@ if [[ installFromUSB -ne 'n' ]]; then
   fi
 
 fi
-
-# Set backgound
-BACKGOUND_IMAGE="Boston_Trippy.jpg"
-osascript -e ‘tell application “Finder” to set desktop picture to POSIX file “backgounds/$BACKGROUND_IMAGE”’
-
 # Install ruby
 
 RUBY_VERSION='2.5.0'
@@ -98,7 +93,7 @@ gem install lolcat sugarpaccione
 osascript -e 'tell application "System Events" to tell appearance preferences to set dark mode to not dark mode'
 
 # Set up github folder
-mkdir ~/GitHub
+mkdir -p ~/GitHub
 
 # Set iTerm2 profile
 if [ $(pwd) = "/Users/$USER/GitHub/dot" ]; then
@@ -108,5 +103,8 @@ else
     defaults read ~/GitHub/dot/iTerm2/com.googlecode.iterm2.plist
 fi
 
+# Set backgound
+BACKGOUND_IMAGE="Boston_Trippy.jpg"
+osascript -e 'tell application "System Events" to tell every desktop to set picture to "/Users/'$USER'/GitHub/dot/backgrounds/'$BACKGROUND_IMAGE'"' 
 
 
