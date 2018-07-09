@@ -93,7 +93,10 @@ rbenv shell $RUBY_VERSION
 gem install lolcat sugarpaccione
 
 # Set dark mode 
-osascript -e 'tell application "System Events" to tell appearance preferences to set dark mode to not dark mode'
+osascript -e 'tell application "System Events" to tell appearance preferences to set dark mode to true'
+
+# Set highlight color
+osascript -e 'tell application "System Events" to tell apearance preferences to set highlight color to purple' 
 
 # Set up github folder
 mkdir -p ~/GitHub
