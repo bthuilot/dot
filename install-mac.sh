@@ -57,7 +57,7 @@ if [[ installFromUSB -ne 'n' ]]; then
   # Make ssh directory if not there
   mkdir -p ~/.ssh
   # Move SSH Key
-  cp $USBLOCATION/Keys/SSH/id* ~/.ssh/
+  cp $USBLOCATION/keys/ssh/id* ~/.ssh/
   # Start the ssh-agent in the background
   eval "$(ssh-agent -s)"
   # Load ssh key automatically
@@ -69,8 +69,8 @@ if [[ installFromUSB -ne 'n' ]]; then
   ssh-add -K ~/.ssh/id_rsa
 
   # Import GPG
-  gpg2 --import $USBLOCATION/Keys/GPG/pub.asc
-  gpg2 --import $USBLOCATION/Keys/GPG/sec.asc
+  gpg2 --import $USBLOCATION/keys/gpg/pub.asc
+  gpg2 --import $USBLOCATION/keys/gpg/sec.asc
 
   # Set up git
   read -p "Set up git as Bryce? [Y/n]" setUpGit
