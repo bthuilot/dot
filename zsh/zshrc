@@ -57,4 +57,4 @@ export LANG=en_US.UTF-8
 export TERM=rxvt-256color
 
 
-alias pp="curl -F 'clbin=<-' https://clbin.com"
+alias pastebin="curl -F 'clbin=<-' https://clbin.com"

@@ -3,15 +3,17 @@
 " - Avoid using standard Vim directory names like 'plugin'
 call plug#begin('~/.local/share/nvim/plugged')
 
-" Make sure you use single quotes
+" Pandoc support plugin
 Plug 'vim-pandoc/vim-pandoc'
-
+" Pandoc syntax highlighting
+Plug 'vim-pandoc/vim-pandoc-syntax'
+" Oceanic next colorscheme
 Plug 'mhartington/oceanic-next'
+" Airline and Airline themes
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-
-" Shorthand notation; fetches https://github.com/junegunn/vim-easy-align
-Plug 'vim-pandoc/vim-pandoc-syntax'
+" Nerd tree
+Plug 'scrooloose/nerdtree'
 
 call plug#end()
 
@@ -20,6 +22,8 @@ call plug#end()
 :set tabstop=4
 :set shiftwidth=4
 :set expandtab
+
+map <C-n> :NERDTreeToggle<CR>
 
 :map <C-L> :! pandoc -o pdf.pdf -H header.tex % <CR>
 
