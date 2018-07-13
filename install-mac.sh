@@ -1,8 +1,5 @@
 #!/bin/bash
 
-# Install command line tools from xcode
-xcode-select --install
-
 # Install Homebrew
 if ! type "$brew" > /dev/null; then
   /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
@@ -22,12 +19,13 @@ brew install $PACKAGES
 brew cask install $APPLICATIONS
 
 # Install zsh
-if [ -d "/usr/local/bin/zsh"]
+if [ -d "/usr/local/bin/zsh" ]
 then
   chsh -s /usr/local/bin/zsh
 else
   chsh -s /bin/zsh
 fi
+
 
 # Install Oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
@@ -38,6 +36,12 @@ cp ../fonts/* /Library/Fonts/
 # Set up shell
 cp zsh/zshrc ~/.zshrc
 source ~/.zshrc
+
+# Install space
+git clone https://github.com/denysdovhan/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt"
+
+ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
+
 
 ## Set up neovim
 # Move config file
@@ -120,3 +124,8 @@ osascript -e 'tell application "System Events" to tell every desktop to set pict
 # Install coin bar
 curl "https://github.com/adamwaite/CoinBar/releases/download/2.0/CoinBar.app.zip" >> /tmp/CoinBar.app.zip
 unzip /tmp/CoinBar.app.zip -d /Applications
+
+# Install command line tools from xcode
+xcode-select --install
+
+
