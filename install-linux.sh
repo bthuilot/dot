@@ -1,9 +1,13 @@
-#!/bin/sh
+#!/bin/bash
+
+set -e
 
 # Install Trizen - RIP Pacaur :(
 git clone https://aur.archlinux.org/trizen.git
-cd trizen
-makepkg -si
+pushd trizen
+makepkg -sri
+popd
+rm -rf trizen
 
 # Copy Files
 mkdir -p ~/.config/
