@@ -1,19 +1,16 @@
-
-export LANG=en_US.UTF-8
 # Load plugins
-plugins=(git brew osx rvm battery)
+plugins=(
+  git
+  osx
+  zsh-syntax-highlighting
+  zsh-autosuggestions
+)
 
-export PATH=$HOME:/Users/brycethuilot/GitHub/flutter/bin:$PATH
-export PATH=$PATH:/Users/brycethuilot/.pub-cache/bin
-export PATH=$PATH:/usr/local/go/bin
+export PATH="/usr/local/opt/openssl/bin:$PATH"
 
 ## Themes
-ZSH_THEME='spaceship' #"deserted"
-# Spaceship theme settings
-source .spaceship-settings.zsh
-
-# Other Zsh Themes
-# lambda-mod-zsh-theme/lambda-mod, geometry/geometry, agnoster, wezm, powerlevel9k/powerlevel9k, bullet-train, deserted
+SOBOLE_THEME_MODE=dark
+ZSH_THEME='sobole'
 
 # Export and Sources
 
@@ -30,31 +27,20 @@ export SSH_KEY_PATH="~/.ssh/rsa_id"
 # GPG
 export GPG_TTY=$(tty)
 # Export go path
-export GOPATH=/Users/brycethuilot/go
-export PATH=$GOPATH/bin:$PATH
 
 # Alias
 alias gac="git add . && git commit -m"
 alias ip='ifconfig | grep "inet " | awk "NR == 2" | cut -f2 -d" "'
 alias suroot='sudo -E -s'
-alias cyber='cd ~/Github/CS2550'
-alias algo='cd ~/Github/CS4800'
-alias eece='cd ~/Github/EECE2160'
 alias ccis-linux='ssh login.ccs.neu.edu'
-alias millcreek='cd ~/Github/MillCreekMailer'
+
 # Load rbenv
 eval "$(rbenv init -)"
-
-
-#echo -e " \e[91m___\e[0m__  ______ "
-#echo -e "\e[91m|_   \e[0m \|_    _| "
-#echo -e "  \e[91m|   \e[0m \ |  |   "
-#echo -e "  \e[91m|  |\ \e[0m\|  |   "
-#echo -e " \e[91m_|  |_\ \e[0m   |_  "
-#echo -e "\e[91m|______|\___\e[0m__| "
 
 export LANG=en_US.UTF-8
 export TERM=rxvt-256color
 
-
 alias pastebin="curl -F 'clbin=<-' https://clbin.com"
+alias wrbb='cd wordpress/wp-content/themes/WRBB-Site'
+alias reload='source /Users/brycethuilot/.zshrc'
+alias edit_zsh='nvim /Users/brycethuilot/.zshrc'
