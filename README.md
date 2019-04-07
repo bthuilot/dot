@@ -4,7 +4,7 @@ My install script for both Arch Linux and MacOS
 
 ## MacOS
 
-*Last updated July 2018*
+*Last updated April 2019*
 
 To install run `./install-mac.sh`.
 
@@ -23,10 +23,11 @@ Currently the scrips;
 - Sets up [iTerm2](https://github.com/gnachman/iTerm2) profile
 
 
-![MacOS background](screenshots/Background.png)
+![Neofetch](screenshots/Neofetch.png)
 
 ![iTerm and Finder](screenshots/iTerm-Finder.png)
 
-## Linux
+![MacOS background](screenshots/Background.png)
 
+## Linux
 *Coming soon!*
