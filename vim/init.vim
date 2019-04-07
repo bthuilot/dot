@@ -1,30 +1,30 @@
-" Specify a directory for plugins
-" - For Neovim: ~/.local/share/nvim/plugged
-" - Avoid using standard Vim directory names like 'plugin'
 call plug#begin('~/.local/share/nvim/plugged')
 
-" Pandoc support plugin
-Plug 'vim-pandoc/vim-pandoc'
-" Pandoc syntax highlighting
-Plug 'vim-pandoc/vim-pandoc-syntax'
-" Oceanic next colorscheme
-Plug 'mhartington/oceanic-next'
-" Airline and Airline themes
-Plug 'vim-airline/vim-airline'
+Plug 'morhetz/gruvbox'
 Plug 'vim-airline/vim-airline-themes'
-" Nerd tree
+Plug 'vim-airline/vim-airline'
 Plug 'scrooloose/nerdtree'
+Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
+Plug 'wincent/command-t', {
+    \   'do': 'cd ruby/command-t/ext/command-t && ruby extconf.rb && make'
+\ }
+Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
+
 
 call plug#end()
 
-:set number
+set background=dark
+colorscheme gruvbox
+let g:CommandTCancelMap = ['<ESC>']
 
-:set tabstop=4
-:set shiftwidth=4
-:set expandtab
+set tabstop=2 softtabstop=0 expandtab shiftwidth=2 smarttab
+set number
 
-map <C-n> :NERDTreeToggle<CR>
+map <C-b> :NERDTreeToggle<CR> 
+map <C-g> :NERDTreeFind<CR>
+map <C-p> :CommandT .<CR>
+let NERDTreeShowHidden=1 
 
-:map <C-L> :! pandoc -o pdf.pdf -H header.tex % <CR>
+let g:airline_theme='wombat'
 
-colorscheme OceanicNext
