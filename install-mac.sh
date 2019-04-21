@@ -1,9 +1,16 @@
 #!/bin/bash
 
+###########################
+### Install XCode tools ###
+###########################
 
-# Install xcode tools
 # Install command line tools from xcode
 xcode-select --install
+
+
+########################
+### Install Homebrew ###
+########################
 
 # Install Homebrew
 if ! type "$brew" > /dev/null; then
@@ -15,13 +22,25 @@ brew tap caskroom/cask
 # Add fonts
 brew tap caskroom/fonts
 
-# Install Applications
+############################
+### Install Applications ###
+############################
+
+# Command line packages
 PACKAGES="git font-fira-code gnupg neofetch neovim rbenv pandoc npm zsh"
 
-APPLICATIONS="iterm2 openemu minecraft visual-studio-code firefox spotify spotmenu torbrowser etcher the-unarchiver gpg-suite deluge discord nordvpn electrum slack font-fira-code istycal daisydisk"
+# Graphical Applications
+APPLICATIONS="iterm2 openemu minecraft visual-studio-code firefox spotify spotmenu torbrowser etcher the-unarchiver gpg-suite deluge discord nordvpn electrum slack font-fira-code istycal daisydisk signal"
 
-brew install $PACKAGES
-brew cask install $APPLICATIONS
+# Install packages using brew
+brew install ${PACKAGES}
+brew cask install ${APPLICATIONS}
+
+
+#################
+### ZSH Setup ###
+#################
+
 
 # Install zsh
 if [ -d "/usr/local/bin/zsh" ]
@@ -31,17 +50,37 @@ else
   chsh -s /bin/zsh
 fi
 
-
 # Install Oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
-# Set up shell
-ln zsh/zshrc $HOME/.zshrc
+# Set up zshrc
+ln zsh/mac.zshrc $HOME/.zshrc
 
-# Install zsh-theme
-wget -o ~/.oh-my-zsh/custom/themes/sobole.zsh-theme https://raw.githubusercontent.com/sobolevn/sobole-zsh-theme/master/sobole.zsh-theme 
+## Zsh Theme
+# Install Oxide (from github.com/dikiaap/dotfiles)
+wget -O $HOME/.oh-my-zsh/custom/themes/oxide.zsh-theme https://raw.githubusercontent.com/dikiaap/dotfiles/master/.oh-my-zsh/themes/oxide.zsh-theme 
 
-## Set up neovim
+## Install ZSH Plugins
+# Auto Suggestions
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+# Syntax highlighting
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+
+####################
+### Install ruby ###
+####################
+
+eval "$(rbenv init -)"
+
+RUBY_VERSION='2.5.0'
+rbenv install $RUBY_VERSION
+rbenv global $RUBY_VERSION
+rbenv shell $RUBY_VERSION
+
+
+##################
+### Set up vim ###
+##################
 
 # Move config file
 mkdir -p $HOME/.config/nvim/
@@ -50,18 +89,20 @@ ln vim/init.vim $HOME/.config/nvim/
 # Set up vim plug
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
+# Install neovim gem to use CommandT
+gem install neovim
+
 
 # Set up SSH and GPG Keys
 # Set up git 
 read -p "Do you want to install files from USB [Y/n]" installFromUSB
-USBLOCATION=/Volumes/THUILOT/
 
 if [[ installFromUSB -ne 'n' ]]; then
 
-  # Make ssh directory if not there
-  mkdir -p ~/.ssh
+  USBLOCATION=/Volumes/THUILOT/
+
   # Move SSH Key
-  cp $USBLOCATION/keys/ssh/id* ~/.ssh/
+  cp -r $USBLOCATION/keys/ssh $HOME/.ssh
 
 
   chmod 400 ~/.ssh/id_rsa
@@ -90,16 +131,6 @@ if [[ installFromUSB -ne 'n' ]]; then
   fi
 
 fi
-# Install ruby
-
-eval "$(rbenv init -)"
-
-RUBY_VERSION='2.5.0'
-rbenv install $RUBY_VERSION
-rbenv global $RUBY_VERSION
-rbenv shell $RUBY_VERSION
-
-gem install neovim
 
 # Set dark mode 
 osascript -e 'tell application "System Events" to tell appearance preferences to set dark mode to true'
@@ -114,7 +145,7 @@ mkdir -p ~/GitHub
 ## TODO ##
 
 
-# Set backgound
-BACKGOUND_IMAGE=stars_at_night.png
-osascript -e 'tell application "System Events" to tell every desktop to set picture to "backgrounds/'$BACKGROUND_IMAGE'"' 
+# Set background
+BACKGROUND_IMAGE=stars_at_night.png
+osascript -e 'tell application "System Events" to tell every desktop to set picture to "'$(pwd)'backgrounds/'${BACKGROUND_IMAGE}'"'
 
