@@ -1,8 +1,9 @@
 # TODO
 
-## Mac
-- Automate Service install
-
 ## Linux
 - Add Linux support
+
+## Mac
+- iTerm profiles
+
 
