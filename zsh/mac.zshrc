@@ -9,8 +9,7 @@ plugins=(
 export PATH="/usr/local/opt/openssl/bin:$PATH"
 
 ## Themes
-SOBOLE_THEME_MODE=dark
-ZSH_THEME='sobole'
+ZSH_THEME='oxide'
 
 # Export and Sources
 
@@ -42,5 +41,5 @@ export TERM=rxvt-256color
 
 alias pastebin="curl -F 'clbin=<-' https://clbin.com"
 alias wrbb='cd wordpress/wp-content/themes/WRBB-Site'
-alias reload='source /Users/brycethuilot/.zshrc'
-alias edit_zsh='nvim /Users/brycethuilot/.zshrc'
+alias reload="source $HOME/.zshrc"
+alias edit_zsh="nvim $HOME/.zshrc"
