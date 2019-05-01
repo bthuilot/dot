@@ -27,14 +27,16 @@ brew tap caskroom/fonts
 ############################
 
 # Command line packages
-PACKAGES="git font-fira-code gnupg neofetch neovim rbenv pandoc npm zsh"
+PACKAGES="git gpg neofetch neovim rbenv pandoc npm zsh wget"
 
 # Graphical Applications
-APPLICATIONS="iterm2 openemu minecraft visual-studio-code firefox spotify spotmenu torbrowser etcher the-unarchiver gpg-suite deluge discord nordvpn electrum slack font-fira-code istycal daisydisk signal"
+APPLICATIONS="iterm2 openemu minecraft visual-studio-code firefox spotify spotmenu torbrowser balenaetcher the-unarchiver gpg-suite deluge discord nordvpn electrum slack font-fira-code daisydisk signal"
 
 # Install packages using brew
 brew install ${PACKAGES}
 brew cask install ${APPLICATIONS}
+# Not working for some reason -> need to look into more
+brew cask install itsycal
 
 
 #################
@@ -54,6 +56,7 @@ fi
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 # Set up zshrc
+rm $HOME/.zshrc
 ln zsh/mac.zshrc $HOME/.zshrc
 
 ## Zsh Theme
@@ -95,17 +98,17 @@ gem install neovim
 
 # Set up SSH and GPG Keys
 # Set up git 
-read -p "Do you want to install files from USB [Y/n]" installFromUSB
-
-if [[ installFromUSB -ne 'n' ]]; then
-
+read -p "Do you want to install files from USB [Y/n]" -n 1 -r
+echo    # move to a new line
+if [[ $REPLY =~ ^[Yy]$ ]]
+then
   USBLOCATION=/Volumes/THUILOT/
 
   # Move SSH Key
   cp -r $USBLOCATION/keys/ssh $HOME/.ssh
 
 
-  chmod 400 ~/.ssh/id_rsa
+  chmod 400 $HOME/.ssh/id_rsa
   # Start the ssh-agent in the background
   eval "$(ssh-agent -s)"
   # Load ssh key automatically
@@ -117,17 +120,18 @@ if [[ installFromUSB -ne 'n' ]]; then
   ssh-add -K ~/.ssh/id_rsa
 
   # Import GPG
-  gpg2 --import $USBLOCATION/keys/gpg/public.asc
-  gpg2 --import $USBLOCATION/keys/gpg/secret.asc
+  gpg --import $USBLOCATION/keys/gpg/public.asc
+  gpg --import $USBLOCATION/keys/gpg/secret.asc
 
   # Set up git
-  read -p "Set up git as Bryce? [Y/n]" setUpGit
-  if [[ setUpGit -ne 'n' ]]; then
+  read -p "Set up git as Bryce? [Y/n]" -n 1 -r
+  echo
+  if [[ $REPLY =~ ^[Yy]$ ]]; 
+  then
     git config --global user.name "Bryce Thuilot"
     git config --global user.email bthuilot@gmail.com
     git config --global commit.gpgsign true
-    git config --global gpg.program gpg2
-    git config --global user.signingkey $(gpg2 --list-secret-keys --keyid-format LONG | grep sec |awk -F'/' '{print $2}' | awk -F' ' '{print $1}')
+    git config --global user.signingkey $(gpg --list-secret-keys --keyid-format LONG | grep sec |awk -F'/' '{print $2}' | awk -F' ' '{print $1}')
   fi
 
 fi
@@ -146,6 +150,6 @@ mkdir -p ~/GitHub
 
 
 # Set background
-BACKGROUND_IMAGE=stars_at_night.png
+BACKGROUND_IMAGE=Stars_at_night.png
 osascript -e 'tell application "System Events" to tell every desktop to set picture to "'$(pwd)'backgrounds/'${BACKGROUND_IMAGE}'"'
 
