@@ -1,6 +1,10 @@
-#!/bin/sh
+#!/bin/bash
 
-# Install Trizen - RIP Pacaur :(
+# Create build directory
+mkdir $HOME/build
+cd $HOME/build
+
+# Install Trizen
 git clone https://aur.archlinux.org/trizen.git
 cd trizen
 makepkg -si
