@@ -30,7 +30,7 @@ brew tap caskroom/fonts
 PACKAGES="git gpg neofetch neovim rbenv pandoc npm zsh wget"
 
 # Graphical Applications
-APPLICATIONS="iterm2 openemu minecraft visual-studio-code firefox spotify spotmenu torbrowser balenaetcher the-unarchiver gpg-suite deluge discord nordvpn electrum slack font-fira-code daisydisk signal"
+APPLICATIONS="iterm2 openemu minecraft visual-studio-code pinentry-mac firefox spotify spotmenu torbrowser balenaetcher the-unarchiver gpg-suite deluge discord nordvpn electrum slack font-fira-code daisydisk signal"
 
 # Install packages using brew
 brew install ${PACKAGES}
@@ -53,6 +53,7 @@ else
 fi
 
 # Install Oh-my-zsh
+RUNZSH = no
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 # Set up zshrc
