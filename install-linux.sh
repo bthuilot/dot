@@ -1,5 +1,7 @@
 #!/bin/bash
 
+DOT_DIR=$(pwd)
+
 # Create build directory
 mkdir $HOME/build
 cd $HOME/build
@@ -9,77 +11,28 @@ git clone https://aur.archlinux.org/trizen.git
 cd trizen
 makepkg -si
 
+cd $HOME 
+
 # Copy Files
 mkdir -p ~/.config/
-cp -r i3/ ~/.config/
-cp -r polybar/ ~/.config/
-cp -r termite/ ~/.config/
-for file in System/*
-do
-  cp $file ~/.$file
-done
 
-SYSTEM="zsh git wget dkms ninja graphviz light dmenu"
+
+SYSTEM="zsh git wget vim neovim chromium snapd "
 WIRELESS="openssh networkmanager network-manager-applet stalonetray wireless_tools"
-DISPLAY="xorg-server xorg xorg-apps xorg-init i3"
-PACKAGES="vim neovim feh atom google-chrome-stable"
-SOUND="alsa-lib pulseaudio playerctl i3lock-fancy-git compton"
-FUN="ttf-google-fonts-git ttf-font-awesome spotify"
+DISPLAY="xorg-server xorg xorg-apps xorg-init plasma kde-applications plymouth ssdm sddm-kcm"
+FONTS="ttf-fira-code ttf-google-fonts-git ttf-font-awesome"
 
 # Install
-trizen -S $SYSTEM $WIRELESS $DISPLAY $PACKAGES $SOUND $FUN
-
-
-# Install my fav font
-fc-query ../Universal/KnackFont.ttf
-fc-cache
-
+trizen -Syyu $SYSTEM $WIRELESS $DISPLAY $PACKAGES $SOUND $FUN $FONTS
 
 sudo systemctl enable NetworkManager
-
-# Make build dir
-mkdir -p builddir
-
-
-read -p "Set up MacBook14 track pad? [Y/n]" setUpTrackPad
-if [[ setUpTrackPad -ne 'n' ]]; then
-
-  trizen -S macbook12-spi-driver-dkms
-  # Set up touch pad
-  cd builddir
-  git clone git://anongit.freedesktop.org/wayland/libinput
-  cd libinput
-
-  ## Download patch
-  wget https://gist.githubusercontent.com/peterychuang/5cf9bf527bc26adef47d714c758a5509/raw/eace1794287bb2e9903f7a7f3c6e2496346b321e/0001-udev-Add-Apple-SPI-Keyboard-and-Touchpad.patch
-
-  ### Get patch
-  git apply 0001-udev-Add-Apple-SPI-Keyboard-and-Touchpad.patch
-
-  ### Build patch
-  meson --prefix=/usr builddir/
-  ninja -C builddir/
-  sudo ninja -C builddir/ install
-  sudo udevadm hwdb --update
-
-  cd
-
-  # TODO add this to the correct file
-  echo "Option \"ClickMethod\" \"clickfinger\""
-fi
-# Background
-mkdir -p ~/.background/
-cp archBackgrounds.zip ~/.background/
-unzip ~/.background/archBackgrounds.zip
-cp ~/.background/archBackgrounds/* ~/.background/
-rm -f ~/.background/archBackgrounds.zip
 
 # Change to ZSH
 chsh -s /usr/bin/zsh
 
 ## Download OhMyZsh
+RUNZSH=no
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-
 
 # RUBY :D
 
@@ -90,33 +43,28 @@ cd ~/.rbenv && src/configure && make -C src
 
 # Init ruby
 ~/.rbenv/bin/rbenv init
-cd
-
-## Check to make sure
-curl -fsSL https://github.com/rbenv/rbenv-installer/raw/master/bin/rbenv-doctor | bash
+cd $HOME
 
 mkdir -p "$(rbenv root)"/plugins
 git clone https://github.com/rbenv/ruby-build.git "$(rbenv root)"/plugins/ruby-build
 
 #Install Ruby :)
 
-VERSION="2.4.2"
+VERSION="2.6.3"
 rbenv install $VERSION
 
-# Move from usb
-read -p "Do you want to install files from USB [Y/n]" installFromUSB
-# TODO get correct USBLOCATION
-USBLOCATION=/Volumes/USB
-
-if [[ installFromUSB -ne 'n' ]]; then
+read -p "Do you want to install files from USB [Y/n]" -n 1 -r
+echo    # move to a new line
+if [[ $REPLY =~ ^[Yy]$ ]]
   # Move SSH
-  mkdir -p ~/.ssh
-  cp $USBLOCATION/Keys/SSH/id* ~/.ssh/
-  ssh-add
+  mkdir -p $HOME/.ssh
+  cp $DOT_DIR/keys/ssh/* $HOME/.ssh/
+  eval "$(ssh-agent -s)"
+  ssh-add ~/.ssh/id_rsa
 
   # Move GPG
-  gpg2 --import $USBLOCATION/Keys/GPG/pub.asc
-  gpg2 --import $USBLOCATION/Keys/GPG/sec.asc
+  gpg2 --import $DOT_DIR/keys/gpg/public.asc
+  gpg2 --import $DOT_DIR/keys/gpg/secret.asc
 
   # Install git essentails
   read -p "Set up git as Bryce? [Y/n]" setUpGit
