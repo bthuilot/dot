@@ -53,7 +53,7 @@ else
 fi
 
 # Install Oh-my-zsh
-RUNZSH = no
+RUNZSH=no
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 # Set up zshrc
