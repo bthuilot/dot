@@ -11,10 +11,23 @@ git clone https://aur.archlinux.org/trizen.git
 cd trizen
 makepkg -si
 
-cd $HOME 
+cd $DOT_DIR
 
-# Copy Files
-mkdir -p ~/.config/
+# Link Files
+mkdir -p $HOME/.config/
+
+## ZSH
+rm $HOME/.zshrc
+ln zsh/linux.zsh $HOME/.zshrc
+ln
+
+## Install ZSH Plugins
+# Auto Suggestions
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+# Syntax highlighting
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+
+
 
 
 SYSTEM="zsh git wget vim neovim chromium snapd "
@@ -48,10 +61,30 @@ cd $HOME
 mkdir -p "$(rbenv root)"/plugins
 git clone https://github.com/rbenv/ruby-build.git "$(rbenv root)"/plugins/ruby-build
 
+eval "$(rbenv init -)"
+
 #Install Ruby :)
 
 VERSION="2.6.3"
 rbenv install $VERSION
+rbenv global $VERSION
+rbenv shell $VERSION
+
+##################
+### Set up vim ###
+##################
+
+# Move config file
+mkdir -p $HOME/.config/nvim/
+ln vim/init.vim $HOME/.config/nvim/
+
+# Set up vim plug
+curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+# Install neovim gem to use CommandT
+gem install neovim
+
+
 
 read -p "Do you want to install files from USB [Y/n]" -n 1 -r
 echo    # move to a new line
