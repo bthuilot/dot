@@ -1,44 +1,53 @@
 #!/bin/bash
 
-DOT_DIR=$(pwd)
+###############
+# Directories #
+###############
 
-# Create build directory
-mkdir $HOME/build
+# Create Build
+mkdir -p $HOME/build
+# Create Config
+mkdir -p $HOME/.config/
+
+# Set Directories
+DOT_DIR=$(pwd)
+BUILD_DIR=$HOME/build
+CONFIG_DIR=$HOME/.config
+
+#########
+# Build #
+#########
 cd $HOME/build
 
 # Install Trizen
-git clone https://aur.archlinux.org/trizen.git
-cd trizen
-makepkg -si
-
-cd $DOT_DIR
-
-# Link Files
-mkdir -p $HOME/.config/
-
-## ZSH
-rm $HOME/.zshrc
-ln zsh/linux.zsh $HOME/.zshrc
-ln
-
-## Install ZSH Plugins
-# Auto Suggestions
-git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-# Syntax highlighting
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+if ! type "$trizen" > /dev/null; then
+  git clone https://aur.archlinux.org/trizen.git
+  cd trizen
+  makepkg -si
+fi
 
 
+####################
+# Install Pacakges #
+####################
+cd $HOME
 
-
+# List packages
 SYSTEM="zsh git wget vim neovim chromium snapd "
 WIRELESS="openssh networkmanager network-manager-applet stalonetray wireless_tools"
 DISPLAY="xorg-server xorg xorg-apps xorg-init plasma kde-applications plymouth ssdm sddm-kcm"
 FONTS="ttf-fira-code ttf-google-fonts-git ttf-font-awesome"
 
-# Install
+# Install all packages
 trizen -Syyu $SYSTEM $WIRELESS $DISPLAY $PACKAGES $SOUND $FUN $FONTS
 
+# Enable 
 sudo systemctl enable NetworkManager
+sudo systemctl enable sddm-plymouth
+
+#######
+# ZSH #
+#######
 
 # Change to ZSH
 chsh -s /usr/bin/zsh
@@ -47,32 +56,49 @@ chsh -s /usr/bin/zsh
 RUNZSH=no
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
-# RUBY :D
+rm $HOME/.zshrc
+ln zsh/linux.zsh $HOME/.zshrc
 
-## Download and install
+###############
+# ZSH Plugins #
+###############
+
+# Auto Suggestions
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+# Syntax highlighting
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+
+
+########
+# Ruby #
+########
+
+# Build rbenv
 git clone https://github.com/rbenv/rbenv.git ~/.rbenv
-
 cd ~/.rbenv && src/configure && make -C src
 
-# Init ruby
+# Init rbenv
 ~/.rbenv/bin/rbenv init
 cd $HOME
 
+# Install ruby-build as plugin
 mkdir -p "$(rbenv root)"/plugins
 git clone https://github.com/rbenv/ruby-build.git "$(rbenv root)"/plugins/ruby-build
 
 eval "$(rbenv init -)"
 
-#Install Ruby :)
+################
+# Install Ruby #
+################
 
 VERSION="2.6.3"
 rbenv install $VERSION
 rbenv global $VERSION
 rbenv shell $VERSION
 
-##################
-### Set up vim ###
-##################
+##########
+# Neovim #
+##########
 
 # Move config file
 mkdir -p $HOME/.config/nvim/
@@ -84,6 +110,9 @@ curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.g
 # Install neovim gem to use CommandT
 gem install neovim
 
+################
+# SSH/GPG Keys #
+################
 
 
 read -p "Do you want to install files from USB [Y/n]" -n 1 -r
