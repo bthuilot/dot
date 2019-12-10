@@ -13,7 +13,7 @@ xcode-select --install
 ########################
 
 # Install Homebrew
-if ! type "$brew" > /dev/null; then
+if ! type "brew" > /dev/null; then
   /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
 
@@ -30,7 +30,7 @@ brew tap caskroom/fonts
 PACKAGES="git gpg neofetch neovim rbenv pandoc npm zsh wget"
 
 # Graphical Applications
-APPLICATIONS="iterm2 openemu minecraft visual-studio-code pinentry-mac firefox spotify spotmenu torbrowser balenaetcher the-unarchiver gpg-suite deluge discord nordvpn electrum slack font-fira-code daisydisk signal"
+APPLICATIONS="google-chrome the-unarchiver gpg-suite deluge discord nordvpn electrum slack font-fira-code daisydisk signal"
 
 # Install packages using brew
 brew install ${PACKAGES}
@@ -43,17 +43,8 @@ brew cask install itsycal
 ### ZSH Setup ###
 #################
 
-
-# Install zsh
-if [ -d "/usr/local/bin/zsh" ]
-then
-  chsh -s /usr/local/bin/zsh
-else
-  chsh -s /bin/zsh
-fi
-
 # Install Oh-my-zsh
-RUNZSH=no
+export RUNZSH=no
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 # Set up zshrc
@@ -138,19 +129,19 @@ then
 fi
 
 # Set dark mode 
-osascript -e 'tell application "System Events" to tell appearance preferences to set dark mode to true'
+#osascript -e 'tell application "System Events" to tell appearance preferences to set dark mode to true'
 
 # Set highlight color
-osascript -e 'tell application "System Events" to tell apearance preferences to set highlight color to purple' 
+#osascript -e 'tell application "System Events" to tell apearance preferences to set highlight color to purple' 
 
 # Set up github folder
-mkdir -p ~/GitHub
+#mkdir -p ~/GitHub
 
 # Set iTerm2 profile
 ## TODO ##
 
 
 # Set background
-BACKGROUND_IMAGE=Stars_at_night.png
-osascript -e 'tell application "System Events" to tell every desktop to set picture to "'$(pwd)'backgrounds/'${BACKGROUND_IMAGE}'"'
+#BACKGROUND_IMAGE=Stars_at_night.png
+#osascript -e 'tell application "System Events" to tell every desktop to set picture to "'$(pwd)'backgrounds/'${BACKGROUND_IMAGE}'"'
 

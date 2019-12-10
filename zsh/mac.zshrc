@@ -14,7 +14,7 @@ ZSH_THEME='oxide'
 # Export and Sources
 
 ## Add oh-my-zsh directory
-export ZSH=/Users/brycethuilot/.oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh
 ## Source zshrc
 source $ZSH/oh-my-zsh.sh
 ## Add /usr/local/bin
@@ -22,10 +22,10 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 ## Add /usr/local/sbin
 export PATH="/usr/local/sbin:$PATH"
 # ssh
-export SSH_KEY_PATH="~/.ssh/rsa_id"
+export SSH_KEY_PATH="$HOME/.ssh/rsa_id"
 # GPG
 export GPG_TTY=$(tty)
-# Export go path
+export AWS_WRBB_PATH="$HOME/.wrbb.pem"
 
 # Alias
 alias gac="git add . && git commit -m"
@@ -43,3 +43,5 @@ alias pastebin="curl -F 'clbin=<-' https://clbin.com"
 alias wrbb='cd wordpress/wp-content/themes/WRBB-Site'
 alias reload="source $HOME/.zshrc"
 alias edit_zsh="nvim $HOME/.zshrc"
+
+[ -z "$PS1" ] && return
