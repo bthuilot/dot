@@ -29,12 +29,30 @@ gpg --armor --export bthuilot@gmail.com > ~/backup/keys/gpg/public.asc
 gpg --armor --export-secret-keys bthuilot@gmail.com > ~/backup/keys/gpg/secret.asc
 
 ## Move SSH keys
-mkdir -p $HOME/backup/keys/gpg
+mkdir -p $HOME/backup/keys/ssh
 cp ~/.ssh/id* $HOME/backup/keys/ssh/
 
 # Move to USB if attached
-if [ -d "/Volumes/THUILOT" ]; then
-    cp -r ~/backup/ /Volumes/THUILOT/
+declare -a volumes
+echo "Please choose which drive to back up to:"
+declare -i i=0
+for file in /Volumes/*
+do
+    volumes+=(${file##*/})
+    echo "  $i) $file"
+    i+=1
+done
+echo "q to not backup"
+read answer
+
+if [ $answer != 'q' ]; then
+  dir=${volumes[$answer]}
+
+  if [ -d "/Volumes/$dir" ]; then
+      cp -r ~/backup/ /Volumes/$dir
+  else
+    echo "$dir is not a directory, not backed up"    
+  fi
 fi
 
 CURRENT_DIR=$(pwd)
