@@ -11,6 +11,10 @@ export PATH="/usr/local/opt/openssl/bin:$PATH"
 ## Themes
 ZSH_THEME='oxide'
 
+export NVM_DIR="$HOME/.nvm"
+  [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+  [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+
 # Export and Sources
 
 ## Add oh-my-zsh directory
@@ -24,7 +28,6 @@ export PATH="/usr/local/sbin:$PATH"
 # ssh
 export SSH_KEY_PATH="$HOME/.ssh/rsa_id"
 # GPG
-export GPG_TTY=$(tty)
 export AWS_WRBB_PATH="$HOME/.wrbb.pem"
 
 # Alias
@@ -43,5 +46,8 @@ alias pastebin="curl -F 'clbin=<-' https://clbin.com"
 alias wrbb='cd wordpress/wp-content/themes/WRBB-Site'
 alias reload="source $HOME/.zshrc"
 alias edit_zsh="nvim $HOME/.zshrc"
-
-[ -z "$PS1" ] && return
+alias convertm4as='for foo in *.m4a; do ffmpeg -i "$foo" -acodec libmp3lame -aq 2 "${foo%.m4a}.mp3"; done'
+export GOPATH="$HOME/.go"
+export GOROOT=/usr/local/opt/go/libexec
+export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:$GOROOT/bin
