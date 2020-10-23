@@ -30,4 +30,11 @@ Currently the scrips;
 ![MacOS background](screenshots/Background.png)
 
 ## Linux
-*Coming soon!*
+
+*Last updated October 2020*
+
+To install run `./install-linux.sh`
+
+![Neofetch](screenshots/linux-1.png)
+
+![background](screenshots/linux-2.png)
