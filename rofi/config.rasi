@@ -1,0 +1,7 @@
+configuration {
+  modi: "window,drun,ssh,combi";
+  font: "Fira Code 12";
+  combi-modi: "drun,ssh";
+  icon-theme: "Papirus";
+}
+@import "/usr/share/rofi/themes/gruvbox-dark.rasi"

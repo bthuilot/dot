@@ -78,15 +78,11 @@ APPLICATIONS="google-chrome the-unarchiver gpg-suite deluge discord nordvpn elec
 ##################
 
 # Move config file
-#mkdir -p $HOME/.config/nvim/
-#ln vim/init.vim $HOME/.config/nvim/
+mkdir -p $HOME/.config/nvim/
+ln vim/init.vim $HOME/.config/nvim/
 
 # Set up vim plug
-#curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-
-# Install neovim gem to use CommandT
-#gem install neovim
-
+curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 # Set up SSH and GPG Keys
 # Set up git 
@@ -136,10 +132,6 @@ fi
 
 # Set up github folder
 #mkdir -p ~/GitHub
-
-# Set iTerm2 profile
-## TODO ##
-
 
 # Set background
 #BACKGROUND_IMAGE=Stars_at_night.png

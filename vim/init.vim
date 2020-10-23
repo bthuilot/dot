@@ -4,12 +4,6 @@ Plug 'morhetz/gruvbox'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-airline/vim-airline'
 Plug 'scrooloose/nerdtree'
-Plug 'pangloss/vim-javascript'
-Plug 'mxw/vim-jsx'
-Plug 'wincent/command-t', {
-    \   'do': 'cd ruby/command-t/ext/command-t && ruby extconf.rb && make'
-\ }
-Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 Plug 'vim-pandoc/vim-pandoc'
 Plug 'vim-pandoc/vim-pandoc-syntax'
 
@@ -18,7 +12,6 @@ call plug#end()
 
 set background=dark
 colorscheme gruvbox
-let g:CommandTCancelMap = ['<ESC>']
 let g:pandoc#syntax#conceal#use = 0
 
 set tabstop=2 softtabstop=0 expandtab shiftwidth=2 smarttab
