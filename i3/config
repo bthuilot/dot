@@ -190,7 +190,7 @@ bindsym $mod+r mode "resize"
 ######################
 
 # Load background
-exec_always feh --bg-scale $HOME/Github/dot/backgrounds/NewYorkAbove.jpg
+exec_always feh --bg-scale $HOME/Github/dot/backgrounds/arch-small.jpg
 
 # Load polybar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh 
