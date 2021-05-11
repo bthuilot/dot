@@ -5,7 +5,7 @@
 ###########################
 
 # Install command line tools from xcode
-#xcode-select --install
+xcode-select --install
 
 
 ########################
@@ -13,14 +13,12 @@
 ########################
 
 # Install Homebrew
-#if ! type "brew" > /dev/null; then
- # /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-#fi
+if ! type "brew" > /dev/null; then
+ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+fi
 
-# Add cask
-#brew tap caskroom/cask
 # Add fonts
-#brew tap caskroom/fonts
+brew tap homebrew/fonts
 
 ############################
 ### Install Applications ###
@@ -30,13 +28,13 @@
 PACKAGES="git gpg neofetch neovim rbenv pandoc npm zsh wget"
 
 # Graphical Applications
-APPLICATIONS="google-chrome the-unarchiver gpg-suite deluge discord nordvpn electrum slack  daisydisk signal"
+APPLICATIONS="brave-browser the-unarchiver gpg-suite deluge discord nordvpn electrum slack daisydisk signal iterm2"
 
 # Install packages using brew
-#brew install ${PACKAGES}
-#brew cask install ${APPLICATIONS}
+brew install ${PACKAGES}
+brew cask install ${APPLICATIONS}
 # Not working for some reason -> need to look into more
-#brew cask install itsycal
+brew cask install itsycal
 
 
 #################
@@ -44,22 +42,16 @@ APPLICATIONS="google-chrome the-unarchiver gpg-suite deluge discord nordvpn elec
 #################
 
 # Install Oh-my-zsh
-#export RUNZSH=no
-#sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+export RUNZSH=no
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 # Set up zshrc
-#rm $HOME/.zshrc
-#ln zsh/mac.zshrc $HOME/.zshrc
+rm $HOME/.zshrc
+ln zsh/mac.zshrc $HOME/.zshrc
 
 ## Zsh Theme
 # Install Oxide (from github.com/dikiaap/dotfiles)
-#wget -O $HOME/.oh-my-zsh/custom/themes/oxide.zsh-theme https://raw.githubusercontent.com/dikiaap/dotfiles/master/.oh-my-zsh/themes/oxide.zsh-theme 
-
-## Install ZSH Plugins
-# Auto Suggestions
-#git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-# Syntax highlighting
-#git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+wget -O $HOME/.oh-my-zsh/custom/themes/oxide.zsh-theme https://raw.githubusercontent.com/dikiaap/dotfiles/master/.oh-my-zsh/themes/oxide.zsh-theme 
 
 ####################
 ### Install ruby ###
@@ -67,10 +59,10 @@ APPLICATIONS="google-chrome the-unarchiver gpg-suite deluge discord nordvpn elec
 
 #eval "$(rbenv init -)"
 #
-#RUBY_VERSION='2.5.0'
-#rbenv install $RUBY_VERSION
-#rbenv global $RUBY_VERSION
-#rbenv shell $RUBY_VERSION
+RUBY_VERSION='2.7.0'
+rbenv install $RUBY_VERSION
+rbenv global $RUBY_VERSION
+rbenv shell $RUBY_VERSION
 
 
 ##################
@@ -78,14 +70,14 @@ APPLICATIONS="google-chrome the-unarchiver gpg-suite deluge discord nordvpn elec
 ##################
 
 # Move config file
-#mkdir -p $HOME/.config/nvim/
-#ln vim/init.vim $HOME/.config/nvim/
+mkdir -p $HOME/.config/nvim/
+ln vim/init.vim $HOME/.config/nvim/
 
 # Set up vim plug
-#curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 # Install neovim gem to use CommandT
-#gem install neovim
+gem install neovim
 
 
 # Set up SSH and GPG Keys
@@ -129,13 +121,13 @@ then
 fi
 
 # Set dark mode 
-#osascript -e 'tell application "System Events" to tell appearance preferences to set dark mode to true'
+osascript -e 'tell application "System Events" to tell appearance preferences to set dark mode to true'
 
 # Set highlight color
-#osascript -e 'tell application "System Events" to tell apearance preferences to set highlight color to purple' 
+osascript -e 'tell application "System Events" to tell apearance preferences to set highlight color to purple' 
 
 # Set up github folder
-#mkdir -p ~/GitHub
+mkdir -p ~/GitHub
 
 # Set iTerm2 profile
 ## TODO ##
