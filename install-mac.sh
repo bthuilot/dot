@@ -76,10 +76,6 @@ ln vim/init.vim $HOME/.config/nvim/
 # Set up vim plug
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
-# Install neovim gem to use CommandT
-gem install neovim
-
-
 # Set up SSH and GPG Keys
 # Set up git 
 read -p "Do you want to install files from USB [Y/n]" -n 1 -r
@@ -128,10 +124,6 @@ osascript -e 'tell application "System Events" to tell apearance preferences to 
 
 # Set up github folder
 mkdir -p ~/GitHub
-
-# Set iTerm2 profile
-## TODO ##
-
 
 # Set background
 #BACKGROUND_IMAGE=Stars_at_night.png

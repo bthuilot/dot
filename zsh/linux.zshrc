@@ -3,14 +3,14 @@
 # Exports & Variables # 
 #######################
 
-export PATH="$HOME/.rbenv/bin:$PATH"
 export ZSH="/home/bryce/.oh-my-zsh"
+export GOPATH="$HOME/.go;$HOME/Github"
 
 ##############
 # ZSH Config #
 ##############
 
-ZSH_THEME="nox"
+ZSH_THEME="oxide"
 plugins=(git)
 
 ###########
@@ -19,4 +19,8 @@ plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
-eval "$(rbenv init -)"
+#########
+# Alias #
+#########
+
+alias clipboard="xclip -selection c"

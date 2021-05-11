@@ -1,34 +1,51 @@
+""""""""""""""""""""""""""
+" (c) 2021 Bryce Thuilot "
+""""""""""""""""""""""""""
+
+""" Plugins
 call plug#begin('~/.local/share/nvim/plugged')
 
+" Styling
 Plug 'morhetz/gruvbox'
 Plug 'vim-airline/vim-airline-themes'
+
+" Utilies
 Plug 'vim-airline/vim-airline'
 Plug 'scrooloose/nerdtree'
-Plug 'pangloss/vim-javascript'
-Plug 'mxw/vim-jsx'
-Plug 'wincent/command-t', {
-    \   'do': 'cd ruby/command-t/ext/command-t && ruby extconf.rb && make'
-\ }
-Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
+Plug 'junegunn/fzf.vim'
+
+
+" Syntax & Langauge Support
 Plug 'vim-pandoc/vim-pandoc'
 Plug 'vim-pandoc/vim-pandoc-syntax'
-
+Plug 'rust-lang/rust.vim'
 
 call plug#end()
 
+""" Styling 
+
+" Airline
+let g:airline_theme='wombat'
+" Colorscheme
 set background=dark
 colorscheme gruvbox
-let g:CommandTCancelMap = ['<ESC>']
-let g:pandoc#syntax#conceal#use = 0
 
-set tabstop=2 softtabstop=0 expandtab shiftwidth=2 smarttab
+
+""" Variables
+
+" Set tabs to 2 spaces
+set tabstop=2 softtabstop=0 expandtab shiftwidth=2 smarttab smartindent
+" Show line number
 set number
-
-map <C-b> :NERDTreeToggle<CR> 
-map <C-g> :NERDTreeFind<CR>
-map <C-p> :CommandT .<CR>
-map <C-m> :!../makepdf.sh<CR>
+" Let NERDTree show hidden files
 let NERDTreeShowHidden=1 
 
-let g:airline_theme='wombat'
+
+""" Map keys
+
+map <C-t> :NERDTreeToggle<CR> 
+map <C-n> :NERDTreeFind<CR>
+map <C-f> :Files<CR>
+map <C-r> :Rg<CR>
+
 

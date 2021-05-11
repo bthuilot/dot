@@ -17,7 +17,7 @@ CONFIG_DIR=$HOME/.config
 #########
 # Build #
 #########
-cd $HOME/build
+cd $BUILD_DIR
 
 # Install Trizen
 if ! type "$trizen" > /dev/null; then
@@ -33,10 +33,10 @@ fi
 cd $HOME
 
 # List packages
-SYSTEM="zsh git wget vim neovim chromium snapd "
-WIRELESS="openssh networkmanager network-manager-applet stalonetray wireless_tools"
-DISPLAY="xorg-server xorg xorg-apps xorg-init plasma kde-applications plymouth ssdm sddm-kcm"
-FONTS="ttf-fira-code ttf-google-fonts-git ttf-font-awesome"
+SYSTEM="zsh git wget vim neovim snapd xrandr"
+WIRELESS="openssh networkmanager"
+DISPLAY="xorg-server xorg xorg-apps xorg-init plymouth ssdm"
+FONTS="ttf-fira-code"
 
 # Install all packages
 trizen -Syyu $SYSTEM $WIRELESS $DISPLAY $PACKAGES $SOUND $FUN $FONTS
@@ -53,48 +53,43 @@ sudo systemctl enable sddm-plymouth
 chsh -s /usr/bin/zsh
 
 ## Download OhMyZsh
-RUNZSH=no
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+RUNZSH="no" sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+## Download oxide theme
+wget https://raw.githubusercontent.com/dikiaap/dotfiles/master/.oh-my-zsh/themes/oxide.zsh-theme -o ~/.oh-my-zsh/custom/themes/oxide.zsh-theme
 
 rm $HOME/.zshrc
-ln zsh/linux.zsh $HOME/.zshrc
+ln $DOT_DIR/zsh/linux.zsh $HOME/.zshrc
 
-###############
-# ZSH Plugins #
-###############
+###########
+# Polybar #
+###########
 
-# Auto Suggestions
-git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-# Syntax highlighting
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-
+ln -s $DOT_DIR/polybar/ $CONFIG_DIR/polybar
 
 ########
-# Ruby #
+# Rofi #
 ########
 
-# Build rbenv
-git clone https://github.com/rbenv/rbenv.git ~/.rbenv
-cd ~/.rbenv && src/configure && make -C src
+mkdir -p $CONFIG_DIR/rofi
+rm $CONFIG_DIR/rofi/config.rasi
+ln $DOT_DIR/rofi/config.rasi $CONFIG_DIR/rofi/config.rasi
 
-# Init rbenv
-~/.rbenv/bin/rbenv init
-cd $HOME
+######
+# i3 #
+######
 
-# Install ruby-build as plugin
-mkdir -p "$(rbenv root)"/plugins
-git clone https://github.com/rbenv/ruby-build.git "$(rbenv root)"/plugins/ruby-build
+rm $CONFIG_DIR/i3/config
+ln $DOT_DIR/i3/config $CONFIG_DIR/i3/config
 
-eval "$(rbenv init -)"
 
-################
-# Install Ruby #
-################
+#############
+# alacritty #
+#############
 
-VERSION="2.6.3"
-rbenv install $VERSION
-rbenv global $VERSION
-rbenv shell $VERSION
+mkdir -p $CONFIG_DIR/alacritty
+rm $CONFIG_DIR/alacritty/alacritty.yml
+ln $DOT_DIR/alacritty/alacritty.yml $CONFIG_DIR/alacritty/alacritty.yml
 
 ##########
 # Neovim #
@@ -107,13 +102,9 @@ ln vim/init.vim $HOME/.config/nvim/
 # Set up vim plug
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
-# Install neovim gem to use CommandT
-gem install neovim
-
 ################
 # SSH/GPG Keys #
 ################
-
 
 read -p "Do you want to install files from USB [Y/n]" -n 1 -r
 echo    # move to a new line
