@@ -4,14 +4,6 @@
 ### Identity files ###
 ######################
 
-# Set up SSH and GPG Keys
-# Set up git 
-read -p "Import keys from \`BACKUP\` y/[n]?" choice
-case "$choice" in 
-  y|Y ) install_keys ;;
-  * ) echo "Skipping";;
-esac
-
 function install_keys {
   USBLOCATION=/Volumes/BACKUP/
 
@@ -41,6 +33,15 @@ function install_keys {
   git config --global commit.gpgsign true
   git config --global user.signingkey $(gpg --list-secret-keys --keyid-format LONG | grep sec |awk -F'/' '{print $2}' | awk -F' ' '{print $1}')
 }
+
+# Set up SSH and GPG Keys
+# Set up git 
+ read -r -p "Install keys from USB [Y/n]" response
+ response=${response,,} # tolower
+ if [[ $response =~ ^(yes|y| ) ]] || [[ -z $response ]]; then
+    install_keys
+ fi
+
 
 
 
