@@ -48,6 +48,6 @@ alias reload="source $HOME/.zshrc"
 alias edit_zsh="nvim $HOME/.zshrc"
 alias convertm4as='for foo in *.m4a; do ffmpeg -i "$foo" -acodec libmp3lame -aq 2 "${foo%.m4a}.mp3"; done'
 export GOPATH="$HOME/.go"
-export GOROOT=/usr/local/opt/go/libexec
+export GOROOT=/usr/local/go
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$GOROOT/bin

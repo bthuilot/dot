@@ -1,8 +1,69 @@
 #!/bin/bash
 
+######################
+### Identity files ###
+######################
+
+# Set up SSH and GPG Keys
+# Set up git 
+read -p "Import keys from \`BACKUP\` y/[n]?" choice
+case "$choice" in 
+  y|Y ) install_keys ;;
+  * ) echo "Skipping";;
+esac
+
+function install_keys {
+  USBLOCATION=/Volumes/BACKUP/
+
+  # SSH keys
+  ##########
+  cp -r $USBLOCATION/keys/ssh $HOME/.ssh
+  chmod 400 $HOME/.ssh/id_rsa
+
+  # Start the ssh-agent in the background
+  eval "$(ssh-agent -s)"
+  # Load ssh key automatically
+  echo "Host *
+    AddKeysToAgent yes
+    UseKeychain yes
+    IdentityFile ~/.ssh/id_rsa" >> ~/.ssh/config
+  # Add ssh key
+  ssh-add -K ~/.ssh/id_rsa
+
+  # GPG Keys
+  ###########
+  gpg --import $USBLOCATION/keys/gpg/public.asc
+  gpg --import $USBLOCATION/keys/gpg/secret.asc
+
+  # Set up git
+  git config --global user.name "Bryce Thuilot"
+  git config --global user.email bthuilot@gmail.com
+  git config --global commit.gpgsign true
+  git config --global user.signingkey $(gpg --list-secret-keys --keyid-format LONG | grep sec |awk -F'/' '{print $2}' | awk -F' ' '{print $1}')
+}
+
+
+
+######################
+### Create folders ###
+######################
+
+GITHUB_FOLDER=~/github
+BUILD_FOLDER=~/build
+mkdir -p $GITHUB_HOLDER
+mkdir -p $BUILD_FOLDER
+
+# Install dot
+DOT_REPO="git@github.com:bthuilot/dot.git"
+DOT_DIR=$GITHUB_FOLDER/dot
+git clone $DOT_REPO $DOT_DIR
+
+cd $DOT_DIR
+
 ###########################
 ### Install XCode tools ###
 ###########################
+
 
 # Install command line tools from xcode
 xcode-select --install
@@ -18,7 +79,8 @@ if ! type "brew" > /dev/null; then
 fi
 
 # Add fonts
-brew tap homebrew/fonts
+brew tap homebrew/cask-fonts
+brew install --cask font-fira-code
 
 ############################
 ### Install Applications ###
@@ -28,13 +90,13 @@ brew tap homebrew/fonts
 PACKAGES="git gpg neofetch neovim rbenv pandoc npm zsh wget"
 
 # Graphical Applications
-APPLICATIONS="brave-browser the-unarchiver gpg-suite deluge discord nordvpn electrum slack daisydisk signal iterm2"
+APPLICATIONS="firefox the-unarchiver gpg-suite deluge discord nordvpn slack daisydisk iterm2"
 
 # Install packages using brew
 brew install ${PACKAGES}
-brew cask install ${APPLICATIONS}
+brew install ${APPLICATIONS}
 # Not working for some reason -> need to look into more
-brew cask install itsycal
+brew install itsycal
 
 
 #################
@@ -57,8 +119,8 @@ wget -O $HOME/.oh-my-zsh/custom/themes/oxide.zsh-theme https://raw.githubusercon
 ### Install ruby ###
 ####################
 
-#eval "$(rbenv init -)"
-#
+eval "$(rbenv init -)"
+
 RUBY_VERSION='2.7.0'
 rbenv install $RUBY_VERSION
 rbenv global $RUBY_VERSION
@@ -75,55 +137,6 @@ ln vim/init.vim $HOME/.config/nvim/
 
 # Set up vim plug
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-
-# Set up SSH and GPG Keys
-# Set up git 
-read -p "Do you want to install files from USB [Y/n]" -n 1 -r
-echo    # move to a new line
-if [[ $REPLY =~ ^[Yy]$ ]]
-then
-  USBLOCATION=/Volumes/BACKUP/
-
-  # Move SSH Key
-  cp -r $USBLOCATION/keys/ssh $HOME/.ssh
-
-
-  chmod 400 $HOME/.ssh/id_rsa
-  # Start the ssh-agent in the background
-  eval "$(ssh-agent -s)"
-  # Load ssh key automatically
-  echo "Host *
-    AddKeysToAgent yes
-    UseKeychain yes
-    IdentityFile ~/.ssh/id_rsa" >> ~/.ssh/config
-  # Add ssh key
-  ssh-add -K ~/.ssh/id_rsa
-
-  # Import GPG
-  gpg --import $USBLOCATION/keys/gpg/public.asc
-  gpg --import $USBLOCATION/keys/gpg/secret.asc
-
-  # Set up git
-  read -p "Set up git as Bryce? [Y/n]" -n 1 -r
-  echo
-  if [[ $REPLY =~ ^[Yy]$ ]]; 
-  then
-    git config --global user.name "Bryce Thuilot"
-    git config --global user.email bthuilot@gmail.com
-    git config --global commit.gpgsign true
-    git config --global user.signingkey $(gpg --list-secret-keys --keyid-format LONG | grep sec |awk -F'/' '{print $2}' | awk -F' ' '{print $1}')
-  fi
-
-fi
-
-# Set dark mode 
-osascript -e 'tell application "System Events" to tell appearance preferences to set dark mode to true'
-
-# Set highlight color
-osascript -e 'tell application "System Events" to tell apearance preferences to set highlight color to purple' 
-
-# Set up github folder
-mkdir -p ~/GitHub
 
 # Set background
 #BACKGROUND_IMAGE=Stars_at_night.png
