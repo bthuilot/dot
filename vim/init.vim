@@ -39,6 +39,8 @@ set tabstop=2 softtabstop=0 expandtab shiftwidth=2 smarttab smartindent
 set number
 " Let NERDTree show hidden files
 let NERDTreeShowHidden=1 
+" Disable folding
+set nofoldenable
 
 
 """ Map keys
