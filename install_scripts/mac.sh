@@ -34,13 +34,6 @@ function install_keys {
   git config --global user.signingkey $(gpg --list-secret-keys --keyid-format LONG | grep sec |awk -F'/' '{print $2}' | awk -F' ' '{print $1}')
 }
 
-# Set up SSH and GPG Keys
-# Set up git 
- read -r -p "Install keys from USB [Y/n]" response
- response=${response,,} # tolower
- if [[ $response =~ ^(yes|y| ) ]] || [[ -z $response ]]; then
-    install_keys
- fi
 
 
 
@@ -79,9 +72,6 @@ if ! type "brew" > /dev/null; then
  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 fi
 
-# Add fonts
-brew tap homebrew/cask-fonts
-brew install --cask font-fira-code
 
 ############################
 ### Install Applications ###
@@ -91,13 +81,29 @@ brew install --cask font-fira-code
 PACKAGES="git gpg neofetch neovim rbenv pandoc npm zsh wget"
 
 # Graphical Applications
-APPLICATIONS="firefox the-unarchiver gpg-suite deluge discord nordvpn slack daisydisk iterm2"
+APPLICATIONS="firefox the-unarchiver gpg-suite deluge discord slack daisydisk iterm2"
 
 # Install packages using brew
 brew install ${PACKAGES}
 brew install ${APPLICATIONS}
 # Not working for some reason -> need to look into more
 brew install itsycal
+
+# Add fonts
+brew tap homebrew/cask-fonts
+brew install --cask font-fira-code
+
+#############
+# Key setup #
+#############
+
+# Set up SSH and GPG Keys
+# Set up git 
+ read -r -p "Install keys from USB [Y/n]" response
+ response=${response,,} # tolower
+ if [[ $response =~ ^(yes|y| ) ]] || [[ -z $response ]]; then
+    install_keys
+ fi
 
 
 #################
@@ -116,17 +122,6 @@ ln zsh/mac.zshrc $HOME/.zshrc
 # Install Oxide (from github.com/dikiaap/dotfiles)
 wget -O $HOME/.oh-my-zsh/custom/themes/oxide.zsh-theme https://raw.githubusercontent.com/dikiaap/dotfiles/master/.oh-my-zsh/themes/oxide.zsh-theme 
 
-####################
-### Install ruby ###
-####################
-
-eval "$(rbenv init -)"
-
-RUBY_VERSION='2.7.0'
-rbenv install $RUBY_VERSION
-rbenv global $RUBY_VERSION
-rbenv shell $RUBY_VERSION
-
 
 ##################
 ### Set up vim ###
@@ -140,6 +135,6 @@ ln vim/init.vim $HOME/.config/nvim/
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 # Set background
-#BACKGROUND_IMAGE=Stars_at_night.png
-#osascript -e 'tell application "System Events" to tell every desktop to set picture to "'$(pwd)'backgrounds/'${BACKGROUND_IMAGE}'"'
+BACKGROUND_IMAGE=NewYorkAbove.jpg
+osascript -e 'tell application "System Events" to tell every desktop to set picture to "'$DOT_DIR'/backgrounds/'${BACKGROUND_IMAGE}'"'
 

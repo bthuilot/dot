@@ -1,9 +1,7 @@
 # TODO
 
+- Screenshots
+
 ## Linux
-- Add Linux support
-
-## Mac
-- iTerm profiles
-
+- Add ability to commit plasma config/programmtically set up
 

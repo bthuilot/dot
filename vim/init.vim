@@ -13,16 +13,22 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-airline/vim-airline'
 Plug 'scrooloose/nerdtree'
 Plug 'junegunn/fzf.vim'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 
 " Syntax & Langauge Support
 Plug 'vim-pandoc/vim-pandoc'
 Plug 'vim-pandoc/vim-pandoc-syntax'
 Plug 'rust-lang/rust.vim'
+Plug 'hashivim/vim-terraform'
+Plug 'neovimhaskell/haskell-vim'
 
 call plug#end()
 
 """ Styling 
+
+syntax on
+filetype plugin indent on
 
 " Airline
 let g:airline_theme='wombat'
@@ -30,6 +36,12 @@ let g:airline_theme='wombat'
 set background=dark
 colorscheme gruvbox
 
+" COC 
+set updatetime=300
+
+" Use `[g` and `]g` to navigate diagnostics
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostic-next)
 
 """ Variables
 
