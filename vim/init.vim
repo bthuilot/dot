@@ -22,29 +22,25 @@ Plug 'vim-pandoc/vim-pandoc-syntax'
 Plug 'rust-lang/rust.vim'
 Plug 'hashivim/vim-terraform'
 Plug 'neovimhaskell/haskell-vim'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
 call plug#end()
 
 """ Styling 
-
-syntax on
-filetype plugin indent on
-
 " Airline
 let g:airline_theme='wombat'
 " Colorscheme
 set background=dark
 colorscheme gruvbox
+" Syntax
+syntax on
+filetype plugin indent on
 
-" COC 
-set updatetime=300
-
-" Use `[g` and `]g` to navigate diagnostics
-nmap <silent> [g <Plug>(coc-diagnostic-prev)
-nmap <silent> ]g <Plug>(coc-diagnostic-next)
 
 """ Variables
 
+" COC 
+set updatetime=300
 " Set tabs to 2 spaces
 set tabstop=2 softtabstop=0 expandtab shiftwidth=2 smarttab smartindent
 " Show line number
@@ -56,10 +52,11 @@ set nofoldenable
 
 
 """ Map keys
-
 map <C-t> :NERDTreeToggle<CR> 
 map <C-n> :NERDTreeFind<CR>
 map <C-f> :Files<CR>
 map <C-r> :Rg<CR>
 
-
+" Use `[g` and `]g` to navigate diagnostics
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostic-next)
