@@ -1,4 +1,4 @@
-;;; org_c.el --- emacs org related config file -*- lexical-binding: t; -*-
+;;; orgc.el --- emacs org related config file -*- lexical-binding: t; -*-
 
 ;; Copyright (C) Bryce Thuilot 2021
 
@@ -17,5 +17,5 @@
 (setq org-agenda-files (list "~/.org/agenda/"))
 
 
-(provide 'org_c)
-;;; org_c.el ends here
+(provide 'orgc)
+;;; orgc.el ends here

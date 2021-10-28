@@ -13,9 +13,8 @@
 
 ;;; Code:
 
-(require 'highlight-parentheses)
+;;(require 'highlight-parentheses)
 ;;(require 'all-the-icons)
-
 
 ;; Gruvbox
 (load-theme 'gruvbox t)
@@ -32,6 +31,11 @@
 ;; Disable toolbar
 (tool-bar-mode -1)
 
+;; Disable toolbar
+(menu-bar-mode -1)
+
+;; Show line numbers
+(global-display-line-numbers-mode)
 
 (provide 'styling)
 ;;; styling.el ends here

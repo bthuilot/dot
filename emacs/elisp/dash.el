@@ -1,4 +1,4 @@
-;;; dashboard_c.el --- emacs dashboard config file -*- lexical-binding: t; -*-
+;;; dash.el --- emacs dashboard config file -*- lexical-binding: t; -*-
 
 ;; Copyright (C) Bryce Thuilot 2021
 
@@ -13,19 +13,19 @@
 
 ;;; Code:
 
-(require 'dashboard)
+(setq epigrams '("TODO this"))
 
-(setq dashboard-footer-messages '("TODO: Fix this"))
+(setq dashboard-footer-messages epigrams)
 
 (setq dashboard-startup-banner 'logo)
 
 (setq dashboard-items '((recents  . 5)
-                        (projects . 5)
+                        ;; (projects . 5)
                         (agenda . 5)))
 
 
 ;; Dashboard
 (dashboard-setup-startup-hook)
 
-(provide 'dashboard_c)
-;;; dashboard_c.el ends here
+(provide 'dash)
+;;; dash.el ends here

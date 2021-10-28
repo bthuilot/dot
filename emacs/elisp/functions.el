@@ -22,4 +22,5 @@
      nil 'fullscreen
      (when (not (frame-parameter nil 'fullscreen)) 'fullboth)))
 
+
 ;;; functions.el ends here
