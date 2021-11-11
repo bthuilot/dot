@@ -23,6 +23,9 @@
 ;; Go
 (add-hook 'go-mode-hook #'lsp-deferred)
 
+;; spell check
+(add-hook 'markdown-mode-hook 'flyspell-mode)
+
 
 ;;;; Speed Adjustments ;;;;;
 
