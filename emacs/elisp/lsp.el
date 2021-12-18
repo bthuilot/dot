@@ -24,6 +24,7 @@
 (add-hook 'go-mode-hook #'lsp-deferred)
 
 ;; spell check
+(setq ispell-program-name "/usr/local/bin/aspell")
 (add-hook 'markdown-mode-hook 'flyspell-mode)
 
 

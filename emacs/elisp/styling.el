@@ -37,5 +37,8 @@
 ;; Show line numbers
 (global-display-line-numbers-mode)
 
+;; Disable bell sound
+(setq ring-bell-function 'ignore)
+
 (provide 'styling)
 ;;; styling.el ends here
