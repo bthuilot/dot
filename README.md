@@ -12,7 +12,7 @@ My install script for both Arch Linux and macOS
 Setup macOS via:
 
 ```shell
-$ curl -L mac.install.thuilot.io | bash
+$ curl -L mac.install.bryce.in | bash
 ```
 
 or clone this repository and run the script `scripts/install/mac.sh`
@@ -28,7 +28,7 @@ run the script `scripts/backup/mac.sh`
 
 Install ArchLinux via:
 ```shell
-$ curl -L arch.install.thuilot.io | bash
+$ curl -L arch.install.bryce.in | bash
 ```
 
 or clone this repository and run the script `scripts/install/arch.sh`
