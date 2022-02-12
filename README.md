@@ -1,16 +1,25 @@
 # Dot files
 
-My install script for both Arch Linux and MacOS
+My install script for both Arch Linux and macOS
 
 ## macOS
 
-*Last updated September 2021*
+*Last updated February 2022*
 
 
-Install macOS via:
+### Setup 
+
+Setup macOS via:
+
 ```shell
-$ ./install_scripts/mac.sh
+$ curl -L mac.install.thuilot.io | bash
 ```
+
+or clone this repository and run the script `scripts/install/mac.sh`
+
+### Backup
+
+run the script `scripts/backup/mac.sh`
 
 ## Linux
 
@@ -19,8 +28,10 @@ $ ./install_scripts/mac.sh
 
 Install ArchLinux via:
 ```shell
-$ ./install_scripts/arch.sh
+$ curl -L arch.install.thuilot.io | bash
 ```
+
+or clone this repository and run the script `scripts/install/arch.sh`
 
 ![Neofetch](screenshots/linux-1.png)
 
