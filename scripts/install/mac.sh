@@ -255,6 +255,11 @@ function setup_emacs {
 # Install command line tools from xcode
 xcode-select --install
 
+# Wait until XCode Command Line Tools installation has finished.
+until $(xcode-select --print-path &> /dev/null); do
+  sleep 2;
+done
+
 # Install `brew` packages
 install_packages
 
