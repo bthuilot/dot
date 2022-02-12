@@ -38,6 +38,7 @@ function check_for_usb {
 # Globals:
 #   USBLOCATION
 #   GPG_KEY_SET
+#   HOME
 # Arguments:
 #   None
 # Output:
@@ -46,10 +47,15 @@ function check_for_usb {
 #######################################
 function install_gpg_key {
     check_for_usb
-    echo "Installing GPG keys..."
-    echo "running gpg, please follow prompts to import keys"
-    gpg --import $USBLOCATION/keys/gpg/public.asc
-    gpg --import $USBLOCATION/keys/gpg/secret.asc
+    echo -n  "Installing GPG keys..."
+    # Setup GPG agent config
+    mkdir -p ~/.gnupg/
+    echo "pinentry-program /usr/local/bin/pinentry-mac" >> $HOME/.gnupg/gpg-agent.conf
+    gpg-connect-agent reloadagent /bye 1> /dev/null
+
+    # Import keys
+    gpg --import $USBLOCATION/keys/gpg/public.asc --no-tty
+    gpg --import $USBLOCATION/keys/gpg/secret.asc --no-tty
     echo -e "${GREEN}done${NO_COLOR}"
     GPG_KEY_SET=1
 }
@@ -82,11 +88,12 @@ function setup_backgrounds {
 # starts ssh-agent an enables the key
 # to be autoloaded by the agent
 # Globals:
-#   None
+#   HOME
 # Arguments:
 #   None
 #######################################
 function create_ssh_key {
+    echo -n "Setting up SSH config"
     # Generate SSH key
     ssh-keygen -t ed25519 -C "bryce@thuilot.io"
     
@@ -97,10 +104,11 @@ function create_ssh_key {
     echo "Host *
     AddKeysToAgent yes
     UseKeychain yes
-    IdentityFile ~/.ssh/id_ed25519" >> ~/.ssh/config
+    IdentityFile ~/.ssh/id_ed25519" >> $HOME/.ssh/config
 
     # Add SSH key to SSH agent
-    ssh-add -K ~/.ssh/id_rsa
+    ssh-add -K $HOME/.ssh/id_rsa
+    echo -e "${GREEN}done${NO_COLOR}"
 }
 
 #######################################
@@ -115,6 +123,7 @@ function create_ssh_key {
 #   None
 #######################################
 function setup_git {
+    echo -n "Setting up git config... "
     # Set up git
     git config --global user.name "Bryce Thuilot"
     git config --global user.email bryce@thuilot.io
@@ -123,7 +132,7 @@ function setup_git {
     if [[ -z "${GPG_KEY_SET}" ]]; then
 	git config --global user.signingkey $(gpg --list-secret-keys --keyid-format LONG | grep sec |awk -F'/' '{print $2}' | awk -F' ' '{print $1}')
     fi
-    
+    echo -e "${GREEN}done${NO_COLOR}"
 }
 
 #######################################
@@ -133,6 +142,7 @@ function setup_git {
 # directories into env variables for
 # use in this script
 # Globals:
+#   HOME
 #   GITHUB_FOLDER
 #   BUILD_FOLDER
 #   DOT_REPO_URL
@@ -141,8 +151,8 @@ function setup_git {
 #   None
 #######################################
 function create_fs_layout {
-    GITHUB_FOLDER=~/github
-    BUILD_FOLDER=~/build
+    GITHUB_FOLDER=$HOME/github
+    BUILD_FOLDER=$HOME/build
     mkdir -p $GITHUB_HOLDER
     mkdir -p $BUILD_FOLDER
 
@@ -160,7 +170,7 @@ function create_fs_layout {
 #   None
 #######################################
 function install_packages {
-    echo -n "Installing packages from homebrew... "
+    echo "Installing packages from homebrew... "
     
     # Install Homebrew
     if ! type "brew" > /dev/null; then
@@ -172,7 +182,7 @@ function install_packages {
     cli_apps="git gpg neofetch neovim rbenv pandoc npm zsh wget"
 
     # Graphical Applications
-    gui_apps="firefox the-unarchiver gpg-suite deluge discord slack daisydisk iterm2 emacs"
+    gui_apps="firefox the-unarchiver gpg-suite deluge discord slack daisydisk iterm2 emacs pinentry-mac"
 
     # Install packages using brew
     brew install ${cli_apps}
@@ -198,7 +208,7 @@ function install_packages {
 #   None
 #######################################
 function install_zsh {
-    echo -n "Installing ZSH... "
+    echo "Installing ZSH... "
     # Install Oh-my-zsh
     export RUNZSH=no
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
@@ -219,17 +229,20 @@ function install_zsh {
 # config directory
 # Globals:
 #   DOT_DIR
+#   HOME
 # Arugemnts:
 #   None
 #######################################
 function setup_emacs {
+    echo -n "Setting up emacs... "
     # Set up config directories
-    mkdir -p ~/.emacs.d/
-    rm ~/.emacs.d/init.el
+    mkdir -p $HOME/.emacs.d/
+    rm $HOME/.emacs.d/init.el
 
     # Link config files
     ln $DOT_DIR/emacs/init.el ~/.emacs.d/init.el
     ln -s $DOT_DIR/emacs/elisp ~/.emacs.d/elisp
+    echo -e "${GREEN}done${NOCOLOR}"
 }
 
 
