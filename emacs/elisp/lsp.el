@@ -23,16 +23,8 @@
 ;; Go
 (add-hook 'go-mode-hook #'lsp-deferred)
 
-;; Spell check
-(setq ispell-program-name "/usr/local/bin/aspell")
-(add-hook 'markdown-mode-hook 'flyspell-mode)
-
 ;; Shell
 (add-hook 'sh-mode-hook 'flymake-shellcheck-load)
-
-;; Pandoc
-;;(add-hook 'markdown-mode-hook 'pandoc-mode)
-;;(add-hook 'pandoc-mode-hook 'pandoc-load-default-settings)
 
 ;;;; Speed Adjustments ;;;;;
 
@@ -40,7 +32,6 @@
 (setq gc-cons-threshold 100000000)
 
 (setq read-process-output-max (* 1024 1024)) ;; 1mb
-
 
 ;; Company mode
 (setq company-idle-delay 0)

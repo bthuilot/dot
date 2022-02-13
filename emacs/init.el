@@ -20,14 +20,6 @@
 
 ;;;; PATH settings
 ;; Add custom paths to PATH
-(let ((ghcPath (expand-file-name "~/.ghcup/bin"))
-      (goPath (expand-file-name ""))
-      (aspell "/usr/local/bin/aspell")
-      )
-  (mapc (lambda (path)
-	  (setenv "PATH" (concat (getenv "PATH") (concat ":" path)))
-	  )
-	(list ghcPath goPath aspell)))
 
 ;; Add PATH to exec path
 (setq exec-path (split-string (getenv "PATH") ":"))
@@ -56,7 +48,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(exec-path-from-shell bison-mode racket-mode yaml-mode flycheck-yamllint markdown-preview-mode markdown-mode pandoc-mode highlight-parentheses company flycheck sml-mode lsp-ui lsp-mode lsp-haskell all-the-icons haskell-mode dashboard go-complete gruvbox-theme)))
+   '(exec-path-from-shell yaml-mode flycheck-yamllint company flycheck sml-mode lsp-ui lsp-mode lsp-haskell haskell-mode dashboard go-complete gruvbox-theme)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
