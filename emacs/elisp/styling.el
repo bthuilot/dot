@@ -27,5 +27,17 @@
 ;; Disable bell sound
 (setq ring-bell-function 'ignore)
 
+
+;; Dashboard
+(setq dashboard-startup-banner 'logo)
+(setq dashboard-set-navigator t)
+(setq dashboard-items '(
+                        (projects . 5)
+			(recents  . 10)
+			))
+;; Dashboard
+(dashboard-setup-startup-hook)
+
+
 (provide 'styling)
 ;;; styling.el ends here

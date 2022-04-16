@@ -14,13 +14,11 @@
 ;;; Code:
 
 
-;; fullscreen
+;; Control+Enter: Toggle fullscreen
 (global-set-key [C-return] 'toggle-fullscreen)
 
-;; Org mode
-(global-set-key (kbd "C-c l") #'org-store-link)
-(global-set-key (kbd "C-c a") #'org-agenda)
-(global-set-key (kbd "C-c c") #'org-capture)
+;; Control+C, P: Projectile commands
+(define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
 
 (provide 'keybinds)
 ;;; keybindings.el ends here

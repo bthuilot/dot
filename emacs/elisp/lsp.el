@@ -26,6 +26,15 @@
 ;; Shell
 (add-hook 'sh-mode-hook 'flymake-shellcheck-load)
 
+;; Rust
+(with-eval-after-load 'rust-mode
+  (add-hook 'flycheck-mode-hook #'flycheck-rust-setup))
+(add-hook 'rust-mode-hook
+          (lambda () (setq indent-tabs-mode nil)))
+(add-hook 'rust-mode-hook #'lsp-deferred)
+(setq rust-format-on-save t)
+(setq lsp-rust-server 'rust-analyzer)
+
 ;;;; Speed Adjustments ;;;;;
 
 ;; Adjust Garbage Collector

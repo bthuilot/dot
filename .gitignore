@@ -3,3 +3,7 @@
 Linux-Temp
 .idea
 backgrounds/
+
+emacs/*
+!emacs/init.el
+!emacs/elisp/*

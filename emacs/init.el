@@ -18,14 +18,12 @@
 ;; Emacs general settings ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-;;;; PATH settings
-;; Add custom paths to PATH
-
-;; Add PATH to exec path
-(setq exec-path (split-string (getenv "PATH") ":"))
-
 ;; Set directory for temp files
 (setq backup-directory-alist `(("." . "~/.emacs_saves")))
+
+;; Set $PATH from shell
+(when (memq window-system '(mac ns x))
+  (exec-path-from-shell-initialize))
 
 ;;;;;;;;;;;;;;
 ;; Packages ;;
@@ -33,11 +31,8 @@
 
 (require 'package)
 
-(setq gnutls-algorithm-priority "NORMAL:-VERS-TLS1.3")
-
 ;; Set up package archives
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
-(add-to-list 'package-archives '("elpa" . "https://elpa.gnu.org/packages/"))
 
 ;; Initialize package
 (package-initialize)
@@ -48,13 +43,16 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(exec-path-from-shell yaml-mode flycheck-yamllint company flycheck sml-mode lsp-ui lsp-mode lsp-haskell haskell-mode dashboard go-complete gruvbox-theme)))
+   '(projectile flycheck-rust exec-path-from-shell rust-mode company lsp-haskell haskell-mode flycheck lsp-mode dashboard gruvbox-theme)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+
+;; Initialize Packages
+(projectile-mode +1)
 
 ;;;;;;;;;;;;;;;;;;;;
 ;; Add load paths ;;
@@ -71,9 +69,6 @@
 ;;;;;;;;;;;;;;;;;;;;
 ;; Modes/packages ;;
 ;;;;;;;;;;;;;;;;;;;;
-
-;; Dashboard related config
-(load "dash")
 
 
 ;; LSP relate config
