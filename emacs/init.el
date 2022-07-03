@@ -43,7 +43,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(projectile flycheck-rust exec-path-from-shell rust-mode company lsp-haskell haskell-mode flycheck lsp-mode dashboard gruvbox-theme)))
+   '(magit merlin tuareg go-mode dockerfile-mode flycheck-yamllint projectile flycheck-rust exec-path-from-shell rust-mode company lsp-haskell haskell-mode flycheck lsp-mode dashboard gruvbox-theme)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -59,6 +59,10 @@
 ;;;;;;;;;;;;;;;;;;;;
 
 (add-to-list 'load-path "~/.emacs.d/elisp/")
+
+;; ## added by OPAM user-setup for emacs / base ## 56ab50dc8996d2bb95e7856a6eddb17b ## you can edit, but keep this line
+(require 'opam-user-setup "~/.emacs.d/opam-user-setup.el")
+;; ## end of OPAM user-setup addition for emacs / base ## keep this line
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Function definitions ;;

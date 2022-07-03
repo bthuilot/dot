@@ -35,6 +35,10 @@
 (setq rust-format-on-save t)
 (setq lsp-rust-server 'rust-analyzer)
 
+;; OCaml
+(add-hook 'tuareg-mode-hook #'merlin-mode)
+(add-hook 'caml-mode-hook #'merlin-mode)
+
 ;;;; Speed Adjustments ;;;;;
 
 ;; Adjust Garbage Collector

@@ -35,6 +35,10 @@ export PATH="/usr/local/sbin:$PATH"
 # Sources #
 ###########
 
+# Source Opam
+[[ ! -r /Users/bryce/.opam/opam-init/init.zsh ]] || source /Users/bryce/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
+
+# Source Oh My ZSH
 source $ZSH/oh-my-zsh.sh
 
 #########

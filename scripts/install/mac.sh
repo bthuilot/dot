@@ -54,8 +54,8 @@ function install_gpg_key {
     gpg-connect-agent reloadagent /bye 1> /dev/null
 
     # Import keys
-    gpg --import $USBLOCATION/keys/gpg/public.asc --no-tty
-    gpg --import $USBLOCATION/keys/gpg/secret.asc --no-tty
+    gpg --no_tty --import $USBLOCATION/keys/gpg/public.asc
+    gpg --no_tty --import $USBLOCATION/keys/gpg/secret.asc
     echo -e "${GREEN}done${NO_COLOR}"
     GPG_KEY_SET=1
 }
@@ -93,21 +93,22 @@ function setup_backgrounds {
 #   None
 #######################################
 function create_ssh_key {
-    echo -n "Setting up SSH config"
+    echo "Setting up SSH config..."
     # Generate SSH key
-    ssh-keygen -t ed25519 -C "bryce@thuilot.io"
+    ssh-keygen -t ed25519 -C "bryce@thuilot.io" -N "" -f ~/.ssh/id_ed25519 1> /dev/null
     
     # Start the ssh-agent in the background
-    eval "$(ssh-agent -s)"
+    eval "$(ssh-agent -s)" 1> /dev/null
 
     # Load ssh key automatically
-    echo "Host *
-    AddKeysToAgent yes
-    UseKeychain yes
-    IdentityFile ~/.ssh/id_ed25519" >> $HOME/.ssh/config
+    echo "Host *\n AddKeysToAgent yes\nUseKeychain yes\nIdentityFile ~/.ssh/id_ed25519" > $HOME/.ssh/config
 
     # Add SSH key to SSH agent
-    ssh-add -K $HOME/.ssh/id_rsa
+    ssh-add -K $HOME/.ssh/id_ed25519 1> /dev/null
+    
+    cat $HOME/.ssh/id_ed25519 | pbcopy
+    echo "Public key copied to keyboard, please add to GitHub before continuing"
+    read # Read to wait till enter is pressed
     echo -e "${GREEN}done${NO_COLOR}"
 }
 
@@ -130,7 +131,7 @@ function setup_git {
     git config --global commit.gpgsign true
     
     if [[ -z "${GPG_KEY_SET}" ]]; then
-	git config --global user.signingkey $(gpg --list-secret-keys --keyid-format LONG | grep sec |awk -F'/' '{print $2}' | awk -F' ' '{print $1}')
+	git config --global user.signingkey $(gpg --list-secret-keys --keyid-format LONG | grep sec |awk -F'/' '{print $2}' | awk -F' ' '{print $1}') 
     fi
     echo -e "${GREEN}done${NO_COLOR}"
 }
@@ -159,7 +160,7 @@ function create_fs_layout {
     # Install dot
     DOT_REPO_URL="git@github.com:bthuilot/dot.git"
     DOT_DIR=$GITHUB_FOLDER/dot
-    git clone $DOT_REPO_URL $DOT_DIR
+    git clone $DOT_REPO_URL $DOT_DIR &> /dev/null
 }
 
 
@@ -186,7 +187,7 @@ function install_packages {
 
     # Install packages using brew
     brew install ${cli_apps}
-    brew install ${gui_apps}
+    brew install --cask ${gui_apps}
     # Not working for some reason -> need to look into more
     brew install itsycal
 
@@ -236,13 +237,42 @@ function install_zsh {
 function setup_emacs {
     echo -n "Setting up emacs... "
     # Set up config directories
-    mkdir -p $HOME/.emacs.d/
-    rm $HOME/.emacs.d/init.el
+    rm -r $HOME/.emacs.d/
 
     # Link config files
-    ln $DOT_DIR/emacs/init.el ~/.emacs.d/init.el
-    ln -s $DOT_DIR/emacs/elisp ~/.emacs.d/elisp
+    ln -s $DOT_DIR/emacs  $HOME/.emacs.d/
     echo -e "${GREEN}done${NOCOLOR}"
+}
+
+
+######################################
+# Disable natural scroll direction
+# Globals:
+#   None
+# Arguments:
+#   None
+######################################
+function disable_natural_scroll {
+    osascript <<'END'
+try
+	tell application "System Preferences"
+		activate
+		set current pane to pane "com.apple.preference.trackpad"
+	end tell
+	delay 2
+	tell application "System Events"
+		tell process "System Preferences"
+			click radio button "Scroll & Zoom" of tab group 1 of window "Trackpad"
+			set scrollDirection to checkbox 1 of tab group 1 of window "Trackpad"
+			tell scrollDirection
+				if (its value as boolean) then click scrollDirection
+			end tell
+			tell application "System Preferences" to quit
+		end tell
+	end tell
+end try
+END
+
 }
 
 
@@ -257,7 +287,7 @@ xcode-select --install
 
 # Wait until XCode Command Line Tools installation has finished.
 until $(xcode-select --print-path &> /dev/null); do
-  sleep 2;
+  sleep 5;
 done
 
 # Install `brew` packages
@@ -268,15 +298,14 @@ install_packages
 # --------- #
 
 # Install GPG key
-read -r -p "Install GPG key from USB [Y/n]" response
-response=${response,,} # tolower
-if [[ $response =~ ^(yes|y| ) ]] || [[ -z $response ]]; then
-   install_gpg_key
-fi
+read -p "Install GPG key from USB? [Y/n]" yn
+case $yn in 
+    [Nn]* ) echo "Skipping";;
+    * ) install_gpg_key;;
+esac
 
 # Create SSH Key
 create_ssh_key
-
 
 # Personalization #
 # --------------- #
@@ -292,6 +321,15 @@ install_zsh
 
 # Setup Emacs
 setup_emacs
+
+# Set scroll directory
+disable_natural_scroll
+
+# Set downloads folder
+# TODO
+
+# Set dock
+# TODO
 
 # Set background
 BACKGROUND_IMAGE=NewYorkAbove.jpg
