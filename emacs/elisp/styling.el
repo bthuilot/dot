@@ -13,7 +13,8 @@
 ;;; Code:
 
 ;; Gruvbox
-(load-theme 'gruvbox t)
+;; (load-theme 'gruvbox t)
+(color-theme-sanityinc-tomorrow-night)
 
 ;; Disable toolbar
 (tool-bar-mode -1)
@@ -35,9 +36,11 @@
                         (projects . 5)
 			(recents  . 10)
 			))
-;; Dashboard
 (dashboard-setup-startup-hook)
 
+;; all-the-icons
+(when (display-graphic-p)
+  (require 'all-the-icons))
 
 (provide 'styling)
 ;;; styling.el ends here

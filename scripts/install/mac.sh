@@ -240,7 +240,9 @@ function setup_emacs {
     rm -r $HOME/.emacs.d/
 
     # Link config files
-    ln -s $DOT_DIR/emacs  $HOME/.emacs.d/
+    pushd $HOME
+    ln -s $DOT_DIR/emacs  .emacs.d
+    popd
     echo -e "${GREEN}done${NOCOLOR}"
 }
 

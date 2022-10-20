@@ -23,4 +23,11 @@
      (when (not (frame-parameter nil 'fullscreen)) 'fullboth)))
 
 
+;; Go to previous buffer
+(defun goto-previous-buffer ()
+  "Switch to previous open buffer."
+  (interactive)
+  (switch-to-buffer (other-buffer (current-buffer) 1)))
+
+
 ;;; functions.el ends here

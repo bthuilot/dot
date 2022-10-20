@@ -1,9 +1,6 @@
 # Load plugins
 plugins=(
   git
-  osx
-  zsh-syntax-highlighting
-  zsh-autosuggestions
 )
 
 ## Themes
@@ -18,7 +15,8 @@ export TERM=rxvt-256color
 export ZSH=$HOME/.oh-my-zsh
 export SSH_KEY_PATH="$HOME/.ssh/rsa_id"
 export GOPATH="$HOME/go"
-export GOROOT="/usr/local/opt/go/libexec"
+export GOBIN="$GOPATH/bin"
+export GOROOT="$(brew --prefix golang)/libexec"
 export NVM_DIR="$HOME/.nvm"
   [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
   [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
