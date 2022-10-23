@@ -47,36 +47,15 @@
 ;; Add load paths ;;
 ;;;;;;;;;;;;;;;;;;;;
 
-(setq DOT_DIR "/Users/bryce/github/dot")
+(setq dot-dir "/Users/bryce/github/dot")
+(setq dot-os "macos")
 
-(add-to-list 'load-path (concat DOT_DIR "/common/emacs"))
+(add-to-list 'load-path (concat dot-dir "/common/elisp/"))
 
 (load "general")
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Function definitions ;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;
-
 (load "functions")
-
-;;;;;;;;;;;;;;;;;;;;
-;; Modes/packages ;;
-;;;;;;;;;;;;;;;;;;;;
-
-
-;; LSP relate config
 (load "lsp")
-
-;;;;;;;;;;;;;;;;;;;;
-;; Styling config ;;
-;;;;;;;;;;;;;;;;;;;;
-
 (load "styling")
-
-;;;;;;;;;;;;;;;;;;
-;; Key Bindings ;;
-;;;;;;;;;;;;;;;;;;
-
 (load "keybindings")
 
 ;; ## added by OPAM user-setup for emacs / base ## 56ab50dc8996d2bb95e7856a6eddb17b ## you can edit, but keep this line

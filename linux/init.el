@@ -24,6 +24,7 @@
 
 
 (setq dot-dir "/home/bryce/github/dot")
+(setq dot-os "linux")
 (add-to-list 'load-path (concat dot-dir "/common/elisp/"))
 
 (load "general")
