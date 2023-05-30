@@ -7,3 +7,8 @@ backgrounds/
 emacs/*
 !emacs/init.el
 !emacs/elisp/*
+
+
+# Added by cargo
+
+/target

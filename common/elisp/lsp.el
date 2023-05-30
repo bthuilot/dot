@@ -18,33 +18,44 @@
 ;; Treemacs
 (lsp-treemacs-sync-mode 1)
 
-;; Flycheck
+;; Flycheck ;;
+;;;;;;;;;;;;;;
 (add-hook 'after-init-hook #'global-flycheck-mode)
 
-;; Haskell
+;; Haskell ;;
+;;;;;;;;;;;;;
 (add-hook 'haskell-mode-hook #'lsp-deferred)
 (add-hook 'haskell-literate-mode-hook #'lsp-deferred)
 
-;; Go
+;; Go ;;
+;;;;;;;;
 (defun lsp-go-install-save-hooks ()
   (add-hook 'before-save-hook #'lsp-format-buffer t t)
   (add-hook 'before-save-hook #'lsp-organize-imports t t))
 (add-hook 'go-mode-hook #'lsp-go-install-save-hooks)
-
 (add-hook 'go-mode-hook #'lsp-deferred)
 
 
-;; Shell
+;; Shell ;;
+;;;;;;;;;;;
 (add-hook 'sh-mode-hook 'flymake-shellcheck-load)
 
-;; Rust
-(with-eval-after-load 'rust-mode
-  (add-hook 'flycheck-mode-hook #'flycheck-rust-setup))
-(add-hook 'rust-mode-hook
-          (lambda () (setq indent-tabs-mode nil)))
-(add-hook 'rust-mode-hook #'lsp-deferred)
+;; Rust ;;
+;;;;;;;;;;
+
+;; Vars
 (setq rust-format-on-save t)
 (setq lsp-rust-server 'rust-analyzer)
+
+;; Hooks
+(add-hook 'rust-mode-hook #'lsp-deferred)
+(add-hook 'rust-mode-hook
+          (lambda () (progn
+		       (setq indent-tabs-mode nil)
+		       (prettify-symbols-mode)
+		       )))
+(with-eval-after-load 'rust-mode
+    (add-hook 'flycheck-mode-hook #'flycheck-rust-setup))
 
 ;; OCaml
 (add-hook 'tuareg-mode-hook #'merlin-mode)
