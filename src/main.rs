@@ -1,5 +1,6 @@
 use clap::{Parser, Subcommand};
 
+use crate::install::install_dotfiles;
 use crate::preinstall::install_requirements;
 
 mod common;
@@ -44,10 +45,19 @@ fn main() {
     match &cli.command {
         Some(Commands::Install {}) => {
             println!("installing...");
+            match install_dotfiles() {
+                Ok(_) => {
+                    println!("complete!");
+                }
+                Err(s) => {
+                    println!("error: {}", s)
+                }
+            }
             println!("complete!");
         }
         Some(Commands::Backup {}) => {
             println!("backing up...");
+            println!("NOTE: this functionality is not complete yet");
             println!("complete!");
         }
         Some(Commands::PreInstall {}) => {

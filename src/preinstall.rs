@@ -1,4 +1,4 @@
-use crate::common::install_brew_packages;
+use crate::common::{execute_command, install_brew_packages};
 use std::io::ErrorKind;
 use std::process::Command;
 use std::result::Result;
@@ -43,7 +43,7 @@ fn install_xcode_select() -> Result<(), String> {
     // execute `xcode-select --install` which will spawn
     // a window to install the xcode tooling
     println!("running install window");
-    if let Err(_) = Command::new("xcode-select").arg("--install").status() {
+    if let Err(_) = execute_command("xcode-select", &["--install"]) {
         // If there was an error, exit
         return Err(String::from("unable to run xcode-select --install"));
     }
@@ -51,9 +51,9 @@ fn install_xcode_select() -> Result<(), String> {
     // TODO(add max timeout)
     // Now we continually check the path to see when it updates
     // command prints path -> xcode-select is installed
+    exists = false;
     while !exists {
-        let is_installed = Command::new("xcode-select").arg("-p").output();
-        exists = match is_installed {
+        exists = match Command::new("xcode-select").arg("-p").output() {
             Ok(output) => output.status.success(),
             Err(_) => return Err(String::from("xcode-select could not be executed")),
         };

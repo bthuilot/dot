@@ -18,6 +18,17 @@
 ;; Treemacs
 (lsp-treemacs-sync-mode 1)
 
+;; CoPilot ;;
+;;;;;;;;;;;;;
+(quelpa '(copilot :fetcher github
+                 :repo "zerolfx/copilot.el"
+                 :branch "main"
+                 :files ("dist" "*.el")))
+(require 'copilot)
+(add-hook 'prog-mode-hook 'copilot-mode)
+(define-key copilot-completion-map (kbd "<tab>") 'copilot-accept-completion)
+
+(add-to-list 'copilot-major-mode-alist '("go" . "rust"))
 ;; Flycheck ;;
 ;;;;;;;;;;;;;;
 (add-hook 'after-init-hook #'global-flycheck-mode)
@@ -50,10 +61,7 @@
 ;; Hooks
 (add-hook 'rust-mode-hook #'lsp-deferred)
 (add-hook 'rust-mode-hook
-          (lambda () (progn
-		       (setq indent-tabs-mode nil)
-		       (prettify-symbols-mode)
-		       )))
+          (lambda () (setq indent-tabs-mode nil)))
 (with-eval-after-load 'rust-mode
     (add-hook 'flycheck-mode-hook #'flycheck-rust-setup))
 

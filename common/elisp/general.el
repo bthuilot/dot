@@ -25,7 +25,6 @@
 (add-to-list 'default-frame-alist `(height . ,frame-height))
 (add-to-list 'default-frame-alist `(width . ,frame-width))
 
-
 ;;;;;;;;;;;;;;;;;;;;
 
 (provide 'general)

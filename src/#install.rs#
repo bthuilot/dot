@@ -12,6 +12,8 @@ pub fn install_dotfiles() -> Result<(), String> {
         return Err(format!("error setting up git: {}", e));
     }
 
+    
+
     // TODO(clone dot dir)
     // TODO(add pgp)
     // TODO(add SSH)
