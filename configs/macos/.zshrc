@@ -34,7 +34,7 @@ export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
 ###################
 
 # Source common
-for file in ${DOT_DIR}/common/zsh/*.zsh; do
+for file in ${DOT_DIR}/configs/common/zsh/*.zsh; do
     source "$file"
 done
 

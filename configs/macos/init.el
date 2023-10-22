@@ -65,7 +65,7 @@
 ;; macos bug
 (setq image-types (cons 'svg image-types))
 
-(add-to-list 'load-path (concat dot-dir "/common/elisp/"))
+(add-to-list 'load-path (concat dot-dir "/configs/common/elisp/"))
 
 (load "general")
 (load "functions")
