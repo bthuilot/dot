@@ -12,6 +12,10 @@
 
 ;;; Code:
 
+;;Font
+;; (set-frame-font "Berkeley Mono Trial 12" nil t)
+(set-frame-font "Fira Code 12" nil t)
+
 ;; Gruvbox
 ;; (load-theme 'gruvbox t)
 (color-theme-sanityinc-tomorrow-night)
@@ -24,6 +28,10 @@
 
 ;; Show line numbers
 (global-display-line-numbers-mode)
+
+;; Disable newline at end of file
+(setq require-final-newline nil)
+(setq mode-require-final-newline nil)
 
 ;; Disable bell sound
 (setq ring-bell-function 'ignore)

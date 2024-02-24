@@ -1,10 +1,14 @@
 # Load plugins
 plugins=(
-  git
+    git
+    macos
 )
 
-## Themes
+# ZSH Config #
 ZSH_THEME='oxide'
+export ZSH="$HOME/.oh-my-zsh"
+# Source Oh My ZSH
+source $ZSH/oh-my-zsh.sh
 
 
 ###########
@@ -12,7 +16,7 @@ ZSH_THEME='oxide'
 ###########
 
 export TERM=rxvt-256color
-export ZSH=$HOME/.oh-my-zsh
+export DOT_DIR="$HOME/github/dot"
 export SSH_KEY_PATH="$HOME/.ssh/rsa_id"
 export GOPATH="$HOME/go"
 export GOBIN="$GOPATH/bin"
@@ -31,17 +35,22 @@ export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
 # Sources & Evals #
 ###################
 
+# Source common
+for file in ${DOT_DIR}/configs/zsh/*.zsh; do
+    source "$file"
+done
+
 # Source Opam
 [[ ! -r /Users/bryce/.opam/opam-init/init.zsh ]] || source /Users/bryce/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
 
-# Source Oh My ZSH
-source $ZSH/oh-my-zsh.sh
 
 # Source GHCup
-[ -f "/Users/bryce/.ghcup/env" ] && source "/Users/bryce/.ghcup/env"
+[ -f "$HOME/.ghcup/env" ] && source "$HOME/.ghcup/env"
 
-# Load rbenv
+# rbenv
 eval "$(rbenv init -)"
+# pyenv
+eval "$(pyenv init -)"
 
 # Load NVM
 [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"
@@ -54,5 +63,11 @@ eval "$(rbenv init -)"
 alias ip='ifconfig | grep "inet " | awk "NR == 2" | cut -f2 -d" "'
 alias suroot='sudo -E -s'
 alias convertm4as='for foo in *.m4a; do ffmpeg -i "$foo" -acodec libmp3lame -aq 2 "${foo%.m4a}.mp3"; done'
-alias reload="source $HOME/.zshrc"
+alias monogdb="brew services start mongodb-community"
+alias monogdbstop="brew services stop mongodb-community"
 
+
+em() {
+    open -a Emacs "$1"
+}
+compdef _files em

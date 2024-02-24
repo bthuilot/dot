@@ -33,6 +33,14 @@
 (global-set-key (kbd "C-c a") #'org-agenda)
 (global-set-key (kbd "C-c c") #'org-capture)
 
+;;; OS specific
+
+(if (eq system-type 'darwin)
+    ;; macOS
+    (progn
+      (global-set-key (kbd "C-c T") #'iterm)
+      )
+  )
 
 ;; Mode Specific
 ;; ------------

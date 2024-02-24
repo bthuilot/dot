@@ -31,17 +31,25 @@
 
 ;; Visit init.el in a new buffer
 (defun initel ()
-  "Vist init.el in a new buffer"
+  "Vist init.el in a new buffer."
   (interactive)
   (find-file (string-join `(,dot-dir ,dot-os "init.el") "/")))
 
 
-(defun dotel ()
-  "Visit the common elisp in the dot directory"
+(defun dot ()
+  "Visit the common elisp in the dot directory."
   (interactive)
   (let ((commondir (string-join `(,dot-dir "common" "elisp/") "/")))
     (find-file (read-file-name "Enter file name: " commondir))
     ))
+
+(defun iterm()
+  "Open the current directory in iterm."
+  (interactive)
+  (shell-command (concat
+		  "open -a iTerm "
+		  (file-name-directory (buffer-file-name))))
+  )
 
 
 ;;; functions.el ends here

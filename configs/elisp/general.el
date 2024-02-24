@@ -25,6 +25,8 @@
 (add-to-list 'default-frame-alist `(height . ,frame-height))
 (add-to-list 'default-frame-alist `(width . ,frame-width))
 
+;; Don't open a new frame when opening a file with emacs
+(setq ns-pop-up-frames nil)
 
 ;;;;;;;;;;;;;;;;;;;;
 

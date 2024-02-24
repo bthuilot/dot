@@ -1,38 +1,35 @@
-# Dot files
+# dot
 
-My install script for both Arch Linux and macOS
+install scripts and dotfiles for macOS and Linux (Arch)
 
-## macOS
-
-*Last updated February 2022*
-
-
-### Setup 
-
-Setup macOS via:
+## Installation
 
 ```shell
-$ curl -L mac.install.bryce.in | bash
+# OS should be either 'macos' or 'linux'
+curl -L $OS.install.bryce.in | bash
+
+# follow the prompts to complete installation
 ```
 
-or clone this repository and run the script `scripts/install/mac.sh`
 
-### Backup
+## Repository Structure
 
-run the script `scripts/backup/mac.sh`
-
-## Linux
-
-*Last updated September 2021*
-
-
-Install ArchLinux via:
-```shell
-$ curl -L arch.install.bryce.in | bash
 ```
-
-or clone this repository and run the script `scripts/install/arch.sh`
-
-![Neofetch](screenshots/linux-1.png)
-
-![background](screenshots/linux-2.png)
+.
+├── configs
+│   ├── elisp
+│   │   └── *.el      # common elisp files
+│   ├── zsh
+│   │   └── *.zsh     # common zsh files
+│   ├── $OS.init.el   # init.el for $OS
+│   ├── $OS.zshrc     # zshrc for $OS
+│   └── *             # other config files
+└── scripts
+    ├── install
+    │   ├── linux.sh  # install script for linux
+    │   ├── macos.sh  # install script for macos
+    │   └── *.sh      # tool specific install script
+    └── pre-install
+        ├── mac.sh    # pre-install script for macos
+        └── linux.sh  # pre-install script for linux
+```

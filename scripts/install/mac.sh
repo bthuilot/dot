@@ -10,24 +10,9 @@ GREEN='\033[0;32m'
 YELLOW='\033[1;32m'
 NO_COLOR='\033[0m'
 
-#######################################
-# Ensures the backup USB is present
-# and sets it to an ENV variable. Exits
-# with code 1 if directory doesn't exist
-# Globals:
-#   USBLOCATION
-# Arguments:
-#   None
-# Output:
-#   Writes error message to STDERR
-#   if backup USB is not present
-#######################################
-function check_for_usb {
-    USBLOCATION=/Volumes/BACKUP/
-    if [ ! -d $USBLOCATION ]; then
-	>&2 echo -e "${RED}ERROR:${NO_COLOR} USB not found, exiting" && exit 1
-    fi
-}
+# Secret values
+OP_GPG_PRIVATE_KEY='op://dev/gpg-key/private-key'
+OP_GPG_PUBLIC_KEY='op://dev/gpg-key/public-key'
 
 #######################################
 # Installs public & secret keys from
@@ -46,7 +31,6 @@ function check_for_usb {
 #   output from `gpg` command
 #######################################
 function install_gpg_key {
-    check_for_usb
     echo -n  "Installing GPG keys..."
     # Setup GPG agent config
     mkdir -p ~/.gnupg/
@@ -54,33 +38,9 @@ function install_gpg_key {
     gpg-connect-agent reloadagent /bye 1> /dev/null
 
     # Import keys
-    gpg --no_tty --import $USBLOCATION/keys/gpg/public.asc
-    gpg --no_tty --import $USBLOCATION/keys/gpg/secret.asc
+    op read "$OP_GPG_PUBLIC_KEY" |  gpg --no_tty --import
+    op read "$OP_GPG_PRIVATE_KEY" |  gpg --no_tty --import-secret-key
     echo -e "${GREEN}done${NO_COLOR}"
-    GPG_KEY_SET=1
-}
-
-#######################################
-# Unzips backgrounds zip file from
-# backup USB to the dot repo directory.
-# Does nothing is background USB is
-# not present
-# Globals:
-#   USBLOCATION
-#   BACKGROUND_ZIP
-# Arguments:
-#   None
-# Output:
-#   Writes status messages to STDOUT.
-#######################################
-function setup_backgrounds {
-    echo -n "Unzipping background folder... "
-    BACKGROUND_ZIP=$USBLOCATION/backgrounds.zip
-    if [ ! -f $BACKGROUND_ZIP ]; then
-	echo -e "${RED}zip file not found, skipping${NO_COLOR}"
-    else
-	unzip $BACKGROUND_ZIP -d $DOT_DIR/backgrounds 1> /dev/null && echo -e "${GREEN}done${NO_COLOR}"
-    fi
 }
 
 #######################################
@@ -95,75 +55,20 @@ function setup_backgrounds {
 function create_ssh_key {
     echo "Setting up SSH config..."
     # Generate SSH key
-    ssh-keygen -t ed25519 -C "bryce@thuilot.io" -N "" -f ~/.ssh/id_ed25519 1> /dev/null
-    
+    PUB_KEY="$HOME/.ssh/id_ed25519.pub"
+    PRIV_KEY="$HOME/.ssh/id_ed25519"
+    ssh-keygen -t ed25519 -C "bryce@thuilot.io" -N "" -f "$PRIV_KEY" 1> /dev/null
+
     # Start the ssh-agent in the background
     eval "$(ssh-agent -s)" 1> /dev/null
 
     # Load ssh key automatically
-    echo "Host *\n AddKeysToAgent yes\nUseKeychain yes\nIdentityFile ~/.ssh/id_ed25519" > $HOME/.ssh/config
+    printf "Host *\n AddKeysToAgent yes\nUseKeychain yes\nIdentityFile %s\n" "$PRIV_KEY" > $HOME/.ssh/config
 
     # Add SSH key to SSH agent
-    ssh-add -K $HOME/.ssh/id_ed25519 1> /dev/null
-    
-    cat $HOME/.ssh/id_ed25519 | pbcopy
-    echo "Public key copied to keyboard, please add to GitHub before continuing"
-    read # Read to wait till enter is pressed
+    ssh-add -K "$PRIV_KEY" 1> /dev/null
     echo -e "${GREEN}done${NO_COLOR}"
 }
-
-#######################################
-# Sets up git config with name, email
-# gpgsign set to true, and which GPG key
-# to use if GPG_KEY_SET is set
-# Globals:
-#   GPG_KEY_SEY
-# Arugments:
-#   None
-# Output:
-#   None
-#######################################
-function setup_git {
-    echo -n "Setting up git config... "
-    # Set up git
-    git config --global user.name "Bryce Thuilot"
-    git config --global user.email bryce@thuilot.io
-    git config --global commit.gpgsign true
-    
-    if [[ -z "${GPG_KEY_SET}" ]]; then
-	git config --global user.signingkey $(gpg --list-secret-keys --keyid-format LONG | grep sec |awk -F'/' '{print $2}' | awk -F' ' '{print $1}') 
-    fi
-    echo -e "${GREEN}done${NO_COLOR}"
-}
-
-#######################################
-# Create filesystem layout. Creates
-# ~/github and ~/build directories
-# and clones the dot repo. sets the
-# directories into env variables for
-# use in this script
-# Globals:
-#   HOME
-#   GITHUB_FOLDER
-#   BUILD_FOLDER
-#   DOT_REPO_URL
-#   DOT_DIR
-# Arguments:
-#   None
-#######################################
-function create_fs_layout {
-    GITHUB_FOLDER=$HOME/github
-    BUILD_FOLDER=$HOME/build
-    mkdir -p $GITHUB_HOLDER
-    mkdir -p $BUILD_FOLDER
-
-    # Install dot
-    DOT_REPO_URL="git@github.com:bthuilot/dot.git"
-    DOT_DIR=$GITHUB_FOLDER/dot
-    git clone $DOT_REPO_URL $DOT_DIR &> /dev/null
-}
-
-
 
 #######################################
 # Installs packages via brew
@@ -175,75 +80,30 @@ function install_packages {
     
     # Install Homebrew
     if ! type "brew" > /dev/null; then
-	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+      echo "homebrew not found, skipping package installation"
+      return
     fi
 
 
     # Command line packages
-    cli_apps="git gpg neofetch neovim rbenv pandoc npm zsh wget"
+    cli_apps="git gpg neofetch pandoc npm zsh wget gh"
 
     # Graphical Applications
-    gui_apps="firefox the-unarchiver gpg-suite deluge discord slack daisydisk iterm2 emacs pinentry-mac"
+    gui_apps="firefox the-unarchiver gpg-suite deluge discord slack daisydisk iterm2 pinentry-mac"
 
     # Install packages using brew
+    # shellcheck disable=SC2086
     brew install ${cli_apps}
+    # shellcheck disable=SC2086
     brew install --cask ${gui_apps}
     # Not working for some reason -> need to look into more
-    brew install itsycal
+    # brew install itsycal
 
     # Add fonts
     brew tap homebrew/cask-fonts
     brew install --cask font-fira-code
 
     echo -e "${GREEN}done${NO_COLOR}"
-}
-
-#######################################
-# Installs ZSH and links ZSH config
-# file and sets theme
-# Globals:
-#   DOT_DIR
-#   HOME
-#   RUNZSH
-# Arguments:
-#   None
-#######################################
-function install_zsh {
-    echo "Installing ZSH... "
-    # Install Oh-my-zsh
-    export RUNZSH=no
-    sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-
-    # Set up zshrc
-    rm $HOME/.zshrc
-    ln $DOT_DIR/zsh/mac.zshrc $HOME/.zshrc
-
-    ## Zsh Theme
-    # Install Oxide (from github.com/dikiaap/dotfiles)
-    wget -O $HOME/.oh-my-zsh/custom/themes/oxide.zsh-theme https://raw.githubusercontent.com/dikiaap/dotfiles/master/.oh-my-zsh/themes/oxide.zsh-theme > /dev/null
-
-    echo -e "${GREEN}done${NO_COLOR}"
-}
-
-#######################################
-# Links emacs config files to emacs
-# config directory
-# Globals:
-#   DOT_DIR
-#   HOME
-# Arugemnts:
-#   None
-#######################################
-function setup_emacs {
-    echo -n "Setting up emacs... "
-    # Set up config directories
-    rm -r $HOME/.emacs.d/
-
-    # Link config files
-    pushd $HOME
-    ln -s $DOT_DIR/emacs  .emacs.d
-    popd
-    echo -e "${GREEN}done${NOCOLOR}"
 }
 
 
@@ -274,66 +134,56 @@ try
 	end tell
 end try
 END
+}
+
+prompt_for_cmd() {
+    read -p "${1} [Y/n]: " yn
+    case $yn in
+	[nN] ) echo "skipping";;
+	* ) ${2};;
+    esac
 
 }
 
 
+#######################################
+# Entry point of the install script
+# Globals:
+# Outputs:
+#   Writes status to STDOUT
+# Arguments:
+#   None
+#######################################
+main() {
+    prompt_for_cmd "install homebrew packages?" install_packages
+    prompt_for_cmd "setup GPG key?" install_gpg_key
+    prompt_for_cmd "generate new SSH key?" create_ssh_key
+    prompt_for_cmd "setup git?"  "$DOT_DIR/scripts/install/git.sh macos"
+    prompt_for_cmd "setup emacs?" "$DOT_DIR/scripts/install/emacs.sh macos"
+    prompt_for_cmd "setup ZSH?" "$DOT_DIR/scripts/install/zsh.sh macos"
+}
 
-####################
-### Entry Point  ###
-####################
 
+cat << 'EOF'
 
-# Install command line tools from xcode
-xcode-select --install
+###################################
+     _       _    __ _ _
+  __| | ___ | |_ / _(_) | ___  ___
+ / _` |/ _ \| __| |_| | |/ _ \/ __|
+| (_| | (_) | |_|  _| | |  __/\__ \
+ \__,_|\___/ \__|_| |_|_|\___||___/
 
-# Wait until XCode Command Line Tools installation has finished.
-until $(xcode-select --print-path &> /dev/null); do
-  sleep 5;
-done
+              -------
+              Install
+              -------
 
-# Install `brew` packages
-install_packages
+###################################
 
+https://github.com/bthuilot/dot
 
-# Key Setup #
-# --------- #
+press enter to continue...
+EOF
 
-# Install GPG key
-read -p "Install GPG key from USB? [Y/n]" yn
-case $yn in 
-    [Nn]* ) echo "Skipping";;
-    * ) install_gpg_key;;
-esac
-
-# Create SSH Key
-create_ssh_key
-
-# Personalization #
-# --------------- #
-
-# Setup up git with name, email 
-setup_git
-
-# Create file system layout
-create_fs_layout
-
-# Setup ZSH
-install_zsh
-
-# Setup Emacs
-setup_emacs
-
-# Set scroll directory
-disable_natural_scroll
-
-# Set downloads folder
-# TODO
-
-# Set dock
-# TODO
-
-# Set background
-BACKGROUND_IMAGE=NewYorkAbove.jpg
-osascript -e 'tell application "System Events" to tell every desktop to set picture to "'$DOT_DIR'/backgrounds/'${BACKGROUND_IMAGE}'"'
+read # wait for enter
+main
 
