@@ -121,12 +121,14 @@ read
 
 main
 
-echo "${GREEN}done{NO_COLOR}"
+echo "${GREEN}done${NO_COLOR}"
 
 cat <<EOF
 
 install complete, please the following after configuring
-1password and the SSH agent for github:
+1password and the SSH agent for github. Follow the steps at
+https://developer.1password.com/docs/ssh/get-started/
+then run:
 
 cd $HOME/github && git clone git@github.com:bthuilot/dot.git && cd dot && make install-mac
 
