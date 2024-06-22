@@ -1,15 +1,10 @@
+# -*- shell-script -*-
+
 # Load plugins
 plugins=(
     git
     macos
 )
-
-# ZSH Config #
-ZSH_THEME='oxide'
-export ZSH="$HOME/.oh-my-zsh"
-# Source Oh My ZSH
-source $ZSH/oh-my-zsh.sh
-
 
 ###########
 # Exports #
@@ -29,6 +24,14 @@ export PATH="/usr/local/opt/openssl/bin:$PATH"
 export PATH="$PATH:$GOPATH/bin:$GOROOT/bin"
 export PATH="/usr/local/sbin:$PATH"
 export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
+
+
+# ZSH Config #
+ZSH_THEME='oxide'
+
+export ZSH="$HOME/.oh-my-zsh"
+# Source Oh My ZSH
+source $ZSH/oh-my-zsh.sh
 
 
 ###################
@@ -66,8 +69,3 @@ alias convertm4as='for foo in *.m4a; do ffmpeg -i "$foo" -acodec libmp3lame -aq 
 alias monogdb="brew services start mongodb-community"
 alias monogdbstop="brew services stop mongodb-community"
 
-
-em() {
-    open -a Emacs "$1"
-}
-compdef _files em

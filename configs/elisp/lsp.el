@@ -25,6 +25,7 @@
                  :branch "main"
                  :files ("dist" "*.el")))
 (require 'copilot)
+
 (add-hook 'prog-mode-hook 'copilot-mode)
 (define-key copilot-completion-map (kbd "<tab>") 'copilot-accept-completion)
 

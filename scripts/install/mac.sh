@@ -89,7 +89,7 @@ function install_packages {
     cli_apps="git gpg neofetch pandoc npm zsh wget gh"
 
     # Graphical Applications
-    gui_apps="firefox the-unarchiver gpg-suite deluge discord slack daisydisk iterm2 pinentry-mac"
+    gui_apps="firefox 1password 1password-cli gpg-suite deluge discord slack daisydisk iterm2 pinentry-mac"
 
     # Install packages using brew
     # shellcheck disable=SC2086
@@ -123,7 +123,7 @@ try
 	end tell
 	delay 2
 	tell application "System Events"
-		tell process "System Preferences"
+		tell process "System Preferences"`
 			click radio button "Scroll & Zoom" of tab group 1 of window "Trackpad"
 			set scrollDirection to checkbox 1 of tab group 1 of window "Trackpad"
 			tell scrollDirection
