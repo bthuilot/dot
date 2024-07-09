@@ -3,6 +3,7 @@
 # macOS install guide for https://github.com/bthuilot/dot
 # (C) Bryce Thuilot 2022 <bryce@thuilot.io>
 # License: GPL v3
+set -e
 
 # Colors
 RED='\033[0;31m'
@@ -13,6 +14,11 @@ NO_COLOR='\033[0m'
 # Secret values
 OP_GPG_PRIVATE_KEY='op://dev/gpg-key/private-key'
 OP_GPG_PUBLIC_KEY='op://dev/gpg-key/public-key'
+
+# Dot directory
+DIR="$( dirname -- "${BASH_SOURCE[0]}"; )";
+DOT_DIR="$( realpath -- "$DIR/../.."; )";
+
 
 #######################################
 # Installs public & secret keys from
@@ -89,7 +95,7 @@ function install_packages {
     cli_apps="git gpg neofetch pandoc npm zsh wget gh"
 
     # Graphical Applications
-    gui_apps="firefox 1password 1password-cli gpg-suite deluge discord slack daisydisk iterm2 pinentry-mac"
+    gui_apps="firefox 1password 1password-cli gpg-suite slack iterm2 pinentry-mac"
 
     # Install packages using brew
     # shellcheck disable=SC2086

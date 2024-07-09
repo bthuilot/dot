@@ -1,0 +1,30 @@
+;;;;;;;;;;;;;;
+;; Packages ;;
+;;;;;;;;;;;;;;
+
+(require 'package)
+
+;; Set up package archives
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
+
+
+;; Configuration ofr Quelpa
+(when (eq system-type 'darwin)
+    (setq-default quelpa-build-tar-executable "/opt/homebrew/bin/gtar"))
+
+;; Initialize package
+(package-initialize)
+
+;;;;;;;;;;;;;;;;;;;;
+;; Add load paths ;;
+;;;;;;;;;;;;;;;;;;;;
+
+(setq dot-dir "{{.DOT_DIR}}")
+
+(add-to-list 'load-path (concat dot-dir "/configs/elisp/"))
+
+(load "general")
+(load "functions")
+(load "lsp")
+(load "styling")
+(load "keybindings")
