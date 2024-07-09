@@ -46,7 +46,9 @@
 ;; ------------
 
 ;; Control+C, P: Projectile commands
-(define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
+(when (package-installed-p 'projectile)
+    (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
+  )
 
 (provide 'keybinds)
 ;;; keybindings.el ends here

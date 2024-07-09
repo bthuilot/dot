@@ -93,6 +93,7 @@ main() {
     prompt_for_cmd "install homebrew?" install_homebrew
     prompt_for_cmd "install 1password?" install_homebrew_packages "homebrew/cask/1password" "homebrew/cask/1password-cli"
     prompt_for_cmd "install emacs?" install_homebrew_packages "homebrew/casks/emacs"
+    prompt_for_cmd "install golang?" install_homebrew_packages "go"
     echo -e "${GREEN}install complete${NO_COLOR}"
 }
 

@@ -12,13 +12,12 @@
 
 ;;; Code:
 
-;;Font
-;; (set-frame-font "Berkeley Mono Trial 12" nil t)
+;; Font
 (set-frame-font "Fira Code 12" nil t)
 
-;; Gruvbox
-;; (load-theme 'gruvbox t)
-(color-theme-sanityinc-tomorrow-night)
+;; Theme
+(when (package-installed-p 'color-theme-sanityinc-tomorrow)
+  (require 'color-theme-sanityinc-tomorrow))
 
 ;; Disable toolbar
 (tool-bar-mode -1)

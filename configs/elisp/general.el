@@ -14,12 +14,14 @@
 ;; Set directory for temp files
 (setq backup-directory-alist `(("." . "~/.emacs_saves")))
 
+;; macos bug
+(setq image-types (cons 'svg image-types))
+
 ;; Set $PATH from shell
 (when (memq window-system '(mac ns x))
   (exec-path-from-shell-initialize))
 
 ;; Set frame size
-
 (defvar frame-height 60)
 (defvar frame-width 160)
 (add-to-list 'default-frame-alist `(height . ,frame-height))
