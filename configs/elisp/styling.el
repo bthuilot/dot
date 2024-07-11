@@ -39,10 +39,17 @@
 ;; Dashboard
 (setq dashboard-startup-banner 'logo)
 (setq dashboard-set-navigator t)
+(setq dashboard-filter-agenda-entry 'dashboard-no-filter-agenda)
+(setq dashboard-match-agenda-entry
+      "TODO=\"TODO\"|TODO=\"IN-PROGRESS\"")
 (setq dashboard-items '(
-                        (projects . 5)
-			(recents  . 10)
+			(agenda    . 10)
+                        (projects . 10)
+			(recents  . 5)
 			))
+(setq dashboard-item-names '(
+                             ("Agenda for the coming week:" . "Tasks:")
+			     ))
 (dashboard-setup-startup-hook)
 
 ;; all-the-icons

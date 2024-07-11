@@ -30,6 +30,24 @@
 ;; Don't open a new frame when opening a file with emacs
 (setq ns-pop-up-frames nil)
 
+;; Set Org agenda location
+(setq org-task-file (concat org-dir "/tasks.org"))
+(setq org-note-file (concat org-dir "/notes.org"))
+(setq org-agenda-files `(,org-task-file))
+(setq org-default-notes-file org-note-file)
+(setq org-capture-templates
+      '(
+	("t" "🚩 TODO" entry (file+headline org-task-file "Uncategorized")
+         "** TODO %?\n")
+	("n" "📝 Note" entry (file+headline org-task-file "Uncategorized")
+         "** %?\n")
+	))
+
+;; SHUT UPP EMACS
+;;(setq ring-bell-function ignore)
+(setq visible-bell 1)
+
+
 ;;;;;;;;;;;;;;;;;;;;
 
 (provide 'general)
