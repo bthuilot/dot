@@ -33,15 +33,15 @@
 (defun initel ()
   "Vist init.el in a new buffer."
   (interactive)
-  (find-file (string-join `(,dot-dir ,dot-os "init.el") "/")))
+  (find-file "~/.emacs.d/init.el"))
 
-
-(defun dot ()
-  "Visit the common elisp in the dot directory."
+(defun emacs-config ()
+  "List all Emacs config files in dot-dir and open the selected."
   (interactive)
-  (let ((commondir (string-join `(,dot-dir "common" "elisp/") "/")))
-    (find-file (read-file-name "Enter file name: " commondir))
-    ))
+  (let* ((directory (concat dot-dir "/configs/elisp/"))
+         (files (delete "." (delete ".." (directory-files directory))))
+         (file (completing-read "Select a file: " files)))
+    (find-file (expand-file-name file directory))))
 
 (defun iterm()
   "Open the current directory in iterm."
@@ -51,5 +51,23 @@
 		  (file-name-directory (buffer-file-name))))
   )
 
+(defun tasks()
+  "Open Org tasks file."
+  (interactive)
+  (find-file org-task-file))
+
+
+(defun notes()
+  "Open Org tasks file."
+  (interactive)
+  (find-file org-note-file))
+
+(defun workpad()
+  "Open both tasks and notes horizontally."
+  (interactive)
+  (progn
+    (tasks)
+    (split-window-right)
+    (notes)))
 
 ;;; functions.el ends here

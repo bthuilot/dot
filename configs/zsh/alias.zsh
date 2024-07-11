@@ -3,6 +3,9 @@
 # reloads the current zshrc config
 alias reload="source $HOME/.zshrc"
 
+# Go to root of git repo
+alias gitroot='cd $(git rev-parse --show-toplevel)'
+
 # easy way to add and commit all changes
 alias gc="git commit --signoff -m"
 alias ga="git add"

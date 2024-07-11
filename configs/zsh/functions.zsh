@@ -24,5 +24,5 @@ compdef _files temacs
 # Opens the current git repository in the browser
 github() {
     URL="$(git config --get remote.origin.url)" ||  { echo "No remote URL found"; return 1;}
-    open "${URL%.git}"
+    open "$(echo "${URL%.git}" | sed 's|:|/|;s|^git@|https://|')"
 }
