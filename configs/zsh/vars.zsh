@@ -8,7 +8,7 @@ if [ -z "$DOT_DIR" ]; then
   export DOT_DIR="$HOME/github/dot"
 fi
 
-
+export LESS="-F $LESS"
 export EDITOR='tem'
 export SSH_KEY_PATH="$HOME/.ssh/id_ed25519"
 export GOPATH="$HOME/go"

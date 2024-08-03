@@ -21,7 +21,7 @@ if [ ! -f "$HOME/.emacs.d/init.el" ]; then
     cat <<EOF > "$HOME/.emacs.d/init.el"
     ;;; init.el --- emacs config file -*- lexical-binding: t; -*-
 
-    ;; Copyright (C) Bryce Thuilot 2024
+    ;; Copyright (C) Bryce Thuilot $(date '+%Y')
 
 
     ;; Author: Bryce Thuilot <bryce@thuilot.io>

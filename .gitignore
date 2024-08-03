@@ -3,10 +3,8 @@
 Linux-Temp
 .idea
 backgrounds/
+configs/**/*.ignored.*
 
-emacs/*
-!emacs/init.el
-!emacs/elisp/*
 
 # Created by https://www.toptal.com/developers/gitignore/api/emacs,macos,intellij+all
 # Edit at https://www.toptal.com/developers/gitignore?templates=emacs,macos,intellij+all

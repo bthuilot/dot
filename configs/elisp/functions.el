@@ -54,20 +54,12 @@
 (defun tasks()
   "Open Org tasks file."
   (interactive)
-  (find-file org-task-file))
+  (find-file org-notes-file))
 
 
 (defun notes()
   "Open Org tasks file."
   (interactive)
-  (find-file org-note-file))
-
-(defun workpad()
-  "Open both tasks and notes horizontally."
-  (interactive)
-  (progn
-    (tasks)
-    (split-window-right)
-    (notes)))
+  (find-file org-notes-file))
 
 ;;; functions.el ends here

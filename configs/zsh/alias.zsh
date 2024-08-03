@@ -8,6 +8,7 @@ alias gitroot='cd $(git rev-parse --show-toplevel)'
 
 # easy way to add and commit all changes
 alias gc="git commit --signoff -m"
+alias gm="git merge --no-edit"
 alias ga="git add"
 
 alias tffmt="terraform fmt -recursive"

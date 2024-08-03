@@ -26,3 +26,9 @@ github() {
     URL="$(git config --get remote.origin.url)" ||  { echo "No remote URL found"; return 1;}
     open "$(echo "${URL%.git}" | sed 's|:|/|;s|^git@|https://|')"
 }
+
+ntfy() {
+    msg="${1:-Complete}"
+    title="${2:-Terminal}"
+    osascript -e "display notification \"${msg}\" with title \"$title\""
+}

@@ -13,11 +13,12 @@
 ;;; Code:
 
 ;; Font
-(set-frame-font "Fira Code 12" nil t)
+(set-frame-font "Fira Code 14" nil t)
 
 ;; Theme
-(when (package-installed-p 'color-theme-sanityinc-tomorrow)
-  (require 'color-theme-sanityinc-tomorrow))
+(when (package-installed-p 'badger-theme)
+  (load-theme 'badger t))
+
 
 ;; Disable toolbar
 (tool-bar-mode -1)
@@ -41,7 +42,7 @@
 (setq dashboard-set-navigator t)
 (setq dashboard-filter-agenda-entry 'dashboard-no-filter-agenda)
 (setq dashboard-match-agenda-entry
-      "TODO=\"TODO\"|TODO=\"IN-PROGRESS\"")
+      "TODO=\"TODO\"|TODO=\"IN-PROGRESS\"|TODO=\"WAITING\"")
 (setq dashboard-items '(
 			(agenda    . 10)
                         (projects . 10)
