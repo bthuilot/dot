@@ -21,10 +21,37 @@ tem() {
 # Add completion for tem
 compdef _files temacs
 
-# Opens the current git repository in the browser
-github() {
+_git_https_link() {
     URL="$(git config --get remote.origin.url)" ||  { echo "No remote URL found"; return 1;}
-    open "$(echo "${URL%.git}" | sed 's|:|/|;s|^git@|https://|')"
+    echo "$(echo "${URL%.git}" | sed 's|:|/|;s|^git@|https://|')"
+}
+
+# Opens the current git repository in the browser
+grepo() {
+    HTTPS_URL="$(_git_https_link)"
+    open "${HTTPS_URL}"
+}
+
+# Opens the current git commit in the browser
+# Only works for GitHub repos
+ghcommit() {
+    HTTPS_URL="$(_git_https_link)"
+    open "${HTTPS_URL}/commit/$(git rev-parse HEAD)"
+}
+
+# Opens the current git branch in the browser
+# Only works for GitHub repos
+ghbranch() {
+    HTTPS_URL="$(_git_https_link)"
+    open "${HTTPS_URL}/tree/$(git branch --show-current)"
+}
+
+ghpulls() {
+    if [ -z "$GITHUB_USER"]; then
+	echo "no github user set"
+    fi
+    HTTPS_URL="$(_github_https_link)"
+    open "${HTTPS_URL}/pulls/${GITHUB_USER}"
 }
 
 ntfy() {
