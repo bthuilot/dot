@@ -10,6 +10,8 @@ alias gitroot='cd $(git rev-parse --show-toplevel)'
 alias gc="git commit --signoff -m"
 alias gm="git merge --no-edit"
 alias ga="git add"
+alias gf="git fetch origin"
+alias gituntracked="git ls-files --exclude-standard -o"
 
 alias tffmt="terraform fmt -recursive"
 
