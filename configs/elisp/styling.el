@@ -13,7 +13,7 @@
 ;;; Code:
 
 ;; Font
-(set-frame-font "Fira Code 14" nil t)
+(set-frame-font "Fira Code Retina 14" nil t)
 
 ;; Theme
 (when (package-installed-p 'badger-theme)

@@ -2,9 +2,9 @@
 
 ;; Copyright (C) 2021 Bryce Thuilot
 
-;; Author: Your Name <yourname@example.com>
-;; Maintainer: Someone Else <someone@example.com>
-;; Created: 14 Jul 2010
+;; Author: Bryce Thuilot <bryce@thuilot.io>
+;; Maintainer:  Bryce Thuilot <bryce@thuilot.io>
+;; Created: Oct 24, 2021
 
 ;; URL: https://github.com/bthuilot/dot
 
@@ -32,6 +32,12 @@
 ;;; Org Mode
 (global-set-key (kbd "C-c a") #'org-agenda)
 (global-set-key (kbd "C-c c") #'org-capture)
+
+;; Ctrl+C j: join lines
+(global-set-key (kbd "C-c j") #'join-line)
+
+;; git link
+(global-set-key (kbd "C-c g l") 'git-link)
 
 ;;; OS specific
 

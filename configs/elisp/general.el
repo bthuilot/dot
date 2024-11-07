@@ -1,9 +1,9 @@
 ;;; general.el --- emacs general config file -*- lexical-binding: t; -*-
 
-;; Copyright (C) Bryce Thuilot 2022
+;; Copyright (C) 2022 Bryce Thuilot
 
 ;; Author: Bryce Thuilot <bryce@thuilot.io>
-;; Created: 20 Oct 2022
+;; Created: Oct, 20 2022
 
 ;; URL: https://github.com/bthuilot/dot
 
@@ -12,7 +12,10 @@
 
 ;;; Code:
 ;; Set directory for temp files
-(setq backup-directory-alist `(("." . "~/.emacs_saves")))
+(setq backup-directory-alist
+      `((".*" . ,temporary-file-directory)))
+(setq auto-save-file-name-transforms
+      `((".*" ,temporary-file-directory t)))
 
 ;; macos bug
 (setq image-types (cons 'svg image-types))
@@ -24,6 +27,7 @@
 ;; Set frame size
 (defvar frame-height 60)
 (defvar frame-width 160)
+(setq git-link-open-in-browser 't)
 (add-to-list 'default-frame-alist `(height . ,frame-height))
 (add-to-list 'default-frame-alist `(width . ,frame-width))
 
@@ -39,4 +43,5 @@
 ;;;;;;;;;;;;;;;;;;;;
 
 (provide 'general)
-;;; styling.el ends here
+
+;;; general.el ends here
