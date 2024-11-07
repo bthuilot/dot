@@ -21,4 +21,4 @@
 # rbenv
 command -v rbenv > /dev/null && eval "$(rbenv init -)"
 # pyenv
-command -v rbenv > /dev/null && eval "$(pyenv init -)"
+command -v pyenv > /dev/null && eval "$(pyenv init -)"

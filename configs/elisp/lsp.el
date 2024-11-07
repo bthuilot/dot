@@ -38,6 +38,12 @@
 )
 
 
+;; yasnippet ;;
+;;;;;;;;;;;;;;;;
+(when (package-installed-p 'yasnippet)
+  (require 'yasnippet)
+  (yas-global-mode 1))
+
 ;; Flycheck ;;
 ;;;;;;;;;;;;;;
 (add-hook 'after-init-hook #'global-flycheck-mode)
@@ -46,6 +52,12 @@
 ;;;;;;;;;;;;;
 (add-hook 'haskell-mode-hook #'lsp-deferred)
 (add-hook 'haskell-literate-mode-hook #'lsp-deferred)
+
+
+;; JavaScript ;;
+;;;;;;;;;;;;;;;;
+(add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
+(add-hook 'js2-mode-hook (lambda () (setq js2-basic-offset 2)))
 
 ;; Go ;;
 ;;;;;;;;
