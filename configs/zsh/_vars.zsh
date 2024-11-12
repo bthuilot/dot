@@ -4,8 +4,6 @@
 # Env Vars #
 ############
 
-echo "loaded vars"
-
 if [ -z "$DOT_DIR" ]; then
   export DOT_DIR="$HOME/github/dot"
 fi
