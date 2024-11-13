@@ -3,8 +3,6 @@
 # Bryce Thuilot <bryce@thuilot.io>
 # Copyright (C) 2024, GPL-3.0 License
 
-echo "loaded shortcuts"
-
 
 # reloads the current zshrc config
 alias reload="source $HOME/.zshrc"
