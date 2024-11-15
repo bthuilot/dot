@@ -13,13 +13,28 @@
 
 ;;; Code:
 
+;; LSP/Language wide settings ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; enable projectile
 (when (package-installed-p 'projectile)
-    (projectile-mode +1)
-)
+  (projectile-mode +1)
+  )
+
+;; LSP Ui
+(when (package-installed-p 'lsp-ui)
+  (setq lsp-ui-doc-position 'at-point
+        lsp-ui-flycheck-enable t
+	lsp-ui-doc-enable t))
 
 ;; Treemacs
 (when (package-installed-p 'treemacs)
-    (lsp-treemacs-sync-mode 1))
+  (lsp-treemacs-sync-mode 1))
+
+;; Company mode
+(setq company-idle-delay 0)
+(setq company-minimum-prefix-length 1)
+(add-hook 'after-init-hook 'global-company-mode)
 
 ;; Quelpa ;;
 ;;;;;;;;;;;;;
@@ -62,6 +77,7 @@
 ;; Go ;;
 ;;;;;;;;
 
+
 (lsp-register-custom-settings
  '(("gopls.completeUnimported" t t)
    ("gopls.staticcheck" t t)
@@ -71,6 +87,7 @@
   (add-hook 'before-save-hook #'lsp-organize-imports t t))
 (add-hook 'go-mode-hook #'lsp-go-install-save-hooks)
 (add-hook 'go-mode-hook #'lsp-deferred)
+(add-hook 'go-mode-hook #'yas-minor-mode)
 
 
 ;; Shell ;;
