@@ -17,6 +17,6 @@ if ! command -v gsettings &> /dev/null; then
     exit 1
 fi
 
-# disable Super key
-gsettings reset org.gnome.mutter overlay-key
-gesttings set org.gnome.shell.keybindings toggle-overview "['<Control>Space']"
+
+# gsettings reset org.gnome.mutter overlay-key
+# gesttings set org.gnome.shell.keybindings toggle-overview "['<Control>Space']"
