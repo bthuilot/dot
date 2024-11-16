@@ -26,7 +26,7 @@ if [[ $(uname) == "Darwin" ]]; then
 else
   # Alias OSX commands
   # for use with common scripts
-  alias open=xdg-open
+  alias open="linux-open"
   alias pbocpy="xclip -selection c"
 fi
 

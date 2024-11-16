@@ -27,5 +27,5 @@ if [[ $(uname) == "Darwin" ]]; then
   export TERM=rxvt-256color
   export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
 else
-  export GOROOT="/usr/local/go"
+  export GOROOT="/usr/lib/go"
 fi

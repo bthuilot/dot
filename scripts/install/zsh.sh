@@ -14,8 +14,6 @@ NO_COLOR='\033[0m'
 # Dot directory
 DIR="$( dirname -- "${BASH_SOURCE[0]}"; )";
 DOT_DIR="$( realpath -- "$DIR/../.."; )";
-echo "DOT_DIR: $DOT_DIR"
-
 
 echo "Installing ZSH..."
 if test -d "$HOME/.oh-my-zsh"; then

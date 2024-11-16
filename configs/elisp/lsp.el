@@ -23,19 +23,20 @@
 
 ;; Quelpa ;;
 ;;;;;;;;;;;;;
-(when (package-installed-p 'quelpa)
-    (quelpa '(copilot :fetcher github
-                     :repo "zerolfx/copilot.el"
-                     :branch "main"
-                     :files ("dist" "*.el"))
-            )
+;; (when (package-installed-p 'quelpa)
+  ;; (quelpa
+   ;; '(copilot :fetcher github
+                     ;; :repo "zerolfx/copilot.el"
+                     ;; :branch "main"
+                     ;; :files ("dist" "*.el"))
+            
 
     ;; Co-Pilot ;;
-    (require 'copilot)
-    (add-hook 'prog-mode-hook 'copilot-mode)
-    (define-key copilot-completion-map (kbd "<tab>") 'copilot-accept-completion)
-    (add-to-list 'copilot-major-mode-alist '("go" . "rust"))
-)
+    ;; (require 'copilot)
+    ;; (add-hook 'prog-mode-hook 'copilot-mode)
+    ;; (define-key copilot-completion-map (kbd "<tab>") 'copilot-accept-completion)
+    ;; (add-to-list 'copilot-major-mode-alist '("go" . "rust"))
+;; )
 
 
 ;; Flycheck ;;

@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# macOS emacs installation script for https://github.com/bthuilot/dot
+# git installation script for https://github.com/bthuilot/dot
 # (C) Bryce Thuilot 2024 <bryce@thuilot.io>
 # License: GPL v3
 set -e

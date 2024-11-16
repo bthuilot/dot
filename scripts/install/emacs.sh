@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# macOS emacs installation script for https://github.com/bthuilot/dot
+# emacs installation script for https://github.com/bthuilot/dot
 # (C) Bryce Thuilot 2024 <bryce@thuilot.io>
 # License: GPL v3
 set -e
@@ -15,29 +15,33 @@ echo "Setting up emacs ..."
 
 mkdir -p "$HOME/.emacs.d"
 
+# Dot directory
+DIR="$( dirname -- "${BASH_SOURCE[0]}"; )";
+DOT_DIR="$( realpath -- "$DIR/../.."; )";
+
 # check if existing .emacs.d/init.el file exists
 if [ ! -f "$HOME/.emacs.d/init.el" ]; then
     echo -e "${YELLOW}no emacs config exists${NO_COLOR}: creating base config"
     cat <<EOF > "$HOME/.emacs.d/init.el"
-    ;;; init.el --- emacs config file -*- lexical-binding: t; -*-
+;;; init.el --- emacs config file -*- lexical-binding: t; -*-
 
-    ;; Copyright (C) Bryce Thuilot $(date '+%Y')
-
-
-    ;; Author: Bryce Thuilot <bryce@thuilot.io>
-    ;; Created: $(date '+%d %b %Y')
-
-    ;; URL: https://github.com/bthuilot/dot
-
-    ;;; Commentary:
-    ;; 'init.el' Emacs config file.
-    ;; Used to load in other Emacs config files
-
-    ;;; Code:
+;; Copyright (C) Bryce Thuilot $(date '+%Y')
 
 
-    (provide 'init)
-    ;;; init.el ends here
+;; Author: Bryce Thuilot <bryce@thuilot.io>
+;; Created: $(date '+%d %b %Y')
+
+;; URL: https://github.com/bthuilot/dot
+
+;;; Commentary:
+;; 'init.el' Emacs config file.
+;; Used to load in other Emacs config files
+
+;;; Code:
+
+
+(provide 'init)
+;;; init.el ends here
 EOF
 fi
 
