@@ -37,25 +37,26 @@
 (setq ring-bell-function 'ignore)
 
 
+;; all-the-icons
+(when (display-graphic-p)
+  (require 'all-the-icons))
+
 ;; Dashboard
 (setq dashboard-startup-banner 'logo)
 (setq dashboard-set-navigator t)
 (setq dashboard-filter-agenda-entry 'dashboard-no-filter-agenda)
 (setq dashboard-match-agenda-entry
       "TODO=\"TODO\"|TODO=\"IN-PROGRESS\"|TODO=\"WAITING\"")
+(setq dashboard-icon-type 'nerd-icons)
 (setq dashboard-items '(
 			(agenda    . 10)
                         (projects . 10)
-			(recents  . 5)
+			(recents  . 10)
 			))
 (setq dashboard-item-names '(
                              ("Agenda for the coming week:" . "Tasks:")
 			     ))
 (dashboard-setup-startup-hook)
-
-;; all-the-icons
-(when (display-graphic-p)
-  (require 'all-the-icons))
 
 (provide 'styling)
 ;;; styling.el ends here
