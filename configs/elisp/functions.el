@@ -46,10 +46,8 @@
 (defun iterm()
   "Open the current directory in iterm."
   (interactive)
-  (shell-command (concat
-		  "open -a iTerm "
-		  (file-name-directory (buffer-file-name))))
-  )
+  (shell-command
+   (concat "open -a iTerm " (file-name-directory (buffer-file-name)))))
 
 (defun tasks()
   "Open Org tasks file."

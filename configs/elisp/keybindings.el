@@ -39,10 +39,10 @@
 ;; git link
 (global-set-key (kbd "C-c g l") 'git-link)
 
-;;; OS specific
+;; OS specific ;;
 
 (if (eq system-type 'darwin)
-    ;; macOS
+    ; macOS
     (progn
       (global-set-key (kbd "C-c T") #'iterm)
       (define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
