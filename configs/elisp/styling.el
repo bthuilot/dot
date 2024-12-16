@@ -15,11 +15,6 @@
 ;; Font
 (set-frame-font "Fira Code Retina 14" nil t)
 
-;; Theme
-(when (package-installed-p 'badger-theme)
-  (load-theme 'badger t))
-
-
 ;; Disable toolbar
 (tool-bar-mode -1)
 
@@ -30,33 +25,35 @@
 (global-display-line-numbers-mode)
 
 ;; Disable newline at end of file
-(setq require-final-newline nil)
-(setq mode-require-final-newline nil)
+(setq require-final-newline nil
+      mode-require-final-newline nil)
 
 ;; Disable bell sound
 (setq ring-bell-function 'ignore)
 
+;; use badger theme
+(use-package badger-theme
+  :ensure t
+  :config (load-theme 'badger t))
 
 ;; all-the-icons
 (when (display-graphic-p)
   (require 'all-the-icons))
 
 ;; Dashboard
-(setq dashboard-startup-banner 'logo)
-(setq dashboard-set-navigator t)
-(setq dashboard-filter-agenda-entry 'dashboard-no-filter-agenda)
-(setq dashboard-match-agenda-entry
-      "TODO=\"TODO\"|TODO=\"IN-PROGRESS\"|TODO=\"WAITING\"")
-(setq dashboard-icon-type 'nerd-icons)
-(setq dashboard-items '(
-			(agenda    . 10)
-                        (projects . 10)
-			(recents  . 10)
-			))
-(setq dashboard-item-names '(
-                             ("Agenda for the coming week:" . "Tasks:")
-			     ))
-(dashboard-setup-startup-hook)
+(use-package dashboard
+  :init
+  (setq dashboard-startup-banner 'logo
+	dashboard-set-navigator t
+	dashboard-filter-agenda-entry 'dashboard-no-filter-agenda
+	dashboard-match-agenda-entry "TODO=\"TODO\"|TODO=\"IN-PROGRESS\"|TODO=\"WAITING\""
+	dashboard-icon-type 'nerd-icons
+	dashboard-items '((agenda    . 10)
+                          (projects . 10)
+			  (recents  . 10))
+	dashboard-item-names '(("Agenda for the coming week:" . "Tasks:")))
+  :config
+  (dashboard-setup-startup-hook))
 
 (provide 'styling)
 ;;; styling.el ends here

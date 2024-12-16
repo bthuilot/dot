@@ -17,116 +17,180 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; enable projectile
-(when (package-installed-p 'projectile)
-  (projectile-mode +1)
-  )
+(use-package projectile
+  :config
+  (projectile-mode +1))
+  
 
 ;; LSP Ui
-(when (package-installed-p 'lsp-ui)
-  (setq lsp-ui-doc-position 'at-point
-        lsp-ui-flycheck-enable t
-	lsp-ui-doc-enable t))
+(use-package lsp-ui
+  :init
+  (setq-default lsp-ui-doc-position 'at-point
+		lsp-ui-flycheck-enable t
+		lsp-ui-doc-enable t))
 
 ;; Treemacs
-(when (package-installed-p 'treemacs)
+(use-package treemacs
+  :config
   (lsp-treemacs-sync-mode 1))
 
+
 ;; Company mode
-(setq company-idle-delay 0)
-(setq company-minimum-prefix-length 1)
-(add-hook 'after-init-hook 'global-company-mode)
-
-;; Quelpa ;;
-;;;;;;;;;;;;;
-(when (package-installed-p 'quelpa)
-    (quelpa '(copilot :fetcher github
-                     :repo "zerolfx/copilot.el"
-                     :branch "main"
-                     :files ("dist" "*.el"))
-            )
-
-    ;; Co-Pilot ;;
-    (require 'copilot)
-    (add-hook 'prog-mode-hook 'copilot-mode)
-    (define-key copilot-completion-map (kbd "<tab>") 'copilot-accept-completion)
-    (add-to-list 'copilot-major-mode-alist '("go" . "rust"))
-)
-
+(use-package company
+  :init
+  (setq-default
+   company-idle-delay 0
+   company-minimum-prefix-length 1)
+  :hook ('after-init . 'global-company-mode))
 
 ;; yasnippet ;;
 ;;;;;;;;;;;;;;;;
-(when (package-installed-p 'yasnippet)
-  (require 'yasnippet)
+
+(use-package yasnippet
+  :config
   (yas-global-mode 1))
+
 
 ;; Flycheck ;;
 ;;;;;;;;;;;;;;
-(add-hook 'after-init-hook #'global-flycheck-mode)
+
+(use-package flycheck
+  :hook
+  ('after-init . 'global-flycheck-mode))
 
 ;; Haskell ;;
 ;;;;;;;;;;;;;
-(add-hook 'haskell-mode-hook #'lsp-deferred)
-(add-hook 'haskell-literate-mode-hook #'lsp-deferred)
+
+(use-package haskell-mode
+  :hook
+  ('haskell-mode . 'lsp-deferred)
+  ('haskell-literate-mode . 'lsp-deferred))
 
 
 ;; JavaScript ;;
 ;;;;;;;;;;;;;;;;
-(add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
-(add-hook 'js2-mode-hook (lambda () (setq js2-basic-offset 2)))
+
+(use-package js2
+  :init
+  (setq-default js2-basic-offset 2)
+  :mode "\\.js\\'")
+  ;; (add-hook 'js2-mode-hook (lambda () (setq js2-basic-offset 2)))
 
 ;; Go ;;
 ;;;;;;;;
 
-
-(lsp-register-custom-settings
- '(("gopls.completeUnimported" t t)
-   ("gopls.staticcheck" t t)
-   ))
 (defun lsp-go-install-save-hooks ()
   (add-hook 'before-save-hook #'lsp-format-buffer t t)
   (add-hook 'before-save-hook #'lsp-organize-imports t t))
-(add-hook 'go-mode-hook #'lsp-go-install-save-hooks)
-(add-hook 'go-mode-hook #'lsp-deferred)
-(add-hook 'go-mode-hook #'yas-minor-mode)
+
+(use-package go-mode
+  :init
+  (lsp-register-custom-settings
+   '(("gopls.completeUnimported" t t)
+     ("gopls.staticcheck" t t)))
+  :hook
+  ('go-mode . #'lsp-go-install-save-hooks)
+  ('go-mode . #'lsp-deferred)
+  ('go-mode . #'yas-minor-mode))
 
 
 ;; Shell ;;
 ;;;;;;;;;;;
-(add-hook 'sh-mode-hook 'flymake-shellcheck-load)
+
+(use-package flymake-shellcheck
+  :hook
+  ('sh-mode . 'flymake-shellcheck-load))
 
 ;; Rust ;;
 ;;;;;;;;;;
 
-;; Vars
-(setq rust-format-on-save t)
-(setq lsp-rust-server 'rust-analyzer)
+(use-package rust-mode
+  :init
+  (setq rust-format-on-save t
+	lsp-rust-server 'rust-analyzer
+	indent-tabs-mode nil)
+  :hook
+  ('flycheck-mode . #'flycheck-rust-setup)
+  ('rust-mode #'lsp-deferred))
 
-;; Hooks
-(add-hook 'rust-mode-hook #'lsp-deferred)
-(add-hook 'rust-mode-hook
-          (lambda () (setq indent-tabs-mode nil)))
-(with-eval-after-load 'rust-mode
-    (add-hook 'flycheck-mode-hook #'flycheck-rust-setup))
 
-;; OCaml
-(add-hook 'tuareg-mode-hook #'merlin-mode)
-(add-hook 'caml-mode-hook #'merlin-mode)
-(setq utop-command "opam config exec -- dune utop . -- -emacs")
+;; OCaml ;;
+;;;;;;;;;;;
 
-;; Terraform
-(add-hook 'terraform-mode-hook #'lsp-deferred)
-(add-hook 'terraform-mode-hook #'terraform-format-on-save-mode)
+;; Major mode for OCaml programming
+(use-package tuareg
+  :ensure t
+  :mode (("\\.ocamlinit\\'" . tuareg-mode)))
+
+;; Major mode for editing Dune project files
+(use-package dune
+  :ensure t)
+
+;; Merlin provides advanced IDE features
+(use-package merlin
+  :ensure t
+  :init
+  (setq-default utop-command "opam config exec -- dune utop . -- -emacs")
+  :hook
+  ('tuareg-mode . #'merlin-mode)
+  ('merlin-mode . #'company-mode)
+  ('caml-mode . #'merlin-mode)
+  :config
+  (setq merlin-error-after-save nil))
+
+(use-package merlin-eldoc
+  :ensure t
+  :hook ((tuareg-mode) . merlin-eldoc-setup))
+
+;; This uses Merlin internally
+(use-package flycheck-ocaml
+  :ensure t
+  :config
+  (flycheck-ocaml-setup))
+
+(use-package utop
+  :ensure t
+  :config
+  (add-hook 'tuareg-mode-hook #'utop-minor-mode))
+
+
+;; Terraform ;;
+;;;;;;;;;;;;;;;
+
+(use-package terraform-mode
+  :hook
+  ('terraform-mode . #'lsp-deferred)
+  ('terraform-mode . #'terraform-format-on-save-mode))
+
+
+;; Other Languages ;;
+;;;;;;;;;;;;;;;;;;;;;
+
+;; rego
+(use-package rego
+  :mode "\\.rego\\'")
+
+;; paredit
+(use-package paredit
+  :ensure t
+  :config
+  (dolist (m '(emacs-lisp-mode-hook
+               racket-mode-hook
+               racket-repl-mode-hook))
+    (add-hook m #'paredit-mode))
+  (bind-keys :map paredit-mode-map
+             ("{"   . paredit-open-curly)
+             ("}"   . paredit-close-curly))
+  (unless terminal-frame
+    (bind-keys :map paredit-mode-map
+               ("M-[" . paredit-wrap-square)
+               ("M-{" . paredit-wrap-curly))))
 
 ;;;; Speed Adjustments ;;;;;
 
 ;; Adjust Garbage Collector
-(setq gc-cons-threshold 100000000)
-
-(setq read-process-output-max (* 1024 1024)) ;; 1mb
-
-;; Company mode
-(setq company-idle-delay 0)
-(setq company-minimum-prefix-length 1)
+(setq-default gc-cons-threshold 100000000
+	      read-process-output-max (* 1024 1024)) ;; 1mb
 
 
 (provide 'lsp)
