@@ -22,10 +22,12 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 
 
 # PATH exports
+export PATH="$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH"
 export PATH="/usr/local/opt/openssl/bin:$PATH"
 export PATH="$PATH:$GOPATH/bin:$GOROOT/bin"
 export PATH="/usr/local/sbin:$PATH"
 export PATH="$HOME/bin:/usr/local/bin:$PATH"
+export PATH="$HOME/.nimble/bin:$PATH"
 
 # OS specific
 if [[ $(uname) == "Darwin" ]]; then
