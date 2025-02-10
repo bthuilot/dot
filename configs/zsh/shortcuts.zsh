@@ -60,25 +60,48 @@ grepo() {
 }
 
 # Opens the current git commit in the browser
-# Only works for GitHub repos
-ghcommit() {
+gcommit() {
     HTTPS_URL="$(_git_https_link)"
-    open "${HTTPS_URL}/commit/$(git rev-parse HEAD)"
+    case $HTTPS_URL in
+	(https://github.com/*)
+	    open "${HTTPS_URL}/commit/$(git rev-parse HEAD)"
+	  ;;
+	(https://gitlab.com/*)
+	    open "${HTTPS_URL}/-/commit/$(git rev-parse HEAD)"
+    esac;
 }
 
 # Opens the current git branch in the browser
-# Only works for GitHub repos
-ghbranch() {
+gbranch() {
     HTTPS_URL="$(_git_https_link)"
-    open "${HTTPS_URL}/tree/$(git branch --show-current)"
+    case $HTTPS_URL in
+	(https://github.com/*)
+	    open "${HTTPS_URL}/tree/$(git branch --show-current)"
+	    ;;
+	(https://gitlab.com/*)
+	    open "${HTTPS_URL}/-/tree/$(git branch --show-current)?ref_type=heads"
+	    ;;
+    esac;
 }
 
-ghpulls() {
-    if [ -z "$GITHUB_USER" ]; then
-	echo "no github user set"
-    fi
+gpulls() {
     HTTPS_URL="$(_git_https_link)"
-    open "${HTTPS_URL}/pulls/${GITHUB_USER}"
+    case $HTTPS_URL in
+	(https://github.com/*)
+	    if [ -z "$GITHUB_USER" ]; then
+		echo "no github user set"
+		return 1
+	    fi
+	    open "${HTTPS_URL}/pulls/${GITHUB_USER}"
+	    ;;
+	(https://gitlab.com/*)
+	    if [ -z "$GITLAB_USER" ]; then
+		echo "no gitlab user set"
+		return 1
+	    fi 
+	    open "${HTTPS_URL}/-/merge_requests/?author_username=${GITLAB_USER}"
+	    ;;
+    esac;
 }
 
 ntfy() {

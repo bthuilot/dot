@@ -17,15 +17,15 @@ export EDITOR='tem'
 export SSH_KEY_PATH="$HOME/.ssh/id_ed25519"
 export GOPATH="$HOME/go"
 export GOBIN="$GOPATH/bin"
-export NVM_DIR="$HOME/.nvm"
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nv
+
 
 # PATH exports
-export PATH="$HOME/bin:/usr/local/bin:$PATH"
 export PATH="/usr/local/opt/openssl/bin:$PATH"
 export PATH="$PATH:$GOPATH/bin:$GOROOT/bin"
 export PATH="/usr/local/sbin:$PATH"
-export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nv
+export PATH="$HOME/bin:/usr/local/bin:$PATH"
 
 # OS specific
 if [[ $(uname) == "Darwin" ]]; then
@@ -35,3 +35,5 @@ if [[ $(uname) == "Darwin" ]]; then
 else
   export GOROOT="/usr/local/go"
 fi
+
+

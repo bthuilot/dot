@@ -14,8 +14,11 @@ alias lastcommitlong='git log -1 --pretty=%H'
 alias gc="git commit --signoff -m"
 alias gm="git merge --no-edit"
 alias gmc="git commit --no-edit --signoff; git merge --continue"
-alias gca="git commit --amend"
-alias gcan='git commit --amend --date="$(date -R)"'
+alias gca='git commit --amend --no-edit --date="$(date -R)"'
+alias gcaa='git add . && git commit --amend --no-edit --date="$(date -R)"'
+alias gcam='git commit --amend --date="$(date -R)"'
 alias ga="git add"
 alias gf="git fetch origin"
-alias gituntracked="git ls-files --exclude-standard -o"
+alias gut="git untracked"
+alias gpf="git push --force-with-lease"
+

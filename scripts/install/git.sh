@@ -20,4 +20,12 @@ git config --global core.editor "emacs -nw"
 git config --global init.defaultBranch main
 git config --global user.signingkey "$(gpg --list-secret-keys --keyid-format LONG | grep -B 2 ultimate | grep sec  |awk -F'/' '{print $2}' | awk -F' ' '{print $1}')"
 
+# Aliases
+# NOTE: updated to alias are currently not tracked,
+# if a new alias is added to the git config, it must also be
+# setup here
+git config --global alias.untracked "! git ls-files --exclude-standard -o"
+
+
+
 echo -e "${GREEN}done${NO_COLOR}"
