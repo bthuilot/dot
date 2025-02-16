@@ -34,6 +34,7 @@ ecr-login() {
 
 # Opens the given file inside of emacs
 em() {
+    mkdir -p "$(dirname $1)"
     touch "$1"
     open -a Emacs "$1"
 }

@@ -21,7 +21,7 @@
 (global-set-key [C-return] 'toggle-fullscreen)
 
 ;; Ctrl+C t: Goto Treemacs buffer
-;;(global-set-key (kbd "C-c t") #'treemacs-select-window)
+(global-set-key (kbd "C-c t") #'treemacs-select-window)
 
 ;; Ctrl+C s: Goto LSP Treemac symbols
 (global-set-key (kbd "C-c s") #'lsp-treemacs-symbols)
