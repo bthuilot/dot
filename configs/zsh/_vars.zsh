@@ -5,8 +5,9 @@
 ############
 
 if [ -z "$DOT_DIR" ]; then
-  export DOT_DIR="$HOME/github/dot"
+    export DOT_DIR="$HOME/github/dot"
 fi
+
 
 if [ -z "$GITHUB_USER" ]; then
     export GITHUB_USER="bthuilot"
@@ -17,6 +18,9 @@ export EDITOR='tem'
 export SSH_KEY_PATH="$HOME/.ssh/id_ed25519"
 export GOPATH="$HOME/go"
 export GOBIN="$GOPATH/bin"
+export XDG_DATA_HOME="$HOME/Library"
+export XDG_CONFIG_HOME="$HOME/Library/Preferences"
+export XDG_CACHE_HOME="$HOME/Library/Caches"
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nv
 

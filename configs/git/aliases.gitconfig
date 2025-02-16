@@ -1,0 +1,8 @@
+[alias]
+	untracked = ! git ls-files --exclude-standard -o
+	root = ! git rev-parse --show-toplevel
+	last-sha = ! git log -1 --pretty=%h
+	last-sha-long = ! git log -1 --pretty=%H
+	amend = ! git commit --amend --no-edit --date=\"$(date -R)\"
+	amend-all = ! git add . && git amend
+	amend-i = ! git commit --amend --date=\"$(date -R)\"

@@ -1,0 +1,6 @@
+[commit]
+	gpgsign = true
+[core]
+	editor = emacs -nw	
+[init]
+	defaultBranch = main

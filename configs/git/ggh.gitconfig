@@ -1,0 +1,14 @@
+[ggh]
+	# pre-commit #
+	pre-commit = ggh-gitleaks
+
+	# commit-msg #
+	commit-msg = ggh-signed-off
+	commit-msg = ggh-conventional-commit
+
+	# whitelist the trusted directions
+	enableWhitelist = true
+	askToRun = true
+
+	whitelistDir = /Users/bryce/github/*
+	whitelistDir = /Users/bryce/oss/*

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env zsh
 #
 # macOS emacs installation script for https://github.com/bthuilot/dot
 # (C) Bryce Thuilot 2024 <bryce@thuilot.io>
@@ -13,18 +13,24 @@ NO_COLOR='\033[0m'
 
 echo "Setting up git ..."
 # Set up git
-git config --global user.name "Bryce Thuilot"
-git config --global user.email "bryce@thuilot.io"
-git config --global commit.gpgsign true
-git config --global core.editor "emacs -nw"
-git config --global init.defaultBranch main
 git config --global user.signingkey "$(gpg --list-secret-keys --keyid-format LONG | grep -B 2 ultimate | grep sec  |awk -F'/' '{print $2}' | awk -F' ' '{print $1}')"
 
-# Aliases
-# NOTE: updated to alias are currently not tracked,
-# if a new alias is added to the git config, it must also be
-# setup here
-git config --global alias.untracked "! git ls-files --exclude-standard -o"
+
+######################
+# gitconfig Template #
+
+######################
+# eval template
+TEMPLATED=$(go run "$DOT_DIR/scripts/templater/main.go" -in "$DOT_DIR/templates/gitconfig.tmpl" "DOT_DIR=$DOT_DIR")
+
+# remove existing template
+sed -i.pre-dot-files '/# BEGIN BTHUILOT\/DOT TEMPLATE/,/# END BTHUILOT\/DOT TEMPLATE/d' "$HOME/.gitconfig"
+# Write to file
+echo "
+# BEGIN BTHUILOT/DOT TEMPLATE
+$TEMPLATED
+# END BTHUILOT/DOT TEMPLATE
+" >> "$HOME/.gitconfig"
 
 
 
