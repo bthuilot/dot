@@ -16,6 +16,11 @@
 ;; LSP/Language wide settings ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+;; General Configurations ;;
+(setq-default
+ lsp-disabled-clients '(semgrep-ls))
+
+
 ;; enable projectile
 (use-package projectile
   :config
@@ -31,8 +36,37 @@
 
 ;; Treemacs
 (use-package treemacs
+  :ensure t
+  :defer t
   :config
-  (lsp-treemacs-sync-mode 1))
+  (progn
+    (setq
+     treemacs-follow-after-init               t
+     treemacs-expand-after-init               t
+     treemacs-position                        'left
+     )
+    (treemacs-follow-mode t)
+    (treemacs-git-mode `deferred)
+    (lsp-treemacs-sync-mode 1)
+    )
+  :bind
+  (
+   ("s-1" . treemacs-toggle)
+   ("C-x t d" . treemacs-add-and-display-current-project-exclusively)
+   ("C-x t C-t". treemacs-find-fild)
+   )
+  )
+
+(use-package treemacs-magit
+  :after (treemacs magit)
+  :ensure t)
+
+(use-package treemacs-tab-bar
+  :after (treemacs)
+  :ensure t
+  :config (treemacs-set-scope-type 'Tabs))
+
+;; (treemacs-start-on-boot)
 
 
 ;; Company mode
@@ -42,6 +76,14 @@
    company-idle-delay 0
    company-minimum-prefix-length 1)
   :hook ('after-init . 'global-company-mode))
+
+;; Kubernetes
+(use-package kubernetes
+  :ensure t
+  :commands (kubernetes-overview)
+  :config
+  (setq kubernetes-poll-frequency 3600
+        kubernetes-redraw-frequency 3600))
 
 ;; yasnippet ;;
 ;;;;;;;;;;;;;;;;

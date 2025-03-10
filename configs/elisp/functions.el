@@ -43,6 +43,25 @@
          (file (completing-read "Select a file: " files)))
     (find-file (expand-file-name file directory))))
 
+(defun treemacs-toggle ()
+  "Toggle treemacs in a similar nature to JetBrains/VScode."
+  ; if treemacs isnt activated, activate it and select it
+  (interactive)
+  (let ((b (current-buffer)) 
+	;; before selecting treemacs windows, check if its currently
+	(visible (and (fboundp 'treemacs-current-visibility)
+		      (eq 'visible (treemacs-current-visibility)))))
+    ; select the treemacs window 
+    (treemacs-select-window)
+    ; if it was visible already, quit it
+    (if visible (treemacs-quit)
+      (progn
+	;; else, open the current directory and
+	;; have treemacs display that
+	(switch-to-buffer b)
+	(treemacs-add-and-display-current-project-exclusively))
+      )))
+
 (defun iterm()
   "Open the current directory in iterm."
   (interactive)
