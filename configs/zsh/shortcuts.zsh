@@ -13,6 +13,9 @@ alias awsmfa="op item get aws --otp | aws-mfa"
 
 alias dot="cd \$DOT_DIR"
 
+# Install the base components for a new
+alias opaminit="opam install ocaml-lsp-server odoc ocamlformat utop"
+
 if [[ $(uname) == "Darwin" ]]; then
   alias ip='ifconfig | grep "inet " | awk "NR == 2" | cut -f2 -d" "'
   alias suroot='sudo -E -s'

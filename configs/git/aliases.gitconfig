@@ -6,3 +6,4 @@
 	amend = ! git commit --amend --no-edit --date=\"$(date -R)\"
 	amend-all = ! git add . && git amend
 	amend-i = ! git commit --amend --date=\"$(date -R)\"
+	push-up = ! git push --set-upstream origin \"$(git branch --show)\"
