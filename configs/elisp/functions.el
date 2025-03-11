@@ -13,14 +13,36 @@
 
 ;;; Code:
 
+(require 'seq)
+
+;; helper functions ;;
+
+(defun visible-file-buffers ()
+  "Return a list of buffers that are visible and visiting real files."
+  (let ((visible-bufs (mapcar #'window-buffer (window-list))))
+    (seq-filter (lambda (buf) (buffer-file-name buf))
+                visible-bufs)))
+
+
+(defun last-edited-visible-file-buffer ()
+  "Return the last-used buffer among all visible buffers visiting real files.
+This uses `buffer-list`’s ordering (most recent first) as a proxy for
+'last edited.'"
+  (let ((candidate-bufs (visible-file-buffers)))
+    ;; `buffer-list` returns buffers from most recently used to least.
+    ;; The first buffer it finds that is in `candidate-bufs` is
+    ;; effectively “last edited” among the visible-file-buffers.
+    (seq-find (lambda (buf) (memq buf candidate-bufs))
+              (buffer-list))))
+
 
 ;; Toggle fullscreen
 (defun toggle-fullscreen ()
   "Toggle fullscreen for Emacs."
   (interactive)
   (set-frame-parameter
-     nil 'fullscreen
-     (when (not (frame-parameter nil 'fullscreen)) 'fullboth)))
+   nil 'fullscreen
+   (when (not (frame-parameter nil 'fullscreen)) 'fullboth)))
 
 
 ;; Go to previous buffer
@@ -42,6 +64,25 @@
          (files (delete "." (delete ".." (directory-files directory))))
          (file (completing-read "Select a file: " files)))
     (find-file (expand-file-name file directory))))
+
+(defun treemacs-toggle ()
+  "Toggle treemacs in a similar nature to JetBrains/VScode."
+  ; if treemacs isnt activated, activate it and select it
+  (interactive)
+  (let (;; get the last edited "real file" buffer
+	(b (last-edited-visible-file-buffer))
+	;; before selecting treemacs windows, check if its currently
+	(visible (and (fboundp 'treemacs-current-visibility)
+		      (eq 'visible (treemacs-current-visibility)))))
+    ; select the treemacs window
+    (cond
+     ;; if it was visible already, quit it
+     (visible  (progn (treemacs-select-window) (treemacs-quit)))
+     ;; if the current buffer is treemacs
+     ((null b) (message "no directory found to open in treemacs"))
+     (t        (progn (switch-to-buffer b)
+		      (treemacs-add-and-display-current-project-exclusively)))
+     )))
 
 (defun iterm()
   "Open the current directory in iterm."
