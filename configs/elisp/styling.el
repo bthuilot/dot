@@ -37,8 +37,8 @@
   :config (load-theme 'badger t))
 
 ;; all-the-icons
-(when (display-graphic-p)
-  (require 'all-the-icons))
+(use-package all-the-icons
+  :if (display-graphic-p))
 
 ;; Dashboard
 (use-package dashboard

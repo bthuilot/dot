@@ -34,6 +34,12 @@
 		lsp-ui-flycheck-enable t
 		lsp-ui-doc-enable t))
 
+;; fuzzy finder
+(use-package affe
+  :config
+  ;; Manual preview key for `affe-grep'
+  (consult-customize affe-grep :preview-key "M-."))
+
 ;; Treemacs
 (use-package treemacs
   :ensure t
@@ -44,6 +50,7 @@
      treemacs-follow-after-init               t
      treemacs-expand-after-init               t
      treemacs-position                        'left
+     treemacs-select-when-already-in-treemacs 'stay
      )
     (treemacs-follow-mode t)
     (treemacs-git-mode `deferred)
