@@ -38,10 +38,12 @@
 
 ;; all-the-icons
 (use-package all-the-icons
+  :ensure t
   :if (display-graphic-p))
 
 ;; Dashboard
 (use-package dashboard
+  :ensure t
   :init
   (setq dashboard-startup-banner 'logo
 	dashboard-set-navigator t

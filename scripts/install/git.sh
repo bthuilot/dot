@@ -13,7 +13,7 @@ NO_COLOR='\033[0m'
 
 echo "Setting up git ..."
 # Set up git
-git config --global user.signingkey "$(gpg --list-secret-keys --keyid-format LONG | grep -B 2 ultimate | grep sec  |awk -F'/' '{print $2}' | awk -F' ' '{print $1}')"
+# git config --global user.signingkey "$(gpg --list-secret-keys --keyid-format LONG | grep -B 2 ultimate | grep sec  |awk -F'/' '{print $2}' | awk -F' ' '{print $1}')"
 
 
 ######################

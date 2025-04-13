@@ -54,7 +54,7 @@ compdef _files temacs
 
 _git_https_link() {
     URL="$(git config --get remote.origin.url)" ||  { echo "No remote URL found"; return 1;}
-    echo "$(echo "${URL%.git}" | sed 's|:|/|;s|^git@|https://|')"
+    echo "$(echo "${URL%.git}" | sed 's|\.com:|\.com/|;s|^git@|https://|')"
 }
 
 # Opens the current git repository in the browser
@@ -114,11 +114,3 @@ ntfy() {
     osascript -e "display notification \"${msg}\" with title \"$title\""
 }
 
-chalkk() {
-    chalk ${@}
-    rm -f chalk-reports.jsonl
-}
-
-kubens() {
-    kubectl config set-context --current --namespace="$1"
-}

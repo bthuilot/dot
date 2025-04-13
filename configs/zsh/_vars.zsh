@@ -32,6 +32,7 @@ export PATH="$PATH:$GOPATH/bin:$GOROOT/bin"
 export PATH="/usr/local/sbin:$PATH"
 export PATH="$HOME/bin:/usr/local/bin:$PATH"
 export PATH="$HOME/.nimble/bin:$PATH"
+export PATH="${KREW_HOME:-$HOME/.krew}/bin:$PATH"
 
 # OS specific
 if [[ $(uname) == "Darwin" ]]; then

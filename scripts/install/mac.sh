@@ -92,10 +92,10 @@ function install_packages {
 
 
     # Command line packages
-    cli_apps="git gpg neofetch pandoc npm zsh wget gh"
+    cli_apps="git gpg neofetch pandoc npm zsh wget gh pinentry-mac"
 
     # Graphical Applications
-    gui_apps="firefox 1password 1password-cli gpg-suite slack iterm2 pinentry-mac"
+    gui_apps="firefox 1password 1password-cli gpg-suite slack iterm2"
 
     # Install packages using brew
     # shellcheck disable=SC2086
@@ -106,8 +106,8 @@ function install_packages {
     # brew install itsycal
 
     # Add fonts
-    brew tap homebrew/cask-fonts
-    brew install --cask font-fira-code
+    # brew tap homebrew/cask-fonts
+    brew install font-fira-code
 
     echo -e "${GREEN}done${NO_COLOR}"
 }

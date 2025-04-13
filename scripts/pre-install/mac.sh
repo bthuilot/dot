@@ -46,7 +46,7 @@ install_xcode() {
 install_homebrew() {
     echo -n "Installing Homebrew..."
     if ! command -v brew &> /dev/null; then
-        /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" 1> /dev/null
+        /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
     fi
     echo -e "${GREEN}done${NO_COLOR}"
 }
@@ -92,7 +92,7 @@ main() {
     prompt_for_cmd "install xcode?" install_xcode
     prompt_for_cmd "install homebrew?" install_homebrew
     prompt_for_cmd "install 1password?" install_homebrew_packages "homebrew/cask/1password" "homebrew/cask/1password-cli"
-    prompt_for_cmd "install emacs?" install_homebrew_packages "homebrew/casks/emacs"
+    prompt_for_cmd "install emacs?" install_homebrew_packages "homebrew/cask/emacs"
     prompt_for_cmd "install golang?" install_homebrew_packages "go"
     echo -e "${GREEN}install complete${NO_COLOR}"
 }

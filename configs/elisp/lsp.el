@@ -23,7 +23,11 @@
 
 ;; enable projectile
 (use-package projectile
+  :ensure t
+  :init
+  (setq projectile-project-search-path '("~/oss/" "~/github/"))
   :config
+  (define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
   (projectile-mode +1))
   
 
