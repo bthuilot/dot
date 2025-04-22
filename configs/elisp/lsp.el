@@ -27,7 +27,7 @@
   (projectile-mode +1))
   
 
-;; LSP Ui
+;; LSP UI
 (use-package lsp-ui
   :init
   (setq-default lsp-ui-doc-position 'at-point

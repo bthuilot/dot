@@ -118,7 +118,3 @@ chalkk() {
     chalk ${@}
     rm -f chalk-reports.jsonl
 }
-
-kubens() {
-    kubectl config set-context --current --namespace="$1"
-}
