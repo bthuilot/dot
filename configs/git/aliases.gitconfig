@@ -7,3 +7,4 @@
 	amend-all = ! git add . && git amend
 	amend-i = ! git commit --amend --date=\"$(date -R)\"
 	push-up = ! git push --set-upstream origin \"$(git branch --show)\"
+	checkout-remote = "!git fetch origin && git checkout -b \"$1\" \"origin/$1\""
