@@ -44,6 +44,12 @@
   ;; Manual preview key for `affe-grep'
   (consult-customize affe-grep :preview-key "M-."))
 
+;; direnv
+(use-package direnv
+  :ensure t
+  :config
+  (direnv-mode))
+
 ;; Treemacs
 (use-package treemacs
   :ensure t
@@ -205,6 +211,20 @@
   :ensure t
   :config
   (add-hook 'tuareg-mode-hook #'utop-minor-mode))
+
+;; Python ;;
+;;;;;;;;;;;;
+
+(use-package elpy
+  :ensure t
+  :init
+  (elpy-enable))
+
+(use-package company-jedi
+  :ensure t
+  :config
+  (add-hook 'python-mode-hook
+	    (lambda () (add-to-list 'company-backends 'company-jedi))))
 
 
 ;; Terraform ;;
