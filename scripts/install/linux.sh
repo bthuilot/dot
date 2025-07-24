@@ -1,4 +1,12 @@
 #!/bin/bash
+# Copyright (C) 2017-2025 Bryce Thuilot <bryce@thuilot.io>
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the FSF, either version 3 of the License, or (at your option) any later version.
+# See the LICENSE file in the root of this repository for full license text or
+# visit: <https://www.gnu.org/licenses/gpl-3.0.html>.
+
 
 #############
 # Functions #
@@ -6,40 +14,40 @@
 
 # Install SSH/GPG Keys
 function install_keys {
-  USBLOCATION=/mnt/BACKUP/
-  
-  # SSH keys #
-  ############
-  cp -r $USBLOCATION/keys/ssh $HOME/.ssh
-  chmod 400 $HOME/.ssh/id_rsa
+	USBLOCATION=/mnt/BACKUP/
 
-  # Start the ssh-agent in the background
-  eval "$(ssh-agent -s)"
-  # Add ssh key
-  ssh-add -K ~/.ssh/id_rsa
+	# SSH keys #
+	############
+	cp -r $USBLOCATION/keys/ssh $HOME/.ssh
+	chmod 400 $HOME/.ssh/id_rsa
 
-  # GPG Keys #
-  ############
-  gpg --import $USBLOCATION/keys/gpg/public.asc
-  gpg --import $USBLOCATION/keys/gpg/secret.asc
+	# Start the ssh-agent in the background
+	eval "$(ssh-agent -s)"
+	# Add ssh key
+	ssh-add -K ~/.ssh/id_rsa
 
-  # Set up git
-  git config --global user.name "Bryce Thuilot"
-  git config --global user.email bthuilot@gmail.com
-  git config --global commit.gpgsign true
-  git config --global user.signingkey $(gpg --list-secret-keys --keyid-format LONG | grep sec |awk -F'/' '{print $2}' | awk -F' ' '{print $1}')
+	# GPG Keys #
+	############
+	gpg --import $USBLOCATION/keys/gpg/public.asc
+	gpg --import $USBLOCATION/keys/gpg/secret.asc
+
+	# Set up git
+	git config --global user.name "Bryce Thuilot"
+	git config --global user.email bthuilot@gmail.com
+	git config --global commit.gpgsign true
+	git config --global user.signingkey $(gpg --list-secret-keys --keyid-format LONG | grep sec | awk -F'/' '{print $2}' | awk -F' ' '{print $1}')
 }
 
-# Install i3 
+# Install i3
 function install_i3 {
-  trizen -S -no-confirm i3 compton
-  rm $CONFIG_DIR/i3/config
-  ln $DOT_DIR/i3/config $CONFIG_DIR/i3/config
+	trizen -S -no-confirm i3 compton
+	rm $CONFIG_DIR/i3/config
+	ln $DOT_DIR/i3/config $CONFIG_DIR/i3/config
 }
 
 # Install plasma
 function install_plasma {
-  trizen -S -no-confirm plasma-meta
+	trizen -S -no-confirm plasma-meta
 }
 
 ###############
@@ -70,10 +78,10 @@ cd $BUILD_DIR
 sudo pacman -S git
 
 # Install Trizen
-if ! type "$trizen" > /dev/null; then
-  git clone https://aur.archlinux.org/trizen.git
-  cd trizen
-  makepkg -si
+if ! type "$trizen" >/dev/null; then
+	git clone https://aur.archlinux.org/trizen.git
+	cd trizen
+	makepkg -si
 fi
 
 ####################
@@ -89,7 +97,7 @@ FONTS="ttf-fira-code"
 # Install all packages
 trizen -Syyu --no-confirm $SYSTEM $WIRELESS $DISPLAY $PACKAGES $SOUND $FUN $FONTS
 
-# Enable 
+# Enable
 sudo systemctl enable NetworkManager
 sudo systemctl enable sddm-plymouth
 
@@ -98,10 +106,10 @@ sudo systemctl enable sddm-plymouth
 ############
 
 # Set up SSH and GPG Keys
-# Set up git 
+# Set up git
 read -r -p "Install keys from USB [Y/n]" response
 if [[ $response =~ ^(yes|y|Y| ) ]] || [[ -z $response ]]; then
-  install_keys
+	install_keys
 fi
 
 #######
@@ -158,20 +166,20 @@ PS3="Select the DE/WM: "
 
 select de in i3 plasma none; do
 
-  case $de in
-    i3)
-      install_i3
-      break
-      ;;
-    plasma)
-      install_plasma
-      break
-      ;;
-    none)
-      break
-      ;;
-    *) 
-      echo "Invalid option $REPLY"
-      ;;
-  esac
+	case $de in
+	i3)
+		install_i3
+		break
+		;;
+	plasma)
+		install_plasma
+		break
+		;;
+	none)
+		break
+		;;
+	*)
+		echo "Invalid option $REPLY"
+		;;
+	esac
 done

@@ -1,16 +1,17 @@
 #!/bin/bash
+# Copyright (C) 2017-2025 Bryce Thuilot <bryce@thuilot.io>
 #
-# macOS install guide for https://github.com/bthuilot/dot
-# (C) Bryce Thuilot 2023 <bryce@thuilot.io>
-# License: GPL v3
-
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the FSF, either version 3 of the License, or (at your option) any later version.
+# See the LICENSE file in the root of this repository for full license text or
+# visit: <https://www.gnu.org/licenses/gpl-3.0.html>.
 
 # Colors
 RED='\033[0;31m'
 GREEN='\033[0;32m'
 YELLOW='\033[1;32m'
 NO_COLOR='\033[0m'
-
 
 #######################################
 # Install XCode command line tools
@@ -22,17 +23,16 @@ NO_COLOR='\033[0m'
 #   Writes status to STDOUT
 #######################################
 install_xcode() {
-    echo -n "Installing XCode command line tools..."
-    xcode-select --install &> /dev/null
-    # Wait until XCode Command Line Tools installation has finished.
-    # shellcheck disable=SC2091
-    until $(xcode-select --print-path &> /dev/null); do
-      sleep 5;
-    done
+	echo -n "Installing XCode command line tools..."
+	xcode-select --install &>/dev/null
+	# Wait until XCode Command Line Tools installation has finished.
+	# shellcheck disable=SC2091
+	until $(xcode-select --print-path &>/dev/null); do
+		sleep 5
+	done
 
-    echo -e "${GREEN}done${NO_COLOR}"
+	echo -e "${GREEN}done${NO_COLOR}"
 }
-
 
 #######################################
 # Install Homebrew
@@ -44,11 +44,11 @@ install_xcode() {
 #   Writes status to STDOUT
 #######################################
 install_homebrew() {
-    echo -n "Installing Homebrew..."
-    if ! command -v brew &> /dev/null; then
-        /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" 1> /dev/null
-    fi
-    echo -e "${GREEN}done${NO_COLOR}"
+	echo -n "Installing Homebrew..."
+	if ! command -v brew &>/dev/null; then
+		/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" 1>/dev/null
+	fi
+	echo -e "${GREEN}done${NO_COLOR}"
 }
 
 #######################################
@@ -61,23 +61,25 @@ install_homebrew() {
 #   Writes status to STDOUT
 #######################################
 install_homebrew_packages() {
-    echo -n "Installing Homebrew packages \"${@}\" ..."
-    # shellcheck disable=SC2068
-    brew install ${@} &> /dev/null
-    echo -e "${GREEN}done${NO_COLOR}"
+	echo -n "Installing Homebrew packages \"${@}\" ..."
+	# shellcheck disable=SC2068
+	brew install ${@} &>/dev/null
+	echo -e "${GREEN}done${NO_COLOR}"
 }
 
 prompt_for_cmd() {
-  prompt="$1"
-  cmd="$2"
-  read -r -p "${prompt} [Y/n]: " yn
-  shift 2
-  case $yn in
-    [nN] ) echo "skipping";;
-	  *)
-	    # shellcheck disable=SC2068
-	    ${cmd} ${@}; echo '';;
-  esac
+	prompt="$1"
+	cmd="$2"
+	read -r -p "${prompt} [Y/n]: " yn
+	shift 2
+	case $yn in
+	[nN]) echo "skipping" ;;
+	*)
+		# shellcheck disable=SC2068
+		${cmd} ${@}
+		echo ''
+		;;
+	esac
 }
 
 #######################################
@@ -89,16 +91,15 @@ prompt_for_cmd() {
 #   None
 #######################################
 main() {
-    prompt_for_cmd "install xcode?" install_xcode
-    prompt_for_cmd "install homebrew?" install_homebrew
-    prompt_for_cmd "install 1password?" install_homebrew_packages "homebrew/cask/1password" "homebrew/cask/1password-cli"
-    prompt_for_cmd "install emacs?" install_homebrew_packages "homebrew/casks/emacs"
-    prompt_for_cmd "install golang?" install_homebrew_packages "go"
-    echo -e "${GREEN}install complete${NO_COLOR}"
+	prompt_for_cmd "install xcode?" install_xcode
+	prompt_for_cmd "install homebrew?" install_homebrew
+	prompt_for_cmd "install 1password?" install_homebrew_packages "homebrew/cask/1password" "homebrew/cask/1password-cli"
+	prompt_for_cmd "install emacs?" install_homebrew_packages "homebrew/casks/emacs"
+	prompt_for_cmd "install golang?" install_homebrew_packages "go"
+	echo -e "${GREEN}install complete${NO_COLOR}"
 }
 
-
-cat << 'EOF'
+cat <<'EOF'
 
 ###################################
      _       _    __ _ _

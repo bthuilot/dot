@@ -1,6 +1,6 @@
 ;;; general.el --- emacs general config file -*- lexical-binding: t; -*-
 
-;; Copyright (C) 2022 Bryce Thuilot
+;; Copyright (C) Bryce Thuilot <bryce@thuilot.io> 2017-2025
 
 ;; Author: Bryce Thuilot <bryce@thuilot.io>
 ;; Created: Oct, 20 2022

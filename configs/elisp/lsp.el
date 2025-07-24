@@ -1,6 +1,6 @@
 ;;; lsp.el --- emacs LSP mode & related package config file -*- lexical-binding: t; -*-
 
-;; Copyright (C) Bryce Thuilot 2021
+;; Copyright (C) Bryce Thuilot 2017-2025
 
 
 ;; Author: Bryce Thuilot <bryce@thuilot.io>
@@ -211,6 +211,24 @@
   ('terraform-mode . #'lsp-deferred)
   ('terraform-mode . #'terraform-format-on-save-mode))
 
+
+;; Python ;;
+;;;;;;;;;;;;
+
+(use-package lsp-pyright
+  :ensure t
+  :custom (lsp-pyright-langserver-command "pyright")
+  :hook (python-mode . (lambda ()
+                          (require 'lsp-pyright)
+                          (lsp-deferred))))
+
+;; C/C++ ;;
+;;;;;;;;;;;
+(use-package eglot
+  :config (progn
+	  (add-to-list 'eglot-server-programs '((c++-mode c-mode) "clangd"))
+	  (add-hook 'c-mode-hook 'eglot-ensure)
+	  (add-hook 'c++-mode-hook 'eglot-ensure)))
 
 ;; Other Languages ;;
 ;;;;;;;;;;;;;;;;;;;;;

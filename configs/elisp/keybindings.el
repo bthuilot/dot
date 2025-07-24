@@ -1,6 +1,6 @@
 ;;; keybindings.el --- Emacs config file for defining keybinds -*- lexical-binding: t; -*-
 
-;; Copyright (C) 2021 Bryce Thuilot
+;; Copyright (C) Bryce Thuilot <bryce@thuilot.io> 2017-2025
 
 ;; Author: Bryce Thuilot <bryce@thuilot.io>
 ;; Maintainer:  Bryce Thuilot <bryce@thuilot.io>

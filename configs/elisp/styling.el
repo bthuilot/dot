@@ -1,6 +1,6 @@
 ;;; styling.el --- emacs styling config file -*- lexical-binding: t; -*-
 
-;; Copyright (C) Bryce Thuilot 2021
+;; Copyright (C) Bryce Thuilot <bryce@thuilot.io> 2017-2025
 
 ;; Author: Bryce Thuilot <bryce@thuilot.io>
 ;; Created: 21 Oct 2021
@@ -13,7 +13,7 @@
 ;;; Code:
 
 ;; Font
-(set-frame-font "Fira Code Retina 14" nil t)
+(set-frame-font "Fira Code Retina 12" nil t)
 
 ;; Disable toolbar
 (tool-bar-mode -1)
@@ -36,6 +36,12 @@
   :ensure t
   :config (load-theme 'badger t))
 
+;; support editorconfig
+(use-package editorconfig
+  :ensure t
+  :config
+  (editorconfig-mode 1))
+
 ;; all-the-icons
 (use-package all-the-icons
   :if (display-graphic-p))
@@ -54,6 +60,12 @@
 	dashboard-item-names '(("Agenda for the coming week:" . "Tasks:")))
   :config
   (dashboard-setup-startup-hook))
+
+(custom-set-faces
+ '(tab-bar ((t (:background "black"))))
+ '(tab-bar-tab ((t (:background "#171717" :foreground "#F6F3E8" :box (:line-width 2 :style released-button)))))
+ '(tab-bar-tab-inactive ((t (:background "#171717" :foreground "gray70")))))
+
 
 (provide 'styling)
 ;;; styling.el ends here

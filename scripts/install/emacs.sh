@@ -1,8 +1,12 @@
 #!/bin/bash
+# Copyright (C) 2017-2025 Bryce Thuilot <bryce@thuilot.io>
 #
-# macOS emacs installation script for https://github.com/bthuilot/dot
-# (C) Bryce Thuilot 2024 <bryce@thuilot.io>
-# License: GPL v3
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the FSF, either version 3 of the License, or (at your option) any later version.
+# See the LICENSE file in the root of this repository for full license text or
+# visit: <https://www.gnu.org/licenses/gpl-3.0.html>.
+
 set -e
 
 # Colors
@@ -17,11 +21,11 @@ mkdir -p "$HOME/.emacs.d"
 
 # check if existing .emacs.d/init.el file exists
 if [ ! -f "$HOME/.emacs.d/init.el" ]; then
-    echo -e "${YELLOW}no emacs config exists${NO_COLOR}: creating base config"
-    cat <<EOF > "$HOME/.emacs.d/init.el"
+	echo -e "${YELLOW}no emacs config exists${NO_COLOR}: creating base config"
+	cat <<EOF >"$HOME/.emacs.d/init.el"
     ;;; init.el --- emacs config file -*- lexical-binding: t; -*-
 
-    ;; Copyright (C) Bryce Thuilot $(date '+%Y')
+    ;; Copyright (C) Bryce Thuilot <bryce@thuilot.io> 2017-2025
 
 
     ;; Author: Bryce Thuilot <bryce@thuilot.io>

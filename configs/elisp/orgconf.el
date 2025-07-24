@@ -1,6 +1,6 @@
 ;;; orgconf.el --- emacs org mode config file -*- lexical-binding: t; -*-
 
-;; Copyright (C) Bryce Thuilot 2024
+;; Copyright (C) Bryce Thuilot <bryce@thuilot.io> 2017-2025
 
 ;; Author: Bryce Thuilot <bryce@thuilot.io>
 ;; Created: 15 July 2024
