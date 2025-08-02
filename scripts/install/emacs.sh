@@ -23,25 +23,25 @@ mkdir -p "$HOME/.emacs.d"
 if [ ! -f "$HOME/.emacs.d/init.el" ]; then
 	echo -e "${YELLOW}no emacs config exists${NO_COLOR}: creating base config"
 	cat <<EOF >"$HOME/.emacs.d/init.el"
-    ;;; init.el --- emacs config file -*- lexical-binding: t; -*-
+;;; init.el --- emacs config file -*- lexical-binding: t; -*-
 
-    ;; Copyright (C) Bryce Thuilot <bryce@thuilot.io> 2017-2025
-
-
-    ;; Author: Bryce Thuilot <bryce@thuilot.io>
-    ;; Created: $(date '+%d %b %Y')
-
-    ;; URL: https://github.com/bthuilot/dot
-
-    ;;; Commentary:
-    ;; 'init.el' Emacs config file.
-    ;; Used to load in other Emacs config files
-
-    ;;; Code:
+;; Copyright (C) Bryce Thuilot <bryce@thuilot.io> 2017-2025
 
 
-    (provide 'init)
-    ;;; init.el ends here
+;; Author: Bryce Thuilot <bryce@thuilot.io>
+;; Created: $(date '+%d %b %Y')
+
+;; URL: https://github.com/bthuilot/dot
+
+;;; Commentary:
+;; 'init.el' Emacs config file.
+;; Used to load in other Emacs config files
+
+;;; Code:
+
+
+(provide 'init)
+;;; init.el ends here
 EOF
 fi
 

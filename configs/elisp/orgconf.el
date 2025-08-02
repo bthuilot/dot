@@ -16,11 +16,11 @@
 (setq-default org-notes-file (concat org-dir "/notes.org"))
 
 ;; Set agenda
-(setq org-agenda-files `(,org-notes-file))
+(setq-default org-agenda-files `(,org-notes-file))
 ;; set notes
-(setq org-default-notes-file org-notes-file)
+(setq-default org-default-notes-file org-notes-file)
 ;; Set caputre templates
-(setq org-capture-templates
+(setq-default org-capture-templates
       '(
 	("t" "🚩 TODO" entry (file+headline org-notes-file "Uncategorized")
          "** TODO %?\n")
@@ -29,8 +29,8 @@
 	))
 
 ;; Styling changes
-(setq org-blank-before-new-entry '((heading . nil) (plain-list-item . nil)))
+(setq-default org-blank-before-new-entry '((heading . nil) (plain-list-item . nil)))
 
 
 (provide 'orgconf)
-;;; styling.el ends here
+;;; orgconf.el ends here

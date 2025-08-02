@@ -27,11 +27,11 @@ install-git:
 
 
 template-zshrc:
-	@go run ./scripts/helpers/templater/main.go -in ./templates/zshrc.tmpl OS=$(OS) DOT_DIR=$(DOT_DIR)
+	@go run ./scripts/templater/main.go -in ./templates/zshrc.tmpl OS=$(OS) DOT_DIR=$(DOT_DIR)
 
 
 template-init-el:
-	@go run ./scripts/helpers/templater/main.go -in ./templates/init.el.tmpl OS=$(OS) DOT_DIR=$(DOT_DIR)
+	@go run ./scripts/templater/main.go -in ./templates/init.el.tmpl OS=$(OS) DOT_DIR=$(DOT_DIR)
 
 fmt-license:
 	license-eye header fix

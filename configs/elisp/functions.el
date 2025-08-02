@@ -56,24 +56,29 @@ This uses `buffer-list`’s ordering (most recent first) as a proxy for
   (interactive)
   (find-file "~/.emacs.d/init.el"))
 
-(defun emacs-config ()
-  "List all Emacs config files in dot-dir and open the selected."
+(defun dotfiles-config ()
+  "Open one of the elisp config files from the dotfiles directory."
   (interactive)
-  (let* ((directory (concat dot-dir "/configs/elisp/"))
-         (files (delete "." (delete ".." (directory-files directory))))
+  (let* ((files (delete "." (delete ".." (directory-files dotfiles-config-dir))))
          (file (completing-read "Select a file: " files)))
-    (find-file (expand-file-name file directory))))
+    (find-file (expand-file-name file dotfiles-config-dir)))
+  )
+
+(defun dotfiles ()
+  "Open the dotfiles project."
+  (interactive)
+  (project-switch-project dotfiles-dir))
 
 (defun treemacs-toggle ()
   "Toggle treemacs in a similar nature to JetBrains/VScode."
-  ; if treemacs isnt activated, activate it and select it
+					; if treemacs isnt activated, activate it and select it
   (interactive)
   (let (;; get the last edited "real file" buffer
 	(b (last-edited-visible-file-buffer))
 	;; before selecting treemacs windows, check if its currently
 	(visible (and (fboundp 'treemacs-current-visibility)
 		      (eq 'visible (treemacs-current-visibility)))))
-    ; select the treemacs window
+					; select the treemacs window
     (cond
      ;; if it was visible already, quit it
      (visible  (progn (treemacs-select-window) (treemacs-quit)))
@@ -99,5 +104,25 @@ This uses `buffer-list`’s ordering (most recent first) as a proxy for
   "Open Org tasks file."
   (interactive)
   (find-file org-notes-file))
+
+(defun frame-monitor-usable-height (&optional frame)
+  "Return the usable height in pixels of the monitor of FRAME."
+  (cadddr (frame-monitor-workarea frame)))
+
+(defun frame-monitor-usable-width (&optional frame)
+  "Return the usable width in pixels of the monitor of FRAME."
+  (caddr (frame-monitor-workarea frame)))
+
+(defun frame-alist-center (w h)
+  "Will return the frame-alist for the center of the screen.
+W and H are the width and the height of the frame."
+  (let* ((frame (selected-frame))
+	 (top (/ (- w (frame-monitor-usable-width frame)) 2))
+	 (left (/ (- h (frame-monitor-usable-height frame)) 2))
+	 )
+    `((left   . ,left)
+      (top    . ,top)
+      (width  . ,w)
+      (height . ,h))))
 
 ;;; functions.el ends here

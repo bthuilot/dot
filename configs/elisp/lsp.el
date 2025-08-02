@@ -64,16 +64,25 @@
    )
   )
 
-(use-package treemacs-magit
-  :after (treemacs magit)
-  :ensure t)
-
 (use-package treemacs-tab-bar
   :after (treemacs)
   :ensure t
   :config (treemacs-set-scope-type 'Tabs))
 
 ;; (treemacs-start-on-boot)
+
+;; git stuff
+(use-package magit
+  :ensure t)
+
+(use-package git-link
+  :ensure t
+  :config (setq git-link-open-in-browser 't))
+
+
+(use-package treemacs-magit
+  :after (treemacs magit)
+  :ensure t)
 
 
 ;; Company mode

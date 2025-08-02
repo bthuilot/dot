@@ -97,7 +97,7 @@ function install_packages {
 	cli_apps="git gpg neofetch pandoc npm zsh wget gh"
 
 	# Graphical Applications
-	gui_apps="firefox 1password 1password-cli gpg-suite slack iterm2 pinentry-mac"
+	gui_apps="firefox 1password 1password-cli gpg-suite iterm2 pinentry-mac"
 
 	# Install packages using brew
 	# shellcheck disable=SC2086

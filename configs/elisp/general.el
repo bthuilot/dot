@@ -11,7 +11,8 @@
 ;; This file is used to configure general settings
 
 ;;; Code:
-;; Set directory for temp files
+
+;; set directory for temp files
 (setq backup-directory-alist
       `((".*" . ,temporary-file-directory)))
 (setq auto-save-file-name-transforms
@@ -23,22 +24,6 @@
 ;; Set $PATH from shell
 (when (memq window-system '(mac ns x))
   (exec-path-from-shell-initialize))
-
-;; Set frame size
-(defvar frame-height 60)
-(defvar frame-width 160)
-(setq git-link-open-in-browser 't)
-(add-to-list 'default-frame-alist `(height . ,frame-height))
-(add-to-list 'default-frame-alist `(width . ,frame-width))
-
-;; Don't open a new frame when opening a file with emacs
-(setq ns-pop-up-frames nil)
-
-
-;; SHUT UPP EMACS
-;;(setq ring-bell-function ignore)
-(setq visible-bell 1)
-
 
 ;;;;;;;;;;;;;;;;;;;;
 

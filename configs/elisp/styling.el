@@ -12,29 +12,47 @@
 
 ;;; Code:
 
-;; Font
+;; set theme
+(add-to-list 'custom-theme-load-path dotfiles-config-dir)
+(load-theme 'personal t)
+
+;; set default font
 (set-frame-font "Fira Code Retina 12" nil t)
 
-;; Disable toolbar
+;; disable toolbar & menu
 (tool-bar-mode -1)
-
-;; Disable toolbar
 (menu-bar-mode -1)
 
-;; Show line numbers
+;; show line numbers
 (global-display-line-numbers-mode)
+
+;; frame config
+(defvar frame-height 60)
+(defvar frame-width 160)
+
+(add-to-list 'default-frame-alist `(height . ,frame-height))
+(add-to-list 'default-frame-alist `(width . ,frame-width))
+
+;; ()
+
+(setq initial-frame-alist
+      (append initial-frame-alist (frame-alist-center frame-width frame-height)))
+
+;; (add-hook 'emacs-startup-hook
+	  ;; (lambda ()  (centerrr)))
+
+
+
+;; don't open a new frame when opening a file with emacs
+;; (setq ns-pop-up-frames nil)
 
 ;; Disable newline at end of file
 (setq require-final-newline nil
       mode-require-final-newline nil)
 
-;; Disable bell sound
+;; disable bell sound & use screenflash instead
 (setq ring-bell-function 'ignore)
-
-;; use badger theme
-(use-package badger-theme
-  :ensure t
-  :config (load-theme 'badger t))
+(setq visible-bell 1)
 
 ;; support editorconfig
 (use-package editorconfig
@@ -44,10 +62,12 @@
 
 ;; all-the-icons
 (use-package all-the-icons
+  :ensure t
   :if (display-graphic-p))
 
 ;; Dashboard
 (use-package dashboard
+  :ensure t
   :init
   (setq dashboard-startup-banner 'logo
 	dashboard-set-navigator t
@@ -61,11 +81,10 @@
   :config
   (dashboard-setup-startup-hook))
 
-(custom-set-faces
- '(tab-bar ((t (:background "black"))))
- '(tab-bar-tab ((t (:background "#171717" :foreground "#F6F3E8" :box (:line-width 2 :style released-button)))))
- '(tab-bar-tab-inactive ((t (:background "#171717" :foreground "gray70")))))
-
+;; (custom-set-faces
+ ;; '(tab-bar ((t (:background "black"))))
+ ;; '(tab-bar-tab ((t (:background "#171717" :foreground "#F6F3E8" :box (:line-width 2 :style released-button)))))
+ ;; '(tab-bar-tab-inactive ((t (:background "#171717" :foreground "gray70")))))
 
 (provide 'styling)
 ;;; styling.el ends here
