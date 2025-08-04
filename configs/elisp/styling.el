@@ -13,7 +13,7 @@
 ;;; Code:
 
 ;; set theme
-(add-to-list 'custom-theme-load-path dotfiles-config-dir)
+(add-to-list 'custom-theme-load-path (concat dotfiles-config-dir "/themes"))
 (load-theme 'personal t)
 
 ;; set default font
@@ -30,18 +30,8 @@
 (defvar frame-height 60)
 (defvar frame-width 160)
 
-(add-to-list 'default-frame-alist `(height . ,frame-height))
-(add-to-list 'default-frame-alist `(width . ,frame-width))
-
-;; ()
-
 (setq initial-frame-alist
       (append initial-frame-alist (frame-alist-center frame-width frame-height)))
-
-;; (add-hook 'emacs-startup-hook
-	  ;; (lambda ()  (centerrr)))
-
-
 
 ;; don't open a new frame when opening a file with emacs
 ;; (setq ns-pop-up-frames nil)
