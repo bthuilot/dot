@@ -21,12 +21,10 @@
 ;; Add load paths ;;
 ;;;;;;;;;;;;;;;;;;;;
 
-(setq-default dot-dir "{{.DOT_DIR}}")
+(defvar dotfiles-dir "{{.DOT_DIR}}")
+(defvar dotfiles-config-dir (concat dotfiles-dir "/configs/elisp"))
 
-
-(add-to-list 'load-path (concat dot-dir "/configs/elisp/"))
-(add-to-list 'custom-theme-load-path (concat dot-dir "/configs/elisp/themes/"))
-
+(add-to-list 'load-path dotfiles-config-dir)
 
 (load "general")
 (load "functions")
