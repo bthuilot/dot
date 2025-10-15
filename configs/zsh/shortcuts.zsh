@@ -69,3 +69,10 @@ dotenv() {
 
 	export $(grep -v '^#' $file | xargs)
 }
+
+docker-shell() {
+    img="$1"
+    shell="${2:-/bin/bash}"
+
+    docker run --rm -it --entrypoint "$shell" "$img"
+}
