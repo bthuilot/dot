@@ -128,11 +128,14 @@
 ;; JavaScript ;;
 ;;;;;;;;;;;;;;;;
 
-(use-package js2
+(use-package js2-mode
+  :ensure
   :init
   (setq-default js2-basic-offset 2)
-  :mode "\\.js\\'")
-  ;; (add-hook 'js2-mode-hook (lambda () (setq js2-basic-offset 2)))
+  :mode "\\.js\\'"
+  )
+
+;; (add-hook 'js2-mode-hook (lambda () (setq js2-basic-offset 2)))
 
 ;; Go ;;
 ;;;;;;;;
