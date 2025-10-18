@@ -174,6 +174,14 @@
   ('flycheck-mode . #'flycheck-rust-setup)
   ('rust-mode #'lsp-deferred))
 
+;; Zig ;;
+;;;;;;;;;
+
+(use-package zig-mode
+  :hook
+  ('zig-mode . #'lsp-deferred)
+  )
+
 
 ;; OCaml ;;
 ;;;;;;;;;;;
