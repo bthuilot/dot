@@ -23,12 +23,14 @@
 
 ;; enable projectile
 (use-package projectile
+  :ensure t
   :config
   (projectile-mode +1))
   
 
 ;; LSP UI
 (use-package lsp-ui
+  :ensure t
   :init
   (setq-default lsp-ui-doc-position 'at-point
 		lsp-ui-flycheck-enable t
@@ -36,6 +38,7 @@
 
 ;; fuzzy finder
 (use-package affe
+  :ensure t
   :config
   ;; Manual preview key for `affe-grep'
   (consult-customize affe-grep :preview-key "M-."))
@@ -87,24 +90,17 @@
 
 ;; Company mode
 (use-package company
+  :ensure t
   :init
   (setq-default
    company-idle-delay 0
    company-minimum-prefix-length 1)
   :hook ('after-init . 'global-company-mode))
 
-;; Kubernetes
-(use-package kubernetes
-  :ensure t
-  :commands (kubernetes-overview)
-  :config
-  (setq kubernetes-poll-frequency 3600
-        kubernetes-redraw-frequency 3600))
-
-;; yasnippet ;;
 ;;;;;;;;;;;;;;;;
 
 (use-package yasnippet
+  :ensure t
   :config
   (yas-global-mode 1))
 
@@ -113,6 +109,7 @@
 ;;;;;;;;;;;;;;
 
 (use-package flycheck
+  :ensure t
   :hook
   ('after-init . 'global-flycheck-mode))
 
@@ -120,6 +117,7 @@
 ;;;;;;;;;;;;;
 
 (use-package haskell-mode
+  :if (package-installed-p 'haskell-mode)
   :hook
   ('haskell-mode . 'lsp-deferred)
   ('haskell-literate-mode . 'lsp-deferred))
@@ -129,7 +127,7 @@
 ;;;;;;;;;;;;;;;;
 
 (use-package js2-mode
-  :ensure
+  :if (package-installed-p 'js2-mode)
   :init
   (setq-default js2-basic-offset 2)
   :mode "\\.js\\'"
@@ -145,6 +143,7 @@
   (add-hook 'before-save-hook #'lsp-organize-imports t t))
 
 (use-package go-mode
+  :ensure t
   :init
   (lsp-register-custom-settings
    '(("gopls.completeUnimported" t t)
@@ -159,6 +158,7 @@
 ;;;;;;;;;;;
 
 (use-package flymake-shellcheck
+  :ensure t
   :hook
   ('sh-mode . 'flymake-shellcheck-load))
 
@@ -166,6 +166,7 @@
 ;;;;;;;;;;
 
 (use-package rust-mode
+  :if (package-installed-p 'rust-mode)
   :init
   (setq rust-format-on-save t
 	lsp-rust-server 'rust-analyzer
@@ -178,6 +179,7 @@
 ;;;;;;;;;
 
 (use-package zig-mode
+  :if (package-installed-p 'zig-mode)
   :hook
   ('zig-mode . #'lsp-deferred)
   )
@@ -227,6 +229,7 @@
 ;;;;;;;;;;;;;;;
 
 (use-package terraform-mode
+  :if (package-installed-p 'terraform-mode)
   :hook
   ('terraform-mode . #'lsp-deferred)
   ('terraform-mode . #'terraform-format-on-save-mode))
@@ -245,16 +248,18 @@
 ;; C/C++ ;;
 ;;;;;;;;;;;
 (use-package eglot
+  :if (package-installed-p 'eglot)
   :config (progn
-	  (add-to-list 'eglot-server-programs '((c++-mode c-mode) "clangd"))
-	  (add-hook 'c-mode-hook 'eglot-ensure)
-	  (add-hook 'c++-mode-hook 'eglot-ensure)))
+	    (add-to-list 'eglot-server-programs '((c++-mode c-mode) "clangd"))
+	    (add-hook 'c-mode-hook 'eglot-ensure)
+	    (add-hook 'c++-mode-hook 'eglot-ensure)))
 
 ;; Other Languages ;;
 ;;;;;;;;;;;;;;;;;;;;;
 
 ;; rego
 (use-package rego
+  :if (package-installed-p 'rego)
   :mode "\\.rego\\'")
 
 ;; paredit

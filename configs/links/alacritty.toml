@@ -1,0 +1,55 @@
+[font]
+size = 16
+[font.normal]
+family = "Fira Code"
+style = "Regular"
+[font.bold]
+family = "Fira Code"
+style = "Bold"
+[font.italic]
+family = "Droid Sans Mono Slashed for Powerline"
+style = "Italic"
+
+[window]
+[window.dimensions]
+columns = 130
+lines = 40
+
+[colors]
+[colors.primary]
+background = "#1e1e1e"
+foreground = "#cccccc"
+[colors.normal]
+black = "#000000"
+red = "#d55953"
+green = "#87af5f"
+yellow = "#d7af5f"
+blue = "#518ce3"
+magenta = "#c975d1"
+cyan = "#5fafaf"
+white = "#e5e5e5"
+
+[colors.bright]
+black = "#666666"
+red = "#df5953"
+green = "#87af5f"
+yellow = "#d7af5f"
+blue = "#518ce3"
+magenta = "#c975d1"
+cyan = "#f5afaf"
+white = "#e5e5e5"
+
+[[keyboard.bindings]]
+key = "T"
+mods = "Control"
+action = "CreateNewWindow"
+
+[[keyboard.bindings]]
+key = "C"
+mods = "Super"
+action = "Copy"
+
+[[keyboard.bindings]]
+key = "V"
+mods = "Super"
+action = "Paste"

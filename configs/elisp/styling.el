@@ -17,7 +17,7 @@
 (load-theme 'personal t)
 
 ;; set default font
-(set-frame-font "Fira Code Retina 12" nil t)
+;; (set-frame-font "Fira Code Retina 12" nil t)
 
 ;; disable toolbar & menu
 (tool-bar-mode -1)
@@ -27,11 +27,12 @@
 (global-display-line-numbers-mode)
 
 ;; frame config
-(defvar frame-height 60)
-(defvar frame-width 160)
 
-(setq initial-frame-alist
-      (append initial-frame-alist (frame-alist-center frame-width frame-height)))
+(add-to-list 'default-frame-alist '(width  . 160))
+(add-to-list 'default-frame-alist '(height . 60))
+(add-to-list 'default-frame-alist '(top . 0.5))
+(add-to-list 'default-frame-alist '(left . 0.5))
+(add-to-list 'default-frame-alist '(font . "Fira Code Retina 12"))
 
 ;; don't open a new frame when opening a file with emacs
 ;; (setq ns-pop-up-frames nil)
