@@ -29,7 +29,7 @@ else
 	# Alias OSX commands
 	# for use with common scripts
 	alias open=xdg-open
-	alias pbocpy="xclip -selection c"
+	alias pbcopy="xclip -selection c"
 fi
 
 # Logins to AWS ECR with current profile
@@ -37,14 +37,20 @@ ecr-login() {
 	aws ecr get-login-password | docker login -u AWS --password-stdin "https://$(aws sts get-caller-identity --query 'Account' --output text).dkr.ecr.us-east-1.amazonaws.com"
 }
 
+
 # Opens the given file inside of emacs
 em() {
 	mkdir -p "$(dirname $1)"
 	touch "$1"
-	open -a Emacs "$1"
+	if [[ $(uname) == "Darwin" ]]; then
+	    open -a Emacs "$1"
+	else
+	    emacsclient -c -n "$1"
+	fi
 }
 # Add completion for em
-compdef _files emacs
+compdef _files em
+
 
 # Opens the given file inside of emacs in the terminal
 tem() {
@@ -52,7 +58,7 @@ tem() {
 	emacs -nw "$1"
 }
 # Add completion for tem
-compdef _files temacs
+compdef _files tem
 
 ntfy() {
 	msg="${1:-Complete}"

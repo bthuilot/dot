@@ -21,10 +21,10 @@ if [ -z "$GITHUB_USER" ]; then
 fi
 
 export LESS="-F $LESS"
-export EDITOR='tem'
+export EDITOR='emacs'
 export SSH_KEY_PATH="$HOME/.ssh/id_ed25519"
-export GOPATH="$HOME/go"
-export GOBIN="$GOPATH/bin"
+# export GOPATH="$HOME/go"
+# export GOBIN="$GOPATH/bin"
 
 # PATH exports
 export PATH="$HOME/.local/bin:/usr/local/bin:$PATH"
@@ -43,8 +43,8 @@ if [[ $(uname) == "Darwin" ]]; then
     export TERM=rxvt-256color
     export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
 else
-    export GOROOT="/usr/local/go"
+    # nothing
 fi
 
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nv
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" || true # This loads nv
