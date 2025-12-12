@@ -17,7 +17,7 @@
 (load-theme 'personal t)
 
 ;; set default font
-(set-frame-font "Fira Code Retina 12" nil t)
+;; (set-frame-font "FiraCode Nerd Font 14" nil t)
 
 ;; disable toolbar & menu
 (tool-bar-mode -1)
@@ -30,11 +30,14 @@
 (defvar frame-height 60)
 (defvar frame-width 160)
 
-(setq initial-frame-alist
-      (append initial-frame-alist (frame-alist-center frame-width frame-height)))
 
-;; don't open a new frame when opening a file with emacs
-;; (setq ns-pop-up-frames nil)
+;; (setq initial-frame-alist
+      ;; (append initial-frame-alist (frame-alist-center frame-width frame-height)))
+
+
+(add-to-list 'default-frame-alist '(width  . 160))
+(add-to-list 'default-frame-alist '(height . 60))
+(add-to-list 'default-frame-alist '(font . "FiraCode Nerd Font 12"))
 
 ;; Disable newline at end of file
 (setq require-final-newline nil
@@ -50,10 +53,18 @@
   :config
   (editorconfig-mode 1))
 
-;; all-the-icons
-(use-package all-the-icons
+;; nerd icons
+(use-package nerd-icons
   :ensure t
-  :if (display-graphic-p))
+  :custom
+  (nerd-icons-font-family "FiraCode Nerd Font Mono"))
+
+;; nerd icon support for treemacs
+(use-package treemacs-nerd-icons
+  :if (and (package-installed-p 'treemacs)
+	   (package-installed-p 'treemacs-nerd-icons))
+  :after (treemacs lsp-treemacs nerd-icons)
+  :config (treemacs-nerd-icons-config))
 
 ;; Dashboard
 (use-package dashboard
@@ -61,20 +72,12 @@
   :init
   (setq dashboard-startup-banner 'logo
 	dashboard-set-navigator t
-	dashboard-filter-agenda-entry 'dashboard-no-filter-agenda
-	dashboard-match-agenda-entry "TODO=\"TODO\"|TODO=\"IN-PROGRESS\"|TODO=\"WAITING\""
 	dashboard-icon-type 'nerd-icons
-	dashboard-items '((agenda    . 10)
-                          (projects . 10)
-			  (recents  . 10))
-	dashboard-item-names '(("Agenda for the coming week:" . "Tasks:")))
+	dashboard-items '((projects . 15)
+			  (recents  . 15)))
   :config
   (dashboard-setup-startup-hook))
 
-;; (custom-set-faces
- ;; '(tab-bar ((t (:background "black"))))
- ;; '(tab-bar-tab ((t (:background "#171717" :foreground "#F6F3E8" :box (:line-width 2 :style released-button)))))
- ;; '(tab-bar-tab-inactive ((t (:background "#171717" :foreground "gray70")))))
 
 (provide 'styling)
 ;;; styling.el ends here

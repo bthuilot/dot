@@ -20,25 +20,13 @@
 (setq-default
  lsp-disabled-clients '(semgrep-ls))
 
-
-;; enable projectile
-(use-package projectile
-  :config
-  (projectile-mode +1))
-  
-
 ;; LSP UI
 (use-package lsp-ui
+  :ensure t
   :init
   (setq-default lsp-ui-doc-position 'at-point
 		lsp-ui-flycheck-enable t
 		lsp-ui-doc-enable t))
-
-;; fuzzy finder
-(use-package affe
-  :config
-  ;; Manual preview key for `affe-grep'
-  (consult-customize affe-grep :preview-key "M-."))
 
 ;; Treemacs
 (use-package treemacs
@@ -64,13 +52,6 @@
    )
   )
 
-(use-package treemacs-tab-bar
-  :after (treemacs)
-  :ensure t
-  :config (treemacs-set-scope-type 'Tabs))
-
-;; (treemacs-start-on-boot)
-
 ;; git stuff
 (use-package magit
   :ensure t)
@@ -92,14 +73,6 @@
    company-idle-delay 0
    company-minimum-prefix-length 1)
   :hook ('after-init . 'global-company-mode))
-
-;; Kubernetes
-(use-package kubernetes
-  :ensure t
-  :commands (kubernetes-overview)
-  :config
-  (setq kubernetes-poll-frequency 3600
-        kubernetes-redraw-frequency 3600))
 
 ;; yasnippet ;;
 ;;;;;;;;;;;;;;;;
@@ -123,19 +96,6 @@
   :hook
   ('haskell-mode . 'lsp-deferred)
   ('haskell-literate-mode . 'lsp-deferred))
-
-
-;; JavaScript ;;
-;;;;;;;;;;;;;;;;
-
-(use-package js2-mode
-  :ensure
-  :init
-  (setq-default js2-basic-offset 2)
-  :mode "\\.js\\'"
-  )
-
-;; (add-hook 'js2-mode-hook (lambda () (setq js2-basic-offset 2)))
 
 ;; Go ;;
 ;;;;;;;;
@@ -179,8 +139,7 @@
 
 (use-package zig-mode
   :hook
-  ('zig-mode . #'lsp-deferred)
-  )
+  ('zig-mode . #'lsp-deferred))
 
 
 ;; OCaml ;;
@@ -231,7 +190,6 @@
   ('terraform-mode . #'lsp-deferred)
   ('terraform-mode . #'terraform-format-on-save-mode))
 
-
 ;; Python ;;
 ;;;;;;;;;;;;
 
@@ -239,8 +197,8 @@
   :ensure t
   :custom (lsp-pyright-langserver-command "pyright")
   :hook (python-mode . (lambda ()
-                          (require 'lsp-pyright)
-                          (lsp-deferred))))
+                         (require 'lsp-pyright)
+                         (lsp-deferred))))
 
 ;; C/C++ ;;
 ;;;;;;;;;;;

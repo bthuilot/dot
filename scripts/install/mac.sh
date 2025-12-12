@@ -52,32 +52,6 @@ function install_gpg_key {
 	echo -e "${GREEN}done${NO_COLOR}"
 }
 
-#######################################
-# Creats an SSH Key using `ssh-keygen`,
-# starts ssh-agent an enables the key
-# to be autoloaded by the agent
-# Globals:
-#   HOME
-# Arguments:
-#   None
-#######################################
-function create_ssh_key {
-	echo "Setting up SSH config..."
-	# Generate SSH key
-	PUB_KEY="$HOME/.ssh/id_ed25519.pub"
-	PRIV_KEY="$HOME/.ssh/id_ed25519"
-	ssh-keygen -t ed25519 -C "bryce@thuilot.io" -N "" -f "$PRIV_KEY" 1>/dev/null
-
-	# Start the ssh-agent in the background
-	eval "$(ssh-agent -s)" 1>/dev/null
-
-	# Load ssh key automatically
-	printf "Host *\n AddKeysToAgent yes\nUseKeychain yes\nIdentityFile %s\n" "$PRIV_KEY" >$HOME/.ssh/config
-
-	# Add SSH key to SSH agent
-	ssh-add -K "$PRIV_KEY" 1>/dev/null
-	echo -e "${GREEN}done${NO_COLOR}"
-}
 
 #######################################
 # Installs packages via brew
@@ -94,7 +68,7 @@ function install_packages {
 	fi
 
 	# Command line packages
-	cli_apps="git gpg neofetch pandoc npm zsh wget gh"
+	cli_apps="git gnupg zsh wget gh kubectl kubectx jq"
 
 	# Graphical Applications
 	gui_apps="firefox 1password 1password-cli gpg-suite iterm2 pinentry-mac"
@@ -105,11 +79,9 @@ function install_packages {
 	# shellcheck disable=SC2086
 	brew install --cask ${gui_apps}
 	# Not working for some reason -> need to look into more
-	# brew install itsycal
 
 	# Add fonts
-	brew tap homebrew/cask-fonts
-	brew install --cask font-fira-code
+	brew install --cask font-fira-code font-fira-code-nerd font-fira-code-mono-nerd
 
 	echo -e "${GREEN}done${NO_COLOR}"
 }
@@ -163,7 +135,6 @@ prompt_for_cmd() {
 main() {
 	prompt_for_cmd "install homebrew packages?" install_packages
 	prompt_for_cmd "setup GPG key?" install_gpg_key
-	prompt_for_cmd "generate new SSH key?" create_ssh_key
 	prompt_for_cmd "setup git?" "$DOT_DIR/scripts/install/git.sh macos"
 	prompt_for_cmd "setup emacs?" "$DOT_DIR/scripts/install/emacs.sh macos"
 	prompt_for_cmd "setup ZSH?" "$DOT_DIR/scripts/install/zsh.sh macos"
